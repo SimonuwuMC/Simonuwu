@@ -14,8 +14,8 @@ const InstallationGuide = ({ onAchievement }) => {
     <span key="0">
       Descarga e instala Prism Launcher, SkLauncher,{' '}
       <span 
-        className="cursor-default text-gray-700 hover:text-purple-600 transition-colors duration-500"
-        onMouseEnter={handleTutorialClick}
+        className="cursor-pointer text-purple-600 hover:text-purple-800 font-semibold transition-colors underline decoration-dotted"
+        onClick={handleTutorialClick}
       >
         Pojav Launcher
       </span>{' '}
@@ -49,14 +49,18 @@ const InstallationGuide = ({ onAchievement }) => {
           </ol>
 
           {showTutorial && (
-            <div className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-xl animate-fade-in">
+            <div className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-xl animate-fade-in">
+              <div className="flex items-center mb-4">
+                <span className="text-2xl mr-3">🎮</span>
+                <h3 className="text-xl font-bold text-purple-900">¡Tutorial Secreto Encontrado!</h3>
+              </div>
               <a 
                 href="https://youtu.be/20HXyed0-cE?si=SFsT4QdLGLhh_wme"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
-                <span className="mr-2">Tutorial Alternativo</span>
+                <span className="mr-2">Ver Tutorial en YouTube</span>
                 <span className="text-xl">▶️</span>
               </a>
             </div>
