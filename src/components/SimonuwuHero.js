@@ -1,0 +1,64 @@
+import React, { useState } from 'react';
+
+const SimonuwuHero = ({ onAchievement }) => {
+  const [showEasterEgg, setShowEasterEgg] = useState(false);
+
+  const handleEasterEgg = () => {
+    setShowEasterEgg(!showEasterEgg);
+    if (!showEasterEgg) {
+      onAchievement();
+    }
+  };
+
+  return (
+    <div className="bg-gradient-to-br from-pink-500 to-purple-600 py-20 px-6 text-center">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-5xl font-bold text-white mb-6">
+          <span 
+            className="cursor-pointer hover:text-pink-100 transition-colors"
+            onClick={handleEasterEgg}
+          >
+            Simonuwu
+          </span> Fabric Project
+        </h1>
+        {showEasterEgg && (
+          <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg mb-6 animate-fade-in">
+            <p className="text-white mb-2">¡Has encontrado un Easter Egg! 🎉</p>
+            <a 
+              href="https://www.youtube.com/@simonuwu.minecraft" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-red-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 transition-colors"
+            >
+              ¡Visita mi canal de YouTube! 
+              <img 
+                src="https://yt3.googleusercontent.com/nHDQOpEnEv82i7lGYAJ-Xal2YZQwCrHY9qKARDSUDbU-kMgrI0M4LvAbGukkN_7n2pDR-K4DrQ=s72-c-k-c0x00ffffff-no-rj" 
+                alt="Simonuwu Logo"
+                className="w-6 h-6 inline-block ml-2 rounded-full"
+              />
+            </a>
+          </div>
+        )}
+        <p className="text-xl text-pink-100 mb-8">El modpack más optimizado para Minecraft Fabric</p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a 
+            href="https://modrinth.com/modpack/simonuwu-fabric-project" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white text-pink-600 font-bold py-3 px-8 rounded-lg hover:bg-pink-50 transition-colors"
+          >
+            Ver en Modrinth
+          </a>
+          <a 
+            href="#download" 
+            className="bg-pink-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-pink-800 transition-colors"
+          >
+            Descargar
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SimonuwuHero;
