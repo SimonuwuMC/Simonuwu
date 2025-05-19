@@ -156,7 +156,7 @@ const DownloadSection = ({ onAchievement }) => {
                 download
               >
                 <span className="mr-2">Descargar v{item.version}</span>
-                <span className="text-xl">⬇️</span>
+                <span className="text-xl"></span>
               </a>
             </div>
           ))}
