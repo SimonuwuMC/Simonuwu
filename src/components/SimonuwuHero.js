@@ -17,26 +17,24 @@ const SimonuwuHero = ({ onAchievement }) => {
         <div className="animate-fade-in">
           <h1 className="text-6xl font-extrabold text-white mb-6 tracking-tight">
             <span 
-              className="cursor-pointer hover:text-pink-200 transition-colors duration-300 relative group"
-              onClick={handleEasterEgg}
+              className="relative inline-block cursor-default"
+              onMouseEnter={handleEasterEgg}
             >
               Simonuwu
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-pink-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </span>{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-200 to-purple-200">
               Fabric Project
             </span>
           </h1>
           {showEasterEgg && (
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl mb-8 animate-fade-in shadow-xl">
-              <p className="text-white text-lg mb-4">¡Has encontrado un Easter Egg! 🎉</p>
+            <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl mb-8 animate-fade-in">
               <a 
                 href="https://www.youtube.com/@simonuwu.minecraft" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-red-600 text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
-                ¡Visita mi canal de YouTube! 
+                Visitar Canal
                 <img 
                   src="https://yt3.googleusercontent.com/nHDQOpEnEv82i7lGYAJ-Xal2YZQwCrHY9qKARDSUDbU-kMgrI0M4LvAbGukkN_7n2pDR-K4DrQ=s72-c-k-c0x00ffffff-no-rj" 
                   alt="Simonuwu Logo"
