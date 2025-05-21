@@ -27,7 +27,7 @@
 
   .minecraft-btn {
     @apply relative px-8 py-3 text-2xl font-bold text-white uppercase transition-all duration-200 
-           border-b-4 border-green-800 bg-green-600 hover:bg-green-500 
+           border-b-4 border-red-800 bg-red-600 hover:bg-red-500 
            active:border-b-0 active:translate-y-1;
     text-shadow: 2px 2px 0 #000;
   }
@@ -38,7 +38,7 @@
   }
 
   .minecraft-panel {
-    @apply relative bg-gray-800 bg-opacity-90 border-2 border-gray-700;
+    @apply relative bg-gray-900 bg-opacity-90 border-2 border-red-900;
   }
 
   .minecraft-panel::before {
@@ -53,11 +53,11 @@
   @keyframes textGlow {
     from {
       text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
-                   0 0 10px #4ade80, 0 0 20px #4ade80;
+                   0 0 10px #ff0000, 0 0 20px #ff0000;
     }
     to {
       text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
-                   0 0 15px #4ade80, 0 0 25px #4ade80;
+                   0 0 15px #ff0000, 0 0 25px #ff0000;
     }
   }
 }

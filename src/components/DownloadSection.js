@@ -102,8 +102,8 @@ const DownloadSection = ({ onAchievement }) => {
   return (
     <section id="download" className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-minecraft text-center text-white mb-4">Descargar por Versión</h2>
-        <p className="text-xl text-green-300 text-center mb-12 font-minecraft">Elige la versión que mejor se adapte a tus necesidades</p>
+        <h2 className="text-center text-white mb-4">Descargar por Versión</h2>
+        <p className="text-red-300 text-center mb-12 font-minecraft">Elige la versión que mejor se adapte a tus necesidades</p>
         
         <div className="flex space-x-2 mb-8 overflow-x-auto pb-4 justify-center">
           {sortedVersions.map((version) => (
@@ -112,7 +112,7 @@ const DownloadSection = ({ onAchievement }) => {
               onClick={() => setActiveTab(version)}
               className={`minecraft-btn ${
                 activeTab === version 
-                ? 'bg-green-700' 
+                ? 'bg-red-700 border-red-900' 
                 : ''
               }`}
             >
@@ -128,7 +128,7 @@ const DownloadSection = ({ onAchievement }) => {
               className={`minecraft-panel p-8 transition-all duration-300 transform hover:scale-[1.02] ${
                 item.isBeta 
                 ? 'border-yellow-900' 
-                : 'border-green-900'
+                : 'border-red-900'
               }`}
             >
               <div className="flex justify-between items-start mb-4">
@@ -136,7 +136,7 @@ const DownloadSection = ({ onAchievement }) => {
                   <h3 className="text-2xl font-minecraft text-white mb-1">
                     v{item.version}
                     {item.isBeta && (
-                      <span className="ml-3 inline-block px-3 py-1 bg-yellow-600 text-white text-sm font-minecraft rounded-none">
+                      <span className="ml-3 inline-block px-3 py-1 bg-yellow-600 text-white text-sm font-minecraft">
                         BETA
                       </span>
                     )}
