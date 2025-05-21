@@ -100,20 +100,20 @@ const DownloadSection = ({ onAchievement }) => {
   });
 
   return (
-    <section id="download" className="py-20 px-6 bg-gradient-to-b from-white to-purple-50">
+    <section id="download" className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-center text-purple-900 mb-4">Descargar por Versión</h2>
-        <p className="text-xl text-purple-600 text-center mb-12">Elige la versión que mejor se adapte a tus necesidades</p>
+        <h2 className="text-4xl font-minecraft text-center text-white mb-4">Descargar por Versión</h2>
+        <p className="text-xl text-green-300 text-center mb-12 font-minecraft">Elige la versión que mejor se adapte a tus necesidades</p>
         
         <div className="flex space-x-2 mb-8 overflow-x-auto pb-4 justify-center">
           {sortedVersions.map((version) => (
             <button
               key={version}
               onClick={() => setActiveTab(version)}
-              className={`px-6 py-3 rounded-xl font-semibold whitespace-nowrap transition-all duration-300 transform hover:scale-105 ${
+              className={`minecraft-btn ${
                 activeTab === version 
-                ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg' 
-                : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
+                ? 'bg-green-700' 
+                : ''
               }`}
             >
               Minecraft {version}
@@ -125,38 +125,34 @@ const DownloadSection = ({ onAchievement }) => {
           {versionGroups[activeTab].map((item) => (
             <div 
               key={item.id} 
-              className={`p-8 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] ${
+              className={`minecraft-panel p-8 transition-all duration-300 transform hover:scale-[1.02] ${
                 item.isBeta 
-                ? 'bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200' 
-                : 'bg-white shadow-xl'
+                ? 'border-yellow-900' 
+                : 'border-green-900'
               }`}
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-1">
+                  <h3 className="text-2xl font-minecraft text-white mb-1">
                     v{item.version}
                     {item.isBeta && (
-                      <span className="ml-3 inline-block px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-sm font-semibold rounded-full">
+                      <span className="ml-3 inline-block px-3 py-1 bg-yellow-600 text-white text-sm font-minecraft rounded-none">
                         BETA
                       </span>
                     )}
                   </h3>
-                  <p className="text-gray-500">{item.date}</p>
+                  <p className="text-gray-400 font-minecraft">{item.date}</p>
                 </div>
               </div>
-              <p className="text-gray-600 mb-6 text-lg">{item.changelog}</p>
+              <p className="text-gray-300 mb-6 text-lg font-minecraft">{item.changelog}</p>
               <a
                 href={item.downloadUrl}
                 onClick={() => handleDownload(item.version)}
-                className={`inline-flex items-center px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
-                  item.isBeta 
-                  ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-white' 
-                  : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                }`}
+                className="minecraft-btn"
                 download
               >
                 <span className="mr-2">Descargar v{item.version}</span>
-                <span className="text-xl"></span>
+                <span className="text-xl">⛏️</span>
               </a>
             </div>
           ))}

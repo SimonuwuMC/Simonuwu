@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'VT323', monospace;
+    background-image: url('https://images.pexels.com/photos/1532771/pexels-photo-1532771.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .minecraft-btn {
+    @apply relative px-8 py-3 text-lg font-bold text-white uppercase transition-all duration-200 
+           border-b-4 border-green-800 bg-green-600 hover:bg-green-500 
+           active:border-b-0 active:translate-y-1;
+  }
+
+  .minecraft-btn::before {
+    content: '';
+    @apply absolute inset-0 border-2 border-black opacity-20;
+  }
+
+  .minecraft-panel {
+    @apply relative bg-gray-800 bg-opacity-90 border-2 border-gray-700;
+  }
+
+  .minecraft-panel::before {
+    content: '';
+    @apply absolute inset-0 border-2 border-white opacity-5;
+  }
+}
