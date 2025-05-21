@@ -12,9 +12,9 @@ const InstallationGuide = ({ onAchievement }) => {
 
   const steps = [
     <span key="0">
-      Descarga e instala Prism Launcher, SkLauncher,{' '}
+      Descarga e instala Prism Launcher,SkLauncher,{' '}
       <span 
-        className="cursor-pointer text-purple-600 hover:text-purple-800 font-semibold transition-colors underline decoration-dotted"
+        className="cursor-pointer hover:text-purple-600 transition-colors"
         onClick={handleTutorialClick}
       >
         Pojav Launcher
@@ -28,44 +28,31 @@ const InstallationGuide = ({ onAchievement }) => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-purple-50 to-white">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-center text-purple-900 mb-4">Guía de Instalación</h2>
-        <p className="text-xl text-purple-600 text-center mb-12">Sigue estos sencillos pasos para comenzar tu aventura</p>
-        
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-          <ol className="space-y-6">
-            {steps.map((step, index) => (
-              <li 
-                key={index} 
-                className="flex items-start"
-              >
-                <span className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
-                  {index + 1}
-                </span>
-                <p className="text-lg text-gray-700 pt-1">{step}</p>
-              </li>
-            ))}
-          </ol>
+    <section className="py-12 px-6 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-bold text-center text-purple-900 mb-8">Cómo instalar</h2>
+      
+      <div className="bg-white rounded-xl shadow-md p-6">
+        <ol className="list-decimal list-inside space-y-3 text-gray-700">
+          {steps.map((step, index) => (
+            <li key={index} className="pl-2">
+              {step}
+            </li>
+          ))}
+        </ol>
 
-          {showTutorial && (
-            <div className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-xl animate-fade-in">
-              <div className="flex items-center mb-4">
-                <span className="text-2xl mr-3">🎮</span>
-                <h3 className="text-xl font-bold text-purple-900">¡Tutorial Secreto Encontrado!</h3>
-              </div>
-              <a 
-                href="https://youtu.be/20HXyed0-cE?si=SFsT4QdLGLhh_wme"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                <span className="mr-2">Ver Tutorial en YouTube</span>
-                <span className="text-xl">▶️</span>
-              </a>
-            </div>
-          )}
-        </div>
+        {showTutorial && (
+          <div className="mt-4 p-4 bg-purple-50 border border-purple-600 rounded-lg animate-fade-in">
+            <p className="text-purple-900 mb-2">¡Has encontrado un tutorial secreto! 🎮</p>
+            <a 
+              href="https://youtu.be/20HXyed0-cE?si=SFsT4QdLGLhh_wme"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-purple-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-purple-700 transition-colors"
+            >
+              Ver Tutorial en YouTube
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

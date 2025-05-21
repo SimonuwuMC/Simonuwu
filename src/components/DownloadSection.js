@@ -37,7 +37,7 @@ const DownloadSection = ({ onAchievement }) => {
       }
     ],
     '1.21.4': [
-      {
+     {
         id: "70bU5Pqd",
         version: "1.0.4",
         date: "May 12, 2025",
@@ -100,63 +100,44 @@ const DownloadSection = ({ onAchievement }) => {
   });
 
   return (
-    <section id="download" className="py-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-center text-white mb-4">Descargar por Versión</h2>
-        <p className="text-red-300 text-center mb-12 font-minecraft">Elige la versión que mejor se adapte a tus necesidades</p>
-        
-        <div className="flex space-x-2 mb-8 overflow-x-auto pb-4 justify-center">
-          {sortedVersions.map((version) => (
-            <button
-              key={version}
-              onClick={() => setActiveTab(version)}
-              className={`minecraft-btn ${
-                activeTab === version 
-                ? 'bg-red-700 border-red-900' 
-                : ''
-              }`}
-            >
-              Minecraft {version}
-            </button>
-          ))}
-        </div>
+    <section id="download" className="py-12 px-6 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-bold text-center text-purple-900 mb-6">Descargar por Versión</h2>
+      
+      <div className="flex space-x-2 mb-6 overflow-x-auto pb-2">
+        {sortedVersions.map((version) => (
+          <button
+            key={version}
+            onClick={() => setActiveTab(version)}
+            className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap ${activeTab === version ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+          >
+            {version}
+          </button>
+        ))}
+      </div>
 
-        <div className="space-y-6">
-          {versionGroups[activeTab].map((item) => (
-            <div 
-              key={item.id} 
-              className={`minecraft-panel p-8 transition-all duration-300 transform hover:scale-[1.02] ${
-                item.isBeta 
-                ? 'border-yellow-900' 
-                : 'border-red-900'
-              }`}
-            >
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-2xl font-minecraft text-white mb-1">
-                    v{item.version}
-                    {item.isBeta && (
-                      <span className="ml-3 inline-block px-3 py-1 bg-yellow-600 text-white text-sm font-minecraft">
-                        BETA
-                      </span>
-                    )}
-                  </h3>
-                  <p className="text-gray-400 font-minecraft">{item.date}</p>
-                </div>
+      <div className="space-y-4">
+        {versionGroups[activeTab].map((item) => (
+          <div key={item.id} className={`p-6 rounded-xl ${item.isBeta ? 'bg-yellow-50 border border-yellow-200' : 'bg-white border border-gray-200'}`}>
+            <div className="flex justify-between items-start mb-3">
+              <div>
+                <h3 className="text-xl font-bold text-gray-800">
+                  v{item.version} - Minecraft {activeTab}
+                </h3>
+                {item.isBeta && <span className="inline-block ml-2 px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded">BETA</span>}
               </div>
-              <p className="text-gray-300 mb-6 text-lg font-minecraft">{item.changelog}</p>
-              <a
-                href={item.downloadUrl}
-                onClick={() => handleDownload(item.version)}
-                className="minecraft-btn"
-                download
-              >
-                <span className="mr-2">Descargar v{item.version}</span>
-                <span className="text-xl">⛏️</span>
-              </a>
+              <span className="text-gray-500 text-sm">{item.date}</span>
             </div>
-          ))}
-        </div>
+            <p className="text-gray-600 mb-4">{item.changelog}</p>
+            <a
+              href={item.downloadUrl}
+              onClick={() => handleDownload(item.version)}
+              className={`px-6 py-2 rounded-lg font-medium ${item.isBeta ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-purple-600 hover:bg-purple-700'} text-white transition-colors`}
+              download
+            >
+              Descargar v{item.version}
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );

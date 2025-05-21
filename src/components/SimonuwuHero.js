@@ -11,56 +11,50 @@ const SimonuwuHero = ({ onAchievement }) => {
   };
 
   return (
-    <div className="relative minecraft-panel py-24 px-6 text-center overflow-hidden">
-      <div className="relative max-w-6xl mx-auto">
-        <div className="animate-fade-in">
-          <h1 className="minecraft-text-glow mb-6 tracking-tight">
-            <span 
-              className="cursor-pointer hover:text-red-300 transition-colors duration-300 relative group"
-              onClick={handleEasterEgg}
-            >
-              Simonuwu
-              <span className="absolute -bottom-1 left-0 w-full h-1 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </span>{' '}
-            <span className="text-white">
-              Fabric Project
-            </span>
-          </h1>
-          {showEasterEgg && (
-            <div className="minecraft-panel p-8 rounded-none mb-8 animate-fade-in">
-              <p className="text-white mb-4 font-minecraft">¡Has encontrado un Easter Egg! 🎉</p>
-              <a 
-                href="https://www.youtube.com/@simonuwu.minecraft" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="minecraft-btn inline-flex items-center bg-red-600 hover:bg-red-500"
-              >
-                ¡Visita mi canal de YouTube! 
-                <img 
-                  src="https://yt3.googleusercontent.com/nHDQOpEnEv82i7lGYAJ-Xal2YZQwCrHY9qKARDSUDbU-kMgrI0M4LvAbGukkN_7n2pDR-K4DrQ=s72-c-k-c0x00ffffff-no-rj" 
-                  alt="Simonuwu Logo"
-                  className="w-10 h-10 ml-3 rounded-none border-2 border-white"
-                />
-              </a>
-            </div>
-          )}
-          <p className="text-red-300 mb-12 font-minecraft">El modpack más optimizado para Minecraft Fabric</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-8">
+    <div className="bg-gradient-to-br from-pink-500 to-purple-600 py-20 px-6 text-center">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-5xl font-bold text-white mb-6">
+          <span 
+            className="cursor-pointer hover:text-pink-100 transition-colors"
+            onClick={handleEasterEgg}
+          >
+            Simonuwu
+          </span> Fabric Project
+        </h1>
+        {showEasterEgg && (
+          <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg mb-6 animate-fade-in">
+            <p className="text-white mb-2">¡Has encontrado un Easter Egg! 🎉</p>
             <a 
-              href="https://modrinth.com/modpack/simonuwu-fabric-project" 
+              href="https://www.youtube.com/@simonuwu.minecraft" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="minecraft-btn"
+              className="inline-block bg-red-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 transition-colors"
             >
-              Ver en Modrinth
-            </a>
-            <a 
-              href="#download" 
-              className="minecraft-btn"
-            >
-              Descargar Ahora
+              ¡Visita mi canal de YouTube! 
+              <img 
+                src="https://yt3.googleusercontent.com/nHDQOpEnEv82i7lGYAJ-Xal2YZQwCrHY9qKARDSUDbU-kMgrI0M4LvAbGukkN_7n2pDR-K4DrQ=s72-c-k-c0x00ffffff-no-rj" 
+                alt="Simonuwu Logo"
+                className="w-6 h-6 inline-block ml-2 rounded-full"
+              />
             </a>
           </div>
+        )}
+        <p className="text-xl text-pink-100 mb-8">El modpack más optimizado para Minecraft Fabric</p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a 
+            href="https://modrinth.com/modpack/simonuwu-fabric-project" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white text-pink-600 font-bold py-3 px-8 rounded-lg hover:bg-pink-50 transition-colors"
+          >
+            Ver en Modrinth
+          </a>
+          <a 
+            href="#download" 
+            className="bg-pink-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-pink-800 transition-colors"
+          >
+            Descargar
+          </a>
         </div>
       </div>
     </div>
