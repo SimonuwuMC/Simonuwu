@@ -37,7 +37,7 @@ const DownloadSection = ({ onAchievement }) => {
       }
     ],
     '1.21.4': [
-     {
+      {
         id: "70bU5Pqd",
         version: "1.0.4",
         date: "May 12, 2025",
@@ -101,14 +101,14 @@ const DownloadSection = ({ onAchievement }) => {
 
   return (
     <section id="download" className="py-12 px-6 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-purple-900 mb-6">Descargar por Versión</h2>
+      <h2 className="text-3xl font-bold text-center text-red-900 mb-6">Descargar por Versión</h2>
       
       <div className="flex space-x-2 mb-6 overflow-x-auto pb-2">
         {sortedVersions.map((version) => (
           <button
             key={version}
             onClick={() => setActiveTab(version)}
-            className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap ${activeTab === version ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+            className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap ${activeTab === version ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
           >
             {version}
           </button>
@@ -117,13 +117,13 @@ const DownloadSection = ({ onAchievement }) => {
 
       <div className="space-y-4">
         {versionGroups[activeTab].map((item) => (
-          <div key={item.id} className={`p-6 rounded-xl ${item.isBeta ? 'bg-yellow-50 border border-yellow-200' : 'bg-white border border-gray-200'}`}>
+          <div key={item.id} className={`p-6 rounded-xl ${item.isBeta ? 'bg-red-50 border border-red-200' : 'bg-white border border-gray-200'}`}>
             <div className="flex justify-between items-start mb-3">
               <div>
                 <h3 className="text-xl font-bold text-gray-800">
                   v{item.version} - Minecraft {activeTab}
                 </h3>
-                {item.isBeta && <span className="inline-block ml-2 px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded">BETA</span>}
+                {item.isBeta && <span className="inline-block ml-2 px-2 py-1 bg-red-100 text-red-800 text-xs font-bold rounded">BETA</span>}
               </div>
               <span className="text-gray-500 text-sm">{item.date}</span>
             </div>
@@ -131,7 +131,7 @@ const DownloadSection = ({ onAchievement }) => {
             <a
               href={item.downloadUrl}
               onClick={() => handleDownload(item.version)}
-              className={`px-6 py-2 rounded-lg font-medium ${item.isBeta ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-purple-600 hover:bg-purple-700'} text-white transition-colors`}
+              className={`px-6 py-2 rounded-lg font-medium ${item.isBeta ? 'bg-red-500 hover:bg-red-600' : 'bg-red-600 hover:bg-red-700'} text-white transition-colors`}
               download
             >
               Descargar v{item.version}

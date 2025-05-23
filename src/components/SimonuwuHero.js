@@ -11,11 +11,11 @@ const SimonuwuHero = ({ onAchievement }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-pink-500 to-purple-600 py-20 px-6 text-center">
+    <div className="bg-gradient-to-br from-red-500 to-red-800 py-20 px-6 text-center">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-bold text-white mb-6">
           <span 
-            className="cursor-pointer hover:text-pink-100 transition-colors"
+            className="cursor-pointer hover:text-red-100 transition-colors"
             onClick={handleEasterEgg}
           >
             Simonuwu
@@ -39,19 +39,19 @@ const SimonuwuHero = ({ onAchievement }) => {
             </a>
           </div>
         )}
-        <p className="text-xl text-pink-100 mb-8">El modpack más optimizado para Minecraft Fabric</p>
+        <p className="text-xl text-red-100 mb-8">El modpack más optimizado para Minecraft Fabric</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a 
             href="https://modrinth.com/modpack/simonuwu-fabric-project" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-white text-pink-600 font-bold py-3 px-8 rounded-lg hover:bg-pink-50 transition-colors"
+            className="bg-white text-red-600 font-bold py-3 px-8 rounded-lg hover:bg-red-50 transition-colors"
           >
             Ver en Modrinth
           </a>
           <a 
             href="#download" 
-            className="bg-pink-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-pink-800 transition-colors"
+            className="bg-red-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-red-800 transition-colors"
           >
             Descargar
           </a>
