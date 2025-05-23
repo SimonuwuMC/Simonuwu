@@ -124,6 +124,7 @@ const DownloadSection = ({ onAchievement }) => {
                   v{item.version} - Minecraft {activeTab}
                 </h3>
                 {item.isBeta && <span className="inline-block ml-2 px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded">BETA</span>}
+                }
               </div>
               <span className="text-gray-500 text-sm">{item.date}</span>
             </div>
