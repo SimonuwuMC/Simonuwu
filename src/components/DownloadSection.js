@@ -117,14 +117,13 @@ const DownloadSection = ({ onAchievement }) => {
 
       <div className="space-y-4">
         {versionGroups[activeTab].map((item) => (
-          <div key={item.id} className={`p-6 rounded-xl ${item.isBeta ? 'bg-red-50 border border-red-200' : 'bg-white border border-gray-200'}`}>
+          <div key={item.id} className={`p-6 rounded-xl ${item.isBeta ? 'bg-yellow-50 border border-yellow-200' : 'bg-white border border-gray-200'}`}>
             <div className="flex justify-between items-start mb-3">
               <div>
                 <h3 className="text-xl font-bold text-gray-800">
                   v{item.version} - Minecraft {activeTab}
                 </h3>
-                {item.isBeta && <span className="inline-block ml-2 px-2 py-1 bg-red-100 text-red-800 text-xs font-bold rounded">BETA</span>}
-                }
+                {item.isBeta && <span className="inline-block ml-2 px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded">BETA</span>}
               </div>
               <span className="text-gray-500 text-sm">{item.date}</span>
             </div>
@@ -132,7 +131,7 @@ const DownloadSection = ({ onAchievement }) => {
             <a
               href={item.downloadUrl}
               onClick={() => handleDownload(item.version)}
-              className={`px-6 py-2 rounded-lg font-medium ${item.isBeta ? 'bg-red-500 hover:bg-red-600' : 'bg-red-600 hover:bg-red-700'} text-white transition-colors`}
+              className={`px-6 py-2 rounded-lg font-medium ${item.isBeta ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-green-600 hover:bg-green-700'} text-white transition-colors`}
               download
             >
               Descargar v{item.version}
