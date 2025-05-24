@@ -101,6 +101,13 @@ const ModsList = () => {
       icon: "👀"
     },
     {
+      name: "Leawind's Third Person",
+      description: "Alternativa para mejorar la vista en tercera persona",
+      url: "https://modrinth.com/mod/leawinds-third-person",
+      category: "utility",
+      icon: "🎮"
+    },
+    {
       name: "Jade",
       description: "Información detallada al mirar bloques y entidades",
       url: "https://modrinth.com/mod/jade",
