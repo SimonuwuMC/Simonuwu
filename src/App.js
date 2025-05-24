@@ -4,6 +4,7 @@ import DownloadSection from './components/DownloadSection';
 import FeatureSection from './components/FeatureSection';
 import InstallationGuide from './components/InstallationGuide';
 import Achievements from './components/Achievements';
+import ModsList from './components/ModsList';
 
 const App = () => {
   const [achievements, setAchievements] = useState([]);
@@ -27,6 +28,7 @@ const App = () => {
         description: 'Arqueólogo: Encontraste la versión 1.0.0 del modpack'
       })} />
       <FeatureSection />
+      <ModsList />
       <InstallationGuide onAchievement={() => addAchievement({
         id: 'pojav-expert',
         title: '¡Logro Desbloqueado!',
