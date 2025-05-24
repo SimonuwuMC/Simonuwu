@@ -94,8 +94,8 @@ const DownloadSection = ({ onAchievement }) => {
         version: "1.0.4",
         date: "May 23, 2025",
         changelog: "Versión estable para Minecraft 1.20.4",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.18.2",
-        isBeta: false
+        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.18.2",
+        isBeta: true
       }
     ]
   };
