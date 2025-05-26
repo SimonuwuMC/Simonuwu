@@ -78,6 +78,16 @@ const DownloadSection = ({ onAchievement }) => {
         isBeta: false
       }
     ],
+    '1.21.3': [
+      {
+        id: "1B4DY6fn",
+        version: "1.0.4",
+        date: "May 26, 2025",
+        changelog: "Versión estable para Minecraft 1.21.3",
+        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.3",
+        isBeta: false
+      }
+    ],
     '1.21.1': [
       {
         id: "1B4DY6fn",
