@@ -109,6 +109,14 @@ const DownloadSection = ({ onAchievement }) => {
       }
     ],
      '1.18.2': [
+       {
+        id: "1B4DY6fn",
+        version: "1.0.4",
+        date: "May 10, 2025",
+        changelog: "Versión estable para Minecraft 1.18.2, se modifico un mod por otra alternativa",
+        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.18.2",
+        isBeta: false
+      },
       {
         id: "1B4DY6fn",
         version: "beta-0.1-1.0.4",
