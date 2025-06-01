@@ -49,7 +49,7 @@ const ModsList = () => {
       description: "Iluminación dinámica",
       url: "https://modrinth.com/mod/lambdynamiclights",
       category: "graphics",
-      icon: "https://cdn.modrinth.com/data/yBW8D80W/icon.png"
+      icon: "https://cdn.modrinth.com/data/yBW8D80W/d4f5c3ff8df7caf024178b04eca6d69f95979cfe_96.webp"
     },
     {
       name: "3D Skin Layers",
