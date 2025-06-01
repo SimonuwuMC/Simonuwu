@@ -70,7 +70,7 @@ const ModsList = () => {
       description: "Mejoras en las texturas de entidades",
       url: "https://modrinth.com/mod/entitytexturefeatures",
       category: "graphics",
-      icon: "https://cdn.modrinth.com/data/BVzZfTc1/icon.png"
+      icon: "https://cdn.modrinth.com/data/BVzZfTc1/af683d206d50b05258d865b0d6e4aa2f2cee12f2_96.webp"
     },
     {
       name: "Fresh Animations",
