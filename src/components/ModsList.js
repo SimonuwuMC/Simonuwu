@@ -207,26 +207,27 @@ const ModsList = () => {
         
         {Object.entries(categories).map(([category, title]) => (
           <div key={category} className="mb-12">
-            <h3 className="text-2xl font-semibold text-red-800 mb-6">{title}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <h3 className="text-2xl font-semibold text-red-800 mb-4">{title}</h3>
+            <ul className="space-y-3">
               {mods
                 .filter(mod => mod.category === category)
                 .map((mod, index) => (
-                  <a 
-                    key={index}
-                    href={mod.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-red-50 rounded-lg p-4 hover:shadow-md transition-all hover:bg-red-100"
-                  >
-                    <div className="flex items-center mb-2">
-                      <span className="text-2xl mr-2">{mod.icon}</span>
-                      <h4 className="text-lg font-semibold text-red-900">{mod.name}</h4>
-                    </div>
-                    <p className="text-gray-700">{mod.description}</p>
-                  </a>
+                  <li key={index}>
+                    <a 
+                      href={mod.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center hover:bg-red-50 p-2 rounded-lg transition-colors"
+                    >
+                      <span className="text-2xl mr-3">{mod.icon}</span>
+                      <div>
+                        <h4 className="text-lg font-semibold text-red-900">{mod.name}</h4>
+                        <p className="text-gray-700">{mod.description}</p>
+                      </div>
+                    </a>
+                  </li>
                 ))}
-            </div>
+            </ul>
           </div>
         ))}
       </div>
