@@ -77,7 +77,7 @@ const ModsList = () => {
       description: "Pack de recursos con animaciones mejoradas",
       url: "https://modrinth.com/resourcepack/fresh-animations",
       category: "graphics",
-      icon: "https://cdn.modrinth.com/data/TQTTVgYW/icon.png"
+      icon: "https://cdn.modrinth.com/data/50dA9Sha/d5f379581096db483bd2181ab982d9270b17feb7_96.webp"
     },
     {
       name: "Mod Menu",
