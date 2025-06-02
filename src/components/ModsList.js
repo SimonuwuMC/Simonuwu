@@ -119,7 +119,7 @@ const ModsList = () => {
       description: "Información útil en pantalla",
       url: "https://modrinth.com/mod/minihud",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/2mA1CxLZ/icon.png"
+      icon: "https://cdn.modrinth.com/data/UMxybHE8/4adf057a251f694983af139a06839e33bcd7a419.png"
     },
     {
       name: "Not Enough Animations",
