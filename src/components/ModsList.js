@@ -154,7 +154,7 @@ const ModsList = () => {
       description: "Mapa completo del mundo",
       url: "https://modrinth.com/mod/xaeros-world-map",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/NcUtCpym/354080f65407e49f486fcf9c4580e82c45ae63b8_96.webp
+      icon: "https://cdn.modrinth.com/data/NcUtCpym/354080f65407e49f486fcf9c4580e82c45ae63b8_96.webp"
     },
     {
       name: "Zoomify",
