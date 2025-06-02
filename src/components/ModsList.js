@@ -56,7 +56,7 @@ const ModsList = () => {
       description: "Mejora la visualización de las capas de skin",
       url: "https://modrinth.com/mod/3dskinlayers",
       category: "graphics",
-      icon: "https://cdn.modrinth.com/data/zz0zPpWR/icon.png"
+      icon: "https://cdn.modrinth.com/data/zV5r3pPn/ff7010d4ec0275609866c8b0f603b25e25949c08_96.webp"
     },
     {
       name: "Entity Model Features",
