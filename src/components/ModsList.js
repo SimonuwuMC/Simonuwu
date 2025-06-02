@@ -175,7 +175,7 @@ const ModsList = () => {
       description: "Soporte para mods escritos en Kotlin",
       url: "https://modrinth.com/mod/fabric-language-kotlin",
       category: "required",
-      icon: "https://cdn.modrinth.com/data/Ha28R6CL/icon.png"
+      icon: "https://cdn.modrinth.com/data/Ha28R6CL/72c3d74aeb665e45aea93a945a01474cbce3b7da_96.webp"
     },
     {
       name: "Architectury API",
