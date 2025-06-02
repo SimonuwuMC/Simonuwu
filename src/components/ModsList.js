@@ -98,7 +98,7 @@ const ModsList = () => {
       description: "Mejora la vista en tercera persona",
       url: "https://modrinth.com/mod/better-third-person",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/r0v8vy1s/icon.png"
+      icon: "https://cdn.modrinth.com/data/G1s2WpNo/icon.png"
     },
     {
       name: "Leawind's Third Person",
