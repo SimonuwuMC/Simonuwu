@@ -105,7 +105,7 @@ const ModsList = () => {
       description: "Alternativa para Better thrid person para mejorar la vista en tercera persona",
       url: "https://modrinth.com/mod/leawind-third-person",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/Uf1TBbJu/icon.png"
+      icon: "https://cdn.modrinth.com/data/S3D3QF0M/707a25d3fcf17f6aa7009dd3d3bcb68ed7aa10e1_96.webp"
     },
     {
       name: "Jade",
