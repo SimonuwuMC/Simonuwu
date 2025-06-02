@@ -147,7 +147,7 @@ const ModsList = () => {
       description: "Minimapa en pantalla",
       url: "https://modrinth.com/mod/xaeros-minimap",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/1bokaNcj/icon.png"
+      icon: "https://cdn.modrinth.com/data/1bokaNcj/354080f65407e49f486fcf9c4580e82c45ae63b8_96.webp"
     },
     {
       name: "Xaero's World Map",
