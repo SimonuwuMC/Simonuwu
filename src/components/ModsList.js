@@ -201,37 +201,36 @@ const ModsList = () => {
   };
 
   return (
-    <section className="py-12 px-6 bg-white">
+    <section className="py-12 px-6 bg-white dark:bg-gray-800 transition-colors">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-red-900 mb-12">Mods Instalados</h2>
+        <h2 className="text-3xl font-bold text-center text-red-900 dark:text-red-400 mb-12">Mods Instalados</h2>
         
         {Object.entries(categories).map(([category, title]) => (
           <div key={category} className="mb-12">
-            <h3 className="text-2xl font-semibold text-red-800 mb-4">{title}</h3>
-            <ul className="space-y-4">
+            <h3 className="text-2xl font-semibold text-red-800 dark:text-red-300 mb-4">{title}</h3>
+            <div className="space-y-4">
               {mods
                 .filter(mod => mod.category === category)
                 .map((mod, index) => (
-                  <li key={index}>
-                    <a 
-                      href={mod.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center hover:bg-red-50 p-4 rounded-lg transition-colors"
-                    >
-                      <img 
-                        src={mod.icon} 
-                        alt={`${mod.name} icon`}
-                        className="w-12 h-12 mr-4 rounded"
-                      />
-                      <div>
-                        <h4 className="text-lg font-semibold text-red-900">{mod.name}</h4>
-                        <p className="text-gray-700">{mod.description}</p>
-                      </div>
-                    </a>
-                  </li>
+                  <a 
+                    key={index}
+                    href={mod.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center p-4 rounded-lg bg-white dark:bg-gray-700 hover:bg-red-50 dark:hover:bg-gray-600 transition-colors"
+                  >
+                    <img 
+                      src={mod.icon} 
+                      alt={`${mod.name} icon`}
+                      className="w-12 h-12 rounded"
+                    />
+                    <div className="ml-4">
+                      <h4 className="text-lg font-semibold text-red-900 dark:text-red-300">{mod.name}</h4>
+                      <p className="text-gray-700 dark:text-gray-300">{mod.description}</p>
+                    </div>
+                  </a>
                 ))}
-            </ul>
+            </div>
           </div>
         ))}
       </div>
