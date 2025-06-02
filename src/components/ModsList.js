@@ -63,7 +63,7 @@ const ModsList = () => {
       description: "Mejoras en los modelos de entidades",
       url: "https://modrinth.com/mod/entity-model-features",
       category: "graphics",
-      icon: "https://cdn.modrinth.com/data/4I3WmCBM/icon.png"
+      icon: "https://cdn.modrinth.com/data/4I1XuqiY/6e5bbd0d06b1741bfdab6c0cfab6de8fdaf0064c_96.webp"
     },
     {
       name: "Entity Texture Features",
