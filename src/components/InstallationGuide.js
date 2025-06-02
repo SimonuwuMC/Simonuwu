@@ -14,7 +14,7 @@ const InstallationGuide = ({ onAchievement }) => {
     <span key="0">
       Descarga e instala Prism Launcher,SkLauncher,{' '}
       <span 
-        className="cursor-pointer hover:text-red-600 transition-colors"
+        className="cursor-pointer hover:text-red-600 dark:hover:text-red-400 transition-colors"
         onClick={handleTutorialClick}
       >
         Pojav Launcher
@@ -29,10 +29,10 @@ const InstallationGuide = ({ onAchievement }) => {
 
   return (
     <section className="py-12 px-6 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-red-900 mb-8">Cómo instalar</h2>
+      <h2 className="text-3xl font-bold text-center text-red-900 dark:text-red-400 mb-8">Cómo instalar</h2>
       
-      <div className="bg-white rounded-xl shadow-md p-6">
-        <ol className="list-decimal list-inside space-y-3 text-gray-700">
+      <div className="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6">
+        <ol className="list-decimal list-inside space-y-3 text-gray-700 dark:text-gray-300">
           {steps.map((step, index) => (
             <li key={index} className="pl-2">
               {step}
@@ -41,13 +41,13 @@ const InstallationGuide = ({ onAchievement }) => {
         </ol>
 
         {showTutorial && (
-          <div className="mt-4 p-4 bg-red-50 border border-red-600 rounded-lg animate-fade-in">
-            <p className="text-red-900 mb-2">¡Has encontrado un tutorial secreto! 🎮</p>
+          <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/50 border border-red-600 rounded-lg animate-fade-in">
+            <p className="text-red-900 dark:text-red-300 mb-2">¡Has encontrado un tutorial secreto! 🎮</p>
             <a 
               href="https://youtu.be/20HXyed0-cE?si=SFsT4QdLGLhh_wme"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-red-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 transition-colors"
+              className="inline-block bg-red-600 dark:bg-red-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 dark:hover:bg-red-900 transition-colors"
             >
               Ver Tutorial en YouTube
             </a>

@@ -11,7 +11,7 @@ const SimonuwuHero = ({ onAchievement }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-red-500 to-red-800 py-20 px-6 text-center">
+    <div className="bg-gradient-to-br from-red-500 to-red-800 dark:from-red-900 dark:to-red-950 py-20 px-6 text-center transition-colors">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-bold text-white mb-6">
           <span 
@@ -28,7 +28,7 @@ const SimonuwuHero = ({ onAchievement }) => {
               href="https://www.youtube.com/@simonuwu.minecraft" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block bg-red-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 transition-colors"
+              className="inline-block bg-red-600 dark:bg-red-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 dark:hover:bg-red-900 transition-colors"
             >
               ¡Visita mi canal de YouTube! 
               <img 
@@ -45,13 +45,13 @@ const SimonuwuHero = ({ onAchievement }) => {
             href="https://modrinth.com/modpack/simonuwu-fabric-project" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-white text-red-600 font-bold py-3 px-8 rounded-lg hover:bg-red-50 transition-colors"
+            className="bg-white dark:bg-gray-800 text-red-600 dark:text-red-400 font-bold py-3 px-8 rounded-lg hover:bg-red-50 dark:hover:bg-gray-700 transition-colors"
           >
             Ver en Modrinth
           </a>
           <a 
             href="#download" 
-            className="bg-red-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-red-800 transition-colors"
+            className="bg-red-700 dark:bg-red-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-red-800 dark:hover:bg-red-950 transition-colors"
           >
             Descargar
           </a>
