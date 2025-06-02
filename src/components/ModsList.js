@@ -161,7 +161,7 @@ const ModsList = () => {
       description: "Función de zoom mejorada",
       url: "https://modrinth.com/mod/zoomify",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/w7TXFVWi/icon.png"
+      icon: "https://cdn.modrinth.com/data/w7ThoJFB/e2de67a0bfb9e8aa2347982ab3ec5463f26cca31_96.webp"
     },
     {
       name: "Fabric API",
