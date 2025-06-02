@@ -84,7 +84,7 @@ const ModsList = () => {
       description: "Interfaz para gestionar mods",
       url: "https://modrinth.com/mod/modmenu",
       category: "utility",
-      icon: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.softlay.com%2Fdownloads%2Fmod-menu&psig=AOvVaw3LQ8V7frAR-vF3KeclXgr5&ust=1748909097478000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNjx15240Y0DFQAAAAAdAAAAABAE"
+      icon: "https://cdn.modrinth.com/data/mOgUt4GM/1bfe2006b38340e9d064700e41adf84a8abb1bd4_96.webp"
     },
     {
       name: "AppleSkin",
