@@ -35,7 +35,7 @@ const ModsList = () => {
       description: "Soporte para shaders",
       url: "https://modrinth.com/mod/iris",
       category: "graphics",
-      icon: "https://cdn.modrinth.com/data/YL57xq9U/icon.png"
+      icon: "https://cdn.modrinth.com/data/YL57xq9U/18d0e7f076d3d6ed5bedd472b853909aac5da202_96.webp"
     },
     {
       name: "Continuity",
