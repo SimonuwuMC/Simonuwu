@@ -1,37 +1,28 @@
 {
+  "name": "simonuwu-mobile",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "react-scripts start"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1",
-    "autoprefixer": "^10.4.17",
-    "tailwind-merge": "^2.2.1",
-    "tailwindcss-animate": "^1.0.7",
-    "next-themes": "^0.2.1"
+    "expo": "~49.0.15",
+    "expo-status-bar": "~1.6.0",
+    "react": "18.2.0",
+    "react-native": "0.72.6",
+    "react-native-web": "~0.19.6",
+    "expo-linear-gradient": "~12.3.0",
+    "react-native-vector-icons": "^10.0.0",
+    "@expo/vector-icons": "^13.0.0",
+    "expo-linking": "~5.0.2",
+    "expo-web-browser": "~12.3.2",
+    "react-native-async-storage": "^1.19.3"
   },
-  "main": "/index.js",
   "devDependencies": {
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19"
+    "@babel/core": "^7.20.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "private": true
 }
