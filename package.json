@@ -6,7 +6,8 @@
     "start": "npx expo start",
     "android": "npx expo start --android",
     "ios": "npx expo start --ios",
-    "web": "npx expo start --web"
+    "web": "npx expo start --web",
+    "dev": "npx expo start"
   },
   "dependencies": {
     "expo": "~49.0.15",
@@ -20,7 +21,7 @@
     "@expo/vector-icons": "^13.0.0",
     "expo-linking": "~5.0.2",
     "expo-web-browser": "~12.3.2",
-    "react-native-async-storage": "^1.19.3"
+    "@react-native-async-storage/async-storage": "^1.19.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
