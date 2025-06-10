@@ -11,33 +11,8 @@ const SimonuwuHero = ({ onAchievement }) => {
   };
 
   return (
-    <div className="relative bg-gradient-to-br from-red-500 to-red-800 dark:from-red-900 dark:to-red-950 py-20 px-6 text-center transition-colors overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)'
-        }}
-      />
-      
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30" />
-      
-      <div className="relative max-w-4xl mx-auto">
-        {/* Minecraft-style logo area */}
-        <div className="mb-6 flex justify-center">
-          <div className="relative">
-            <img 
-              src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop"
-              alt="Gaming blocks"
-              className="w-24 h-24 rounded-lg shadow-lg"
-            />
-            <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-bold">🎮</span>
-            </div>
-          </div>
-        </div>
-
+    <div className="bg-gradient-to-br from-red-500 to-red-800 dark:from-red-900 dark:to-red-950 py-20 px-6 text-center transition-colors">
+      <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-bold text-white mb-6">
           <span 
             className="cursor-pointer hover:text-red-100 transition-colors"
@@ -46,7 +21,6 @@ const SimonuwuHero = ({ onAchievement }) => {
             Simonuwu
           </span> Fabric Project
         </h1>
-        
         {showEasterEgg && (
           <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg mb-6 animate-fade-in">
             <p className="text-white mb-2">¡Has encontrado un Easter Egg! 🎉</p>
@@ -65,9 +39,7 @@ const SimonuwuHero = ({ onAchievement }) => {
             </a>
           </div>
         )}
-        
         <p className="text-xl text-red-100 mb-8">El modpack más optimizado para Minecraft Fabric</p>
-        
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a 
             href="https://modrinth.com/modpack/simonuwu-fabric-project" 
