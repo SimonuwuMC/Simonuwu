@@ -175,7 +175,7 @@ const ModsList = () => {
       description: "Pack de recursos con traducciones para Sodium",
       url: "https://modrinth.com/resourcepack/translations-for-sodium",
       category: "resourcepacks",
-      icon: "https://cdn.modrinth.com/data/3XQ2GEkn/icon.png"
+      icon: "https://cdn.modrinth.com/data/yfDziwn1/907581019df45903df237952ce8d10ac37134cb5_96.webp"
     },
     {
       name: "Fabric API",
