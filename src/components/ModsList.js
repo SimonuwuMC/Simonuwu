@@ -171,6 +171,13 @@ const ModsList = () => {
       icon: "https://cdn.modrinth.com/data/w7ThoJFB/e2de67a0bfb9e8aa2347982ab3ec5463f26cca31_96.webp"
     },
     {
+      name: "Translations for Sodium",
+      description: "Pack de recursos con traducciones para Sodium",
+      url: "https://modrinth.com/resourcepack/translations-for-sodium",
+      category: "resourcepacks",
+      icon: "https://cdn.modrinth.com/data/3XQ2GEkn/icon.png"
+    },
+    {
       name: "Fabric API",
       description: "API necesaria para los mods de Fabric",
       url: "https://modrinth.com/mod/fabric-api",
@@ -204,6 +211,7 @@ const ModsList = () => {
     performance: "Rendimiento",
     graphics: "Gráficos",
     utility: "Utilidad",
+    resourcepacks: "Packs de Recursos",
     required: "APIs Requeridas"
   };
 
