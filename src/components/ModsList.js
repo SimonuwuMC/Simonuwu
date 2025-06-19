@@ -136,6 +136,13 @@ const ModsList = () => {
       icon: "https://cdn.modrinth.com/data/nfn13YXA/icon.png"
     },
     {
+      name: "Reese's Sodium Options",
+      description: "Mejora la interfaz de opciones de Sodium",
+      url: "https://modrinth.com/mod/reeses-sodium-options",
+      category: "utility",
+      icon: "https://cdn.modrinth.com/data/Bh37bMuy/icon.png"
+    },
+    {
       name: "ReplayMod",
       description: "Grabar y reproducir gameplay",
       url: "https://modrinth.com/mod/replaymod",
