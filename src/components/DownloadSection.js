@@ -9,6 +9,15 @@ const DownloadSection = ({ onAchievement }) => {
     }
   };
 
+  const versionImages = {
+    '1.21.5': 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800',
+    '1.21.4': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
+    '1.21.3': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
+    '1.21.1': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
+    '1.20.4': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
+    '1.18.2': 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800'
+  };
+
   const versionGroups = {
     '1.21.5': [
       {
@@ -156,6 +165,28 @@ const DownloadSection = ({ onAchievement }) => {
           </button>
         ))}
       </div>
+
+      {/* Version Image */}
+      {versionImages[activeTab] && (
+        <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+          <img 
+            src={versionImages[activeTab]} 
+            alt={`Minecraft ${activeTab} update`}
+            className="w-full h-48 object-cover"
+          />
+          <div className="bg-gradient-to-r from-red-600 to-red-800 dark:from-red-800 dark:to-red-900 p-4">
+            <h3 className="text-xl font-bold text-white">Minecraft {activeTab}</h3>
+            <p className="text-red-100">
+              {activeTab === '1.18.2' && 'Caves & Cliffs Part II - Nuevas cuevas y montañas'}
+              {activeTab === '1.20.4' && 'Trails & Tales - Arqueología y nuevas estructuras'}
+              {activeTab === '1.21.1' && 'Tricky Trials - Nuevas mazmorras y desafíos'}
+              {activeTab === '1.21.3' && 'Bundles of Bravery - Nuevos objetos y mecánicas'}
+              {activeTab === '1.21.4' && 'Garden Awakens - Biomas renovados y flora'}
+              {activeTab === '1.21.5' && 'Última versión con todas las mejoras'}
+            </p>
+          </div>
+        </div>
+      )}
 
       <div className="space-y-4">
         {versionGroups[activeTab].map((item) => (
