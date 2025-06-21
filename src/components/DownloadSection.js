@@ -177,12 +177,12 @@ const DownloadSection = ({ onAchievement }) => {
           <div className="bg-gradient-to-r from-red-600 to-red-800 dark:from-red-800 dark:to-red-900 p-4">
             <h3 className="text-xl font-bold text-white">Minecraft {activeTab}</h3>
             <p className="text-red-100">
-              {activeTab === '1.18.2' && 'Caves & Cliffs Part II - Nuevas cuevas y montañas'}
-              {activeTab === '1.20.4' && 'Trails & Tales - Arqueología y nuevas estructuras'}
-              {activeTab === '1.21.1' && 'Tricky Trials - Nuevas mazmorras y desafíos'}
-              {activeTab === '1.21.3' && 'Bundles of Bravery - Nuevos objetos y mecánicas'}
-              {activeTab === '1.21.4' && 'Garden Awakens - Biomas renovados y flora'}
-              {activeTab === '1.21.5' && 'Última versión con todas las mejoras'}
+              {activeTab === '1.18.2' && 'Caves & Cliffs Part II'}
+              {activeTab === '1.20.4' && 'Trails & Tales'}
+              {activeTab === '1.21.1' && 'Tricky Trials'}
+              {activeTab === '1.21.3' && 'Bundles of Bravery'}
+              {activeTab === '1.21.4' && 'Garden Awakens'}
+              {activeTab === '1.21.5' && 'Spring to Life'}
             </p>
           </div>
         </div>
