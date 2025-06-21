@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const DownloadSection = ({ onAchievement }) => {
-  const [activeTab, setActiveTab] = useState('1.21.5');
+  const [activeTab, setActiveTab] = useState('1.21.6');
 
   const handleDownload = (version) => {
     if (version === "1.0.0") {
@@ -10,6 +10,7 @@ const DownloadSection = ({ onAchievement }) => {
   };
 
   const versionImages = {
+    '1.21.6': 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800',
     '1.21.5': 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800',
     '1.21.4': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
     '1.21.3': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -19,6 +20,16 @@ const DownloadSection = ({ onAchievement }) => {
   };
 
   const versionGroups = {
+    '1.21.6': [
+      {
+        id: "70cU6Qrf",
+        version: "beta-0.1-1.0.4",
+        date: "Jan 14, 2025",
+        changelog: "Primera versión beta para Minecraft 1.21.6 Chase the Skies",
+        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.6",
+        isBeta: true
+      }
+    ],
     '1.21.5': [
       {
         id: "60aT4Noc",
@@ -177,7 +188,8 @@ const DownloadSection = ({ onAchievement }) => {
           <div className="bg-gradient-to-r from-red-600 to-red-800 dark:from-red-800 dark:to-red-900 p-4">
             <h3 className="text-xl font-bold text-white">Minecraft {activeTab}</h3>
             <p className="text-red-100">
-              {activeTab === '1.18.2' && 'Caves & Cliffs Part II'}
+              {activeTab === '1.21.6' && 'Chase the Skies - Nuevas aventuras aéreas'}
+              {activeTab === '1.18.2' && 'Caves & Cliffs Part II - Nuevas cuevas y montañas'}
               {activeTab === '1.20.4' && 'Trails & Tales'}
               {activeTab === '1.21.1' && 'Tricky Trials'}
               {activeTab === '1.21.3' && 'Bundles of Bravery'}
