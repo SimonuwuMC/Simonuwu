@@ -194,7 +194,7 @@ const DownloadSection = ({ onAchievement }) => {
           alt={`Minecraft ${activeTab} update`}
           className="w-full h-64 object-cover"
           onError={(e) => {
-            e.target.src = 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1200';
+            e.target.src = 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1920';
           }}
         />
         <div className="bg-gradient-to-r from-red-600 to-red-800 dark:from-red-800 dark:to-red-900 p-6">
