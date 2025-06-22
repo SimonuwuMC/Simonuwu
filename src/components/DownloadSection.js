@@ -192,7 +192,7 @@ const DownloadSection = ({ onAchievement }) => {
         <img 
           src={versionImages[activeTab]} 
           alt={`Minecraft ${activeTab} update`}
-          className="w-full h-96 object-cover"
+          className="w-full h-120 object-cover"
           onError={(e) => {
             e.target.src = 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080';
           }}
