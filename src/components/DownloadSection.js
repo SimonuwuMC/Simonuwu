@@ -16,7 +16,7 @@ const DownloadSection = ({ onAchievement }) => {
     '1.21.3': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
     '1.21.1': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
     '1.20.4': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
-    '1.18.2': './1.18-Caves-_-Cliffs-Part-2-update.png'
+    '1.18.2': 'https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080'
   };
 
   const versionTitles = {
