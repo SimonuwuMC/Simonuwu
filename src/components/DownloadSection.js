@@ -197,7 +197,7 @@ const DownloadSection = ({ onAchievement }) => {
             e.target.src = 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080';
           }}
         />
-        <div className="bg-gradient-to-r from-red-600 to-red-800 dark:from-red-800 dark:to-red-900 p-8">
+        <div className="bg-gradient-to-r from-red-400 to-red-400 dark:from-red-800 dark:to-red-900 p-8">
           <h3 className="text-2xl font-bold text-white mb-3">Minecraft {activeTab}</h3>
           <p className="text-red-100 text-xl">
             {versionTitles[activeTab] || 'Actualización de Minecraft'}
