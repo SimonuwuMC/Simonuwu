@@ -198,7 +198,7 @@ const DownloadSection = ({ onAchievement }) => {
           }}
         />
         <div className="bg-gradient-to-r from-red-600 to-red-800 dark:from-red-800 dark:to-red-900 p-8">
-          <h3 className="text-3xl font-bold text-white mb-3">Minecraft {activeTab}</h3>
+          <h3 className="text-2xl font-bold text-white mb-3">Minecraft {activeTab}</h3>
           <p className="text-red-100 text-xl">
             {versionTitles[activeTab] || 'Actualización de Minecraft'}
           </p>
