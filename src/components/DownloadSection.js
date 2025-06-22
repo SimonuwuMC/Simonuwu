@@ -10,13 +10,23 @@ const DownloadSection = ({ onAchievement }) => {
   };
 
   const versionImages = {
-    '1.21.6': 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800',
-    '1.21.5': 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800',
-    '1.21.4': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
-    '1.21.3': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
-    '1.21.1': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
-    '1.20.4': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
+    '1.21.6': 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    '1.21.5': 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    '1.21.4': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    '1.21.3': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    '1.21.1': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    '1.20.4': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1200',
     '1.18.2': 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/11/minecraft-2537247.jpg?tf=1200x'
+  };
+
+  const versionTitles = {
+    '1.18.2': 'Caves & Cliffs Part II',
+    '1.20.4': 'Trails & Tales',
+    '1.21.1': 'Tricky Trials',
+    '1.21.3': 'Bundles of Bravery',
+    '1.21.4': 'Garden Awakens',
+    '1.21.5': 'Spring to Life',
+    '1.21.6': 'Chase the Skies'
   };
 
   const versionGroups = {
@@ -178,27 +188,22 @@ const DownloadSection = ({ onAchievement }) => {
       </div>
 
       {/* Version Image */}
-      {versionImages[activeTab] && (
-        <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src={versionImages[activeTab]} 
-            alt={`Minecraft ${activeTab} update`}
-            className="w-full h-48 object-cover"
-          />
-          <div className="bg-gradient-to-r from-red-600 to-red-800 dark:from-red-800 dark:to-red-900 p-4">
-            <h3 className="text-xl font-bold text-white">Minecraft {activeTab}</h3>
-            <p className="text-red-100">
-              {activeTab === '1.18.2' && 'Caves & Cliffs Part II'}
-              {activeTab === '1.20.4' && 'Trails & Tales'}
-              {activeTab === '1.21.1' && 'Tricky Trials'}
-              {activeTab === '1.21.3' && 'Bundles of Bravery'}
-              {activeTab === '1.21.4' && 'Garden Awakens'}
-              {activeTab === '1.21.5' && 'Spring to Life'}
-              {activeTab === '1.21.6' && 'Chase the Skies'}
-            </p>
-          </div>
+      <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+        <img 
+          src={versionImages[activeTab]} 
+          alt={`Minecraft ${activeTab} update`}
+          className="w-full h-64 object-cover"
+          onError={(e) => {
+            e.target.src = 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1200';
+          }}
+        />
+        <div className="bg-gradient-to-r from-red-600 to-red-800 dark:from-red-800 dark:to-red-900 p-6">
+          <h3 className="text-2xl font-bold text-white mb-2">Minecraft {activeTab}</h3>
+          <p className="text-red-100 text-lg">
+            {versionTitles[activeTab] || 'Actualización de Minecraft'}
+          </p>
         </div>
-      )}
+      </div>
 
       <div className="space-y-4">
         {versionGroups[activeTab].map((item) => (
