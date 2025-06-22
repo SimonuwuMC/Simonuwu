@@ -10,7 +10,7 @@ const DownloadSection = ({ onAchievement }) => {
   };
 
   const versionImages = {
-    '1.21.6': 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
+    '1.21.6': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_ChaseTheSkies_launch_Header_1170x500.jpg',
     '1.21.5': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/game-updates/MCV_SpringDrop_DotNet_Blog_Editorial_1280x720.jpg',
     '1.21.4': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_TheGardenAwakens_DotNet_1280x768.jpg',
     '1.21.3': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_falldrop_launch_editorial_1170x500.jpg',
