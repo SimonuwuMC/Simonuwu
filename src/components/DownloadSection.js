@@ -16,7 +16,7 @@ const DownloadSection = ({ onAchievement }) => {
     '1.21.3': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1200',
     '1.21.1': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1200',
     '1.20.4': 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    '1.18.2': 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/11/minecraft-2537247.jpg?tf=1920x'
+    '1.18.2': 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/11/minecraft-2537247.jpg?tf=1920x1080'
   };
 
   const versionTitles = {
