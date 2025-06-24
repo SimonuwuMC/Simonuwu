@@ -35,7 +35,7 @@ const DownloadSection = ({ onAchievement }) => {
         id: "80dU7Qsg",
         version: "beta-0.2-1.0.4",
         date: "Jun 24, 2025",
-        changelog: "Segunda versión beta para Minecraft 1.21.6 con mejoras y correcciones",
+        changelog: "Agregados más mods: 3D Skin Layers, AppleSkin, In-Game Account Switcher, MiniHUD y su API MaliLib, Not Enough Animations",
         downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.6",
         isBeta: true
       },
