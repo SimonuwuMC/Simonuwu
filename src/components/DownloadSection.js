@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useKeyboardNavigation } from '../utils/keyboardNavigation';
 
 const DownloadSection = ({ onAchievement }) => {
   const [activeTab, setActiveTab] = useState('1.21.6');
@@ -175,20 +176,36 @@ const DownloadSection = ({ onAchievement }) => {
     return bPatch - aPatch;
   });
 
+  // Initialize keyboard navigation
+  const { handleKeyDown } = useKeyboardNavigation(sortedVersions, activeTab, setActiveTab);
+
+  // Add keyboard event listener
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
+
   return (
     <section id="download" className="py-12 px-6 max-w-5xl mx-auto">
       <h2 className="text-3xl font-bold text-center text-red-900 dark:text-red-400 mb-6">Descargar por Versión</h2>
+      
+      {/* Keyboard navigation hint */}
+      <div className="text-center mb-4">
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          💡 Usa las teclas ← → para navegar entre versiones
+        </p>
+      </div>
       
       <div className="flex space-x-2 mb-6 overflow-x-auto pb-2">
         {sortedVersions.map((version) => (
           <button
             key={version}
             onClick={() => setActiveTab(version)}
-            className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap ${
+            className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 ${
               activeTab === version 
-                ? 'bg-red-600 dark:bg-red-800 text-white' 
+                ? 'bg-red-600 dark:bg-red-800 text-white shadow-lg transform scale-105' 
                 : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
-            } transition-colors`}
+            }`}
           >
             {version}
           </button>
