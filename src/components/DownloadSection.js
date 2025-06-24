@@ -42,7 +42,7 @@ const DownloadSection = ({ onAchievement }) => {
       {
         id: "70cU6Qrf",
         version: "beta-0.1-1.0.4",
-        date: "Jan 14, 2025",
+        date: "Jun 21, 2025",
         changelog: "Primera versión beta para Minecraft 1.21.6 Chase the Skies",
         downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.6",
         isBeta: true
