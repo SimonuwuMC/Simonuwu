@@ -32,6 +32,14 @@ const DownloadSection = ({ onAchievement }) => {
   const versionGroups = {
     '1.21.6': [
       {
+        id: "80dU7Qsg",
+        version: "beta-0.2-1.0.4",
+        date: "Jun 24, 2025",
+        changelog: "Segunda versión beta para Minecraft 1.21.6 con mejoras y correcciones",
+        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.6",
+        isBeta: true
+      },
+      {
         id: "70cU6Qrf",
         version: "beta-0.1-1.0.4",
         date: "Jan 14, 2025",
