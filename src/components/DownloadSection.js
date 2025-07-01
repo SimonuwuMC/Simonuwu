@@ -1,192 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useKeyboardNavigation } from '../utils/keyboardNavigation';
+import { getSortedVersions, getVersionStrings, getVersionData } from '../data/versions';
 
 const DownloadSection = ({ onAchievement }) => {
-  const [activeTab, setActiveTab] = useState('1.21.7');
+  const sortedVersions = getVersionStrings();
+  const [activeTab, setActiveTab] = useState(sortedVersions[0]);
 
   const handleDownload = (version) => {
     if (version === "1.0.0") {
       onAchievement();
     }
   };
-
-  const versionImages = {
-    '1.21.7': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg',
-    '1.21.6': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_ChaseTheSkies_launch_Header_1170x500.jpg',
-    '1.21.5': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/game-updates/MCV_SpringDrop_DotNet_Blog_Editorial_1280x720.jpg',
-    '1.21.4': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_TheGardenAwakens_DotNet_1280x768.jpg',
-    '1.21.3': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_falldrop_launch_editorial_1170x500.jpg',
-    '1.21.1': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Vanilla-PMP_Collection-Carousel-0_Tricky-Trials_1280x768.jpg',
-    '1.20.4': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Vanilla-PMP_Collection-Carousel-0_Trails-and-Tales_1280x768.jpg',
-    '1.18.2': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/CC2_KeyArt_1140x565.jpg'
-  };
-
-  const versionTitles = {
-    '1.18.2': 'Caves & Cliffs Part II',
-    '1.20.4': 'Trails & Tales',
-    '1.21.1': 'Tricky Trials',
-    '1.21.3': 'Bundles of Bravery',
-    '1.21.4': 'Garden Awakens',
-    '1.21.5': 'Spring to Life',
-    '1.21.6': 'Chase the Skies',
-    '1.21.7': 'A Minecraft Movie'
-  };
-
-  const versionGroups = {
-    '1.21.7': [
-      {
-        id: "90eU8Qth",
-        version: "beta-0.1-1.0.5",
-        date: "Jun 25, 2025",
-        changelog: "Primera versión beta para Minecraft 1.21.7 A Minecraft Movie con mods básicos optimizados",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.5-1.21.7",
-        isBeta: true
-      }
-    ],
-    '1.21.6': [
-      {
-        id: "80dU7Qsg",
-        version: "beta-0.2-1.0.4",
-        date: "Jun 24, 2025",
-        changelog: "Agregados más mods: 3D Skin Layers, AppleSkin, In-Game Account Switcher, MiniHUD y su API MaliLib, Not Enough Animations",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.6",
-        isBeta: true
-      },
-      {
-        id: "70cU6Qrf",
-        version: "beta-0.1-1.0.4",
-        date: "Jun 21, 2025",
-        changelog: "Primera versión beta para Minecraft 1.21.6 Chase the Skies",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.6",
-        isBeta: true
-      }
-    ],
-    '1.21.5': [
-      {
-        id: "60aT4Noc",
-        version: "1.0.4",
-        date: "May 14, 2025",
-        changelog: "Versión estable para Minecraft 1.21.5 con todos los mods actualizados",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.5",
-        isBeta: false
-      },
-      {
-        id: "50zT3Nmb",
-        version: "beta-0.2-1.0.4",
-        date: "May 3, 2025",
-        changelog: "Versión beta para Minecraft 1.21.5 con mejoras de rendimiento",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.5",
-        isBeta: true
-      },
-      {
-        id: "40yT2Mla",
-        version: "beta-0.1-1.0.4",
-        date: "Mar 30, 2025",
-        changelog: "Primera versión beta para Minecraft 1.21.5 con mods básicos",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.5",
-        isBeta: true
-      }
-    ],
-    '1.21.4': [
-      {
-        id: "70bU5Pqd",
-        version: "1.0.4",
-        date: "May 12, 2025",
-        changelog: "Última versión estable para Minecraft 1.21.4 con todas las características",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.4",
-        isBeta: false
-      },
-      {
-        id: "80cV6Qre",
-        version: "1.0.3",
-        date: "Feb 9, 2025",
-        changelog: "Mejoras de rendimiento y corrección de errores",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.3-1.21.4",
-        isBeta: false
-      },
-      {
-        id: "90dW7Rsf",
-        version: "1.0.2",
-        date: "Jan 9, 2025",
-        changelog: "Actualización de mods y optimizaciones",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.2-1.21.4",
-        isBeta: false
-      },
-      {
-        id: "10eX8Stg",
-        version: "1.0.1",
-        date: "Jan 9, 2025",
-        changelog: "Primera actualización con correcciones importantes",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.1-1.21.4",
-        isBeta: false
-      },
-      {
-        id: "2A3CX5em",
-        version: "1.0.0",
-        date: "Jan 9, 2025",
-        changelog: "Primera versión estable para Minecraft 1.21.4 y del modpack entero,con errores",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.0-1.21.4",
-        isBeta: false
-      }
-    ],
-    '1.21.3': [
-      {
-        id: "1B4DY6fn",
-        version: "1.0.4",
-        date: "May 26, 2025",
-        changelog: "Versión estable para Minecraft 1.21.3",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.3",
-        isBeta: false
-      }
-    ],
-    '1.21.1': [
-      {
-        id: "1B4DY6fn",
-        version: "1.0.4",
-        date: "May 26, 2025",
-        changelog: "Versión estable para Minecraft 1.21.1",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.1",
-        isBeta: false
-      }
-    ],
-    '1.20.4': [
-      {
-        id: "1B4DY6fn",
-        version: "1.0.4",
-        date: "May 10, 2025",
-        changelog: "Versión estable para Minecraft 1.20.4",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.20.4",
-        isBeta: false
-      }
-    ],
-     '1.18.2': [
-       {
-        id: "1B4DY6fn",
-        version: "1.0.4",
-        date: "May 10, 2025",
-        changelog: "Versión estable para Minecraft 1.18.2, se modifico un mod por otra alternativa",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.18.2",
-        isBeta: false
-      },
-      {
-        id: "1B4DY6fn",
-        version: "beta-0.1-1.0.4",
-        date: "May 23, 2025",
-        changelog: "Versión beta para Minecraft 1.18.2",
-        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.18.2",
-        isBeta: true
-      }
-    ]
-  };
-
-  const sortedVersions = Object.keys(versionGroups).sort((a, b) => {
-    const [aMajor, aMinor, aPatch] = a.split('.').map(Number);
-    const [bMajor, bMinor, bPatch] = b.split('.').map(Number);
-    
-    if (aMajor !== bMajor) return bMajor - aMajor;
-    if (aMinor !== bMinor) return bMinor - aMinor;
-    return bPatch - aPatch;
-  });
 
   // Initialize keyboard navigation
   const { handleKeyDown } = useKeyboardNavigation(sortedVersions, activeTab, setActiveTab);
@@ -196,6 +20,13 @@ const DownloadSection = ({ onAchievement }) => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
+
+  // Get current version data
+  const currentVersionData = getVersionData(activeTab);
+
+  if (!currentVersionData) {
+    return <div>Error: Version data not found</div>;
+  }
 
   return (
     <section id="download" className="py-12 px-6 max-w-5xl mx-auto">
@@ -227,7 +58,7 @@ const DownloadSection = ({ onAchievement }) => {
       {/* Version Image */}
       <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
         <img 
-          src={versionImages[activeTab]} 
+          src={currentVersionData.image} 
           alt={`Minecraft ${activeTab} update`}
           className="w-full h-120 object-cover"
           onError={(e) => {
@@ -237,13 +68,13 @@ const DownloadSection = ({ onAchievement }) => {
         <div className="bg-gradient-to-r from-red-400 to-red-400 dark:from-red-800 dark:to-red-900 p-8">
           <h3 className="text-2xl font-bold text-white mb-3">Minecraft {activeTab}</h3>
           <p className="text-red-100 text-xl">
-            {versionTitles[activeTab] || 'Actualización de Minecraft'}
+            {currentVersionData.title}
           </p>
         </div>
       </div>
 
       <div className="space-y-4">
-        {versionGroups[activeTab].map((item) => (
+        {currentVersionData.releases.map((item) => (
           <div 
             key={item.id} 
             className={`p-6 rounded-xl ${

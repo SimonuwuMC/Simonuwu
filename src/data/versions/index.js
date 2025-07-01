@@ -1,0 +1,54 @@
+import { minecraft1217 } from './minecraft-1.21.7';
+import { minecraft1216 } from './minecraft-1.21.6';
+import { minecraft1215 } from './minecraft-1.21.5';
+import { minecraft1214 } from './minecraft-1.21.4';
+import { minecraft1213 } from './minecraft-1.21.3';
+import { minecraft1211 } from './minecraft-1.21.1';
+import { minecraft1204 } from './minecraft-1.20.4';
+import { minecraft1182 } from './minecraft-1.18.2';
+
+// Export all versions as an array
+export const allVersions = [
+  minecraft1217,
+  minecraft1216,
+  minecraft1215,
+  minecraft1214,
+  minecraft1213,
+  minecraft1211,
+  minecraft1204,
+  minecraft1182
+];
+
+// Export individual versions
+export {
+  minecraft1217,
+  minecraft1216,
+  minecraft1215,
+  minecraft1214,
+  minecraft1213,
+  minecraft1211,
+  minecraft1204,
+  minecraft1182
+};
+
+// Helper function to get version data by version string
+export const getVersionData = (versionString) => {
+  return allVersions.find(v => v.version === versionString);
+};
+
+// Helper function to get sorted versions (newest first)
+export const getSortedVersions = () => {
+  return allVersions.sort((a, b) => {
+    const [aMajor, aMinor, aPatch] = a.version.split('.').map(Number);
+    const [bMajor, bMinor, bPatch] = b.version.split('.').map(Number);
+    
+    if (aMajor !== bMajor) return bMajor - aMajor;
+    if (aMinor !== bMinor) return bMinor - aMinor;
+    return bPatch - aPatch;
+  });
+};
+
+// Helper function to get all available version strings
+export const getVersionStrings = () => {
+  return getSortedVersions().map(v => v.version);
+};
