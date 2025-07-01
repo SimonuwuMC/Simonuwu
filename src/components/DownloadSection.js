@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useKeyboardNavigation } from '../utils/keyboardNavigation';
 
 const DownloadSection = ({ onAchievement }) => {
-  const [activeTab, setActiveTab] = useState('1.21.6');
+  const [activeTab, setActiveTab] = useState('1.21.7');
 
   const handleDownload = (version) => {
     if (version === "1.0.0") {
@@ -11,6 +11,7 @@ const DownloadSection = ({ onAchievement }) => {
   };
 
   const versionImages = {
+    '1.21.7': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg',
     '1.21.6': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_ChaseTheSkies_launch_Header_1170x500.jpg',
     '1.21.5': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/game-updates/MCV_SpringDrop_DotNet_Blog_Editorial_1280x720.jpg',
     '1.21.4': 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_TheGardenAwakens_DotNet_1280x768.jpg',
@@ -27,10 +28,21 @@ const DownloadSection = ({ onAchievement }) => {
     '1.21.3': 'Bundles of Bravery',
     '1.21.4': 'Garden Awakens',
     '1.21.5': 'Spring to Life',
-    '1.21.6': 'Chase the Skies'
+    '1.21.6': 'Chase the Skies',
+    '1.21.7': 'A Minecraft Movie'
   };
 
   const versionGroups = {
+    '1.21.7': [
+      {
+        id: "90eU8Qth",
+        version: "beta-0.1-1.0.5",
+        date: "Jun 25, 2025",
+        changelog: "Primera versión beta para Minecraft 1.21.7 A Minecraft Movie con mods básicos optimizados",
+        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.5-1.21.7",
+        isBeta: true
+      }
+    ],
     '1.21.6': [
       {
         id: "80dU7Qsg",
