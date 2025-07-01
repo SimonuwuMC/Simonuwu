@@ -5,6 +5,7 @@ import { getSortedVersions, getVersionStrings, getVersionData } from '../data/ve
 const DownloadSection = ({ onAchievement }) => {
   const sortedVersions = getVersionStrings();
   const [activeTab, setActiveTab] = useState(sortedVersions[0]);
+  const [useAlternativeImage, setUseAlternativeImage] = useState(false);
 
   const handleDownload = (version) => {
     if (version === "1.0.0") {
@@ -21,12 +22,30 @@ const DownloadSection = ({ onAchievement }) => {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
+  // Reset image selection when changing tabs
+  useEffect(() => {
+    setUseAlternativeImage(false);
+  }, [activeTab]);
+
   // Get current version data
   const currentVersionData = getVersionData(activeTab);
 
   if (!currentVersionData) {
     return <div>Error: Version data not found</div>;
   }
+
+  // Determine which image to show
+  const currentImage = useAlternativeImage && currentVersionData.alternativeImage 
+    ? currentVersionData.alternativeImage 
+    : currentVersionData.image;
+
+  // Determine current image title
+  const getImageTitle = () => {
+    if (activeTab === '1.21.7') {
+      return useAlternativeImage ? 'Chase the Skies' : 'A Minecraft Movie';
+    }
+    return currentVersionData.title;
+  };
 
   return (
     <section id="download" className="py-12 px-6 max-w-5xl mx-auto">
@@ -55,12 +74,42 @@ const DownloadSection = ({ onAchievement }) => {
         ))}
       </div>
 
+      {/* Image Selector for 1.21.7 */}
+      {activeTab === '1.21.7' && currentVersionData.alternativeImage && (
+        <div className="flex justify-center mb-4">
+          <div className="bg-white dark:bg-gray-700 rounded-lg p-2 shadow-md">
+            <div className="flex space-x-2">
+              <button
+                onClick={() => setUseAlternativeImage(false)}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  !useAlternativeImage
+                    ? 'bg-red-600 dark:bg-red-800 text-white'
+                    : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500'
+                }`}
+              >
+                🎬 A Minecraft Movie
+              </button>
+              <button
+                onClick={() => setUseAlternativeImage(true)}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  useAlternativeImage
+                    ? 'bg-red-600 dark:bg-red-800 text-white'
+                    : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500'
+                }`}
+              >
+                🌤️ Chase the Skies
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Version Image */}
       <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
         <img 
-          src={currentVersionData.image} 
-          alt={`Minecraft ${activeTab} update`}
-          className="w-full h-120 object-cover"
+          src={currentImage} 
+          alt={`Minecraft ${activeTab} update - ${getImageTitle()}`}
+          className="w-full h-120 object-cover transition-all duration-300"
           onError={(e) => {
             e.target.src = 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080';
           }}
@@ -68,8 +117,16 @@ const DownloadSection = ({ onAchievement }) => {
         <div className="bg-gradient-to-r from-red-400 to-red-400 dark:from-red-800 dark:to-red-900 p-8">
           <h3 className="text-2xl font-bold text-white mb-3">Minecraft {activeTab}</h3>
           <p className="text-red-100 text-xl">
-            {currentVersionData.title}
+            {getImageTitle()}
           </p>
+          {activeTab === '1.21.7' && (
+            <p className="text-red-200 text-sm mt-2">
+              {useAlternativeImage 
+                ? '🌤️ Mostrando imagen de Chase the Skies' 
+                : '🎬 Mostrando imagen de A Minecraft Movie'
+              }
+            </p>
+          )}
         </div>
       </div>
 
