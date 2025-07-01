@@ -10,14 +10,6 @@ export const minecraft1217 = {
       changelog: "Nueva versión beta 0.1 para Minecraft 1.21.7 con mods básicos optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.7",
       isBeta: true
-    },
-    {
-      id: "90eU8Qth",
-      version: "beta-0.1-1.0.5",
-      date: "Jun 25, 2025",
-      changelog: "Primera versión beta para Minecraft 1.21.7 A Minecraft Movie con mods básicos optimizados",
-      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.5-1.21.7",
-      isBeta: true
     }
   ]
 };
