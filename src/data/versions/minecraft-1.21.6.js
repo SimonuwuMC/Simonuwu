@@ -6,7 +6,7 @@ export const minecraft1216 = {
     {
       id: "90fV8Rth",
       version: "beta-0.3-1.0.4",
-      date: "Jun 26, 2025",
+      date: "Jul 1, 2025",
       changelog: "Nueva versión beta 0.3 con mejoras adicionales y correcciones de errores para Minecraft 1.21.6",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.3-1.0.4-1.21.6",
       isBeta: true
