@@ -5,7 +5,7 @@ import { getSortedVersions, getVersionStrings, getVersionData } from '../data/ve
 const DownloadSection = ({ onAchievement }) => {
   const sortedVersions = getVersionStrings();
   const [activeTab, setActiveTab] = useState(sortedVersions[0]);
-  const [useAlternativeImage, setUseAlternativeImage] = useState(false);
+  const [selectedImageOption, setSelectedImageOption] = useState('movie'); // Default to first option
 
   const handleDownload = (version) => {
     if (version === "1.0.0") {
@@ -24,7 +24,7 @@ const DownloadSection = ({ onAchievement }) => {
 
   // Reset image selection when changing tabs
   useEffect(() => {
-    setUseAlternativeImage(false);
+    setSelectedImageOption('movie'); // Reset to default option
   }, [activeTab]);
 
   // Get current version data
@@ -34,18 +34,24 @@ const DownloadSection = ({ onAchievement }) => {
     return <div>Error: Version data not found</div>;
   }
 
-  // Determine which image to show
-  const currentImage = useAlternativeImage && currentVersionData.alternativeImage 
-    ? currentVersionData.alternativeImage 
-    : currentVersionData.image;
-
-  // Determine current image title
-  const getImageTitle = () => {
-    if (activeTab === '1.21.7') {
-      return useAlternativeImage ? 'Chase the Skies' : 'A Minecraft Movie';
+  // Get current image and title based on selection
+  const getCurrentImageData = () => {
+    if (currentVersionData.hasImageSelector && currentVersionData.imageOptions) {
+      const selectedOption = currentVersionData.imageOptions.find(
+        option => option.key === selectedImageOption
+      );
+      return selectedOption || currentVersionData.imageOptions[0];
     }
-    return currentVersionData.title;
+    
+    // Fallback for versions without image selector
+    return {
+      image: currentVersionData.image,
+      title: currentVersionData.title,
+      description: null
+    };
   };
+
+  const currentImageData = getCurrentImageData();
 
   return (
     <section id="download" className="py-12 px-6 max-w-5xl mx-auto">
@@ -74,31 +80,24 @@ const DownloadSection = ({ onAchievement }) => {
         ))}
       </div>
 
-      {/* Image Selector for 1.21.7 */}
-      {activeTab === '1.21.7' && currentVersionData.alternativeImage && (
+      {/* Image Selector - Only show if version has image selector */}
+      {currentVersionData.hasImageSelector && currentVersionData.imageOptions && (
         <div className="flex justify-center mb-4">
           <div className="bg-white dark:bg-gray-700 rounded-lg p-2 shadow-md">
             <div className="flex space-x-2">
-              <button
-                onClick={() => setUseAlternativeImage(false)}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  !useAlternativeImage
-                    ? 'bg-red-600 dark:bg-red-800 text-white'
-                    : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500'
-                }`}
-              >
-                🎬 A Minecraft Movie
-              </button>
-              <button
-                onClick={() => setUseAlternativeImage(true)}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  useAlternativeImage
-                    ? 'bg-red-600 dark:bg-red-800 text-white'
-                    : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500'
-                }`}
-              >
-                🌤️ Chase the Skies
-              </button>
+              {currentVersionData.imageOptions.map((option) => (
+                <button
+                  key={option.key}
+                  onClick={() => setSelectedImageOption(option.key)}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    selectedImageOption === option.key
+                      ? 'bg-red-600 dark:bg-red-800 text-white'
+                      : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500'
+                  }`}
+                >
+                  {option.icon} {option.title}
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -107,8 +106,8 @@ const DownloadSection = ({ onAchievement }) => {
       {/* Version Image */}
       <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
         <img 
-          src={currentImage} 
-          alt={`Minecraft ${activeTab} update - ${getImageTitle()}`}
+          src={currentImageData.image} 
+          alt={`Minecraft ${activeTab} update - ${currentImageData.title}`}
           className="w-full h-120 object-cover transition-all duration-300"
           onError={(e) => {
             e.target.src = 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080';
@@ -117,14 +116,11 @@ const DownloadSection = ({ onAchievement }) => {
         <div className="bg-gradient-to-r from-red-400 to-red-400 dark:from-red-800 dark:to-red-900 p-8">
           <h3 className="text-2xl font-bold text-white mb-3">Minecraft {activeTab}</h3>
           <p className="text-red-100 text-xl">
-            {getImageTitle()}
+            {currentImageData.title}
           </p>
-          {activeTab === '1.21.7' && (
+          {currentImageData.description && (
             <p className="text-red-200 text-sm mt-2">
-              {useAlternativeImage 
-                ? '🌤️ Mostrando imagen de Chase the Skies' 
-                : '🎬 Mostrando imagen de A Minecraft Movie'
-              }
+              {currentImageData.icon} {currentImageData.description}
             </p>
           )}
         </div>
