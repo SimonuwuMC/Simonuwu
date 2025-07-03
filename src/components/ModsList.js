@@ -3,6 +3,34 @@ import React from 'react';
 const ModsList = () => {
   const mods = [
     {
+      name: "Fabric API",
+      description: "API necesaria para los mods de Fabric",
+      url: "https://modrinth.com/mod/fabric-api",
+      category: "required",
+      icon: "https://cdn.modrinth.com/data/P7dR8mSH/icon.png"
+    },
+    {
+      name: "Fabric Language Kotlin",
+      description: "Soporte para mods escritos en Kotlin",
+      url: "https://modrinth.com/mod/fabric-language-kotlin",
+      category: "required",
+      icon: "https://cdn.modrinth.com/data/Ha28R6CL/72c3d74aeb665e45aea93a945a01474cbce3b7da_96.webp"
+    },
+    {
+      name: "Architectury API",
+      description: "API necesaria para REI",
+      url: "https://modrinth.com/mod/architectury-api",
+      category: "required",
+      icon: "https://cdn.modrinth.com/data/lhGA9TYQ/icon.png"
+    },
+    {
+      name: "Cloth Config",
+      description: "API de configuración para mods",
+      url: "https://modrinth.com/mod/cloth-config",
+      category: "required",
+      icon: "https://cdn.modrinth.com/data/9s6osm5g/icon.png"
+    },
+    {
       name: "Sodium",
       description: "Optimización del renderizado gráfico",
       url: "https://modrinth.com/mod/sodium",
@@ -176,78 +204,35 @@ const ModsList = () => {
       url: "https://modrinth.com/resourcepack/translations-for-sodium",
       category: "resourcepacks",
       icon: "https://cdn.modrinth.com/data/yfDziwn1/907581019df45903df237952ce8d10ac37134cb5_96.webp"
-    },
-    {
-      name: "Fabric API",
-      description: "API necesaria para los mods de Fabric",
-      url: "https://modrinth.com/mod/fabric-api",
-      category: "required",
-      icon: "https://cdn.modrinth.com/data/P7dR8mSH/icon.png"
-    },
-    {
-      name: "Fabric Language Kotlin",
-      description: "Soporte para mods escritos en Kotlin",
-      url: "https://modrinth.com/mod/fabric-language-kotlin",
-      category: "required",
-      icon: "https://cdn.modrinth.com/data/Ha28R6CL/72c3d74aeb665e45aea93a945a01474cbce3b7da_96.webp"
-    },
-    {
-      name: "Architectury API",
-      description: "API necesaria para REI",
-      url: "https://modrinth.com/mod/architectury-api",
-      category: "required",
-      icon: "https://cdn.modrinth.com/data/lhGA9TYQ/icon.png"
-    },
-    {
-      name: "Cloth Config",
-      description: "API de configuración para mods",
-      url: "https://modrinth.com/mod/cloth-config",
-      category: "required",
-      icon: "https://cdn.modrinth.com/data/9s6osm5g/icon.png"
     }
   ];
-
-  const categories = {
-    performance: "Rendimiento",
-    graphics: "Gráficos",
-    utility: "Utilidad",
-    resourcepacks: "Packs de Recursos",
-    required: "APIs Requeridas"
-  };
 
   return (
     <section className="py-12 px-6 bg-white dark:bg-gray-800 transition-colors">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-red-900 dark:text-red-400 mb-12">Mods Instalados</h2>
         
-        {Object.entries(categories).map(([category, title]) => (
-          <div key={category} className="mb-12">
-            <h3 className="text-2xl font-semibold text-red-800 dark:text-red-300 mb-4">{title}</h3>
-            <div className="space-y-4">
-              {mods
-                .filter(mod => mod.category === category)
-                .map((mod, index) => (
-                  <a 
-                    key={index}
-                    href={mod.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center p-4 rounded-lg bg-white dark:bg-gray-700 hover:bg-red-50 dark:hover:bg-gray-600 transition-colors"
-                  >
-                    <img 
-                      src={mod.icon} 
-                      alt={`${mod.name} icon`}
-                      className="w-12 h-12 rounded"
-                    />
-                    <div className="ml-4">
-                      <h4 className="text-lg font-semibold text-red-900 dark:text-red-300">{mod.name}</h4>
-                      <p className="text-gray-700 dark:text-gray-300">{mod.description}</p>
-                    </div>
-                  </a>
-                ))}
-            </div>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {mods.map((mod, index) => (
+            <a 
+              key={index}
+              href={mod.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center p-4 rounded-lg bg-red-50 dark:bg-gray-700 hover:bg-red-100 dark:hover:bg-gray-600 transition-colors border border-red-200 dark:border-gray-600"
+            >
+              <img 
+                src={mod.icon} 
+                alt={`${mod.name} icon`}
+                className="w-12 h-12 rounded flex-shrink-0"
+              />
+              <div className="ml-4 min-w-0">
+                <h4 className="text-lg font-semibold text-red-900 dark:text-red-300 truncate">{mod.name}</h4>
+                <p className="text-gray-700 dark:text-gray-300 text-sm line-clamp-2">{mod.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
