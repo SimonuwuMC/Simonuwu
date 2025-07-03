@@ -11,7 +11,7 @@ const SimonuwuHero = ({ onAchievement }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-red-500 to-red-800 dark:from-red-900 dark:to-red-950 py-20 px-6 text-center transition-colors">
+    <header className="bg-gradient-to-br from-red-500 to-red-800 dark:from-red-900 dark:to-red-950 py-20 px-6 text-center transition-colors">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-bold text-white mb-6">
           <span 
@@ -57,7 +57,7 @@ const SimonuwuHero = ({ onAchievement }) => {
           </a>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

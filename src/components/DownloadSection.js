@@ -64,21 +64,24 @@ const DownloadSection = ({ onAchievement }) => {
         </p>
       </div>
       
-      <div className="flex space-x-2 mb-6 overflow-x-auto pb-2">
+      <nav className="flex space-x-2 mb-6 overflow-x-auto pb-2" role="tablist" aria-label="Versiones de Minecraft">
         {sortedVersions.map((version) => (
           <button
             key={version}
             onClick={() => setActiveTab(version)}
+            role="tab"
+            aria-selected={activeTab === version}
+            aria-controls={`panel-${version}`}
             className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 ${
               activeTab === version 
                 ? 'bg-red-600 dark:bg-red-800 text-white shadow-lg transform scale-105' 
                 : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
             }`}
           >
-            {version}
+            Minecraft {version}
           </button>
         ))}
-      </div>
+      </nav>
 
       {/* Image Selector - Only show if version has image selector */}
       {currentVersionData.hasImageSelector && currentVersionData.imageOptions && (
@@ -104,7 +107,7 @@ const DownloadSection = ({ onAchievement }) => {
       )}
 
       {/* Version Image */}
-      <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+      <article className="mb-8 rounded-xl overflow-hidden shadow-lg">
         <img 
           src={currentImageData.image} 
           alt={`Minecraft ${activeTab} update - ${currentImageData.title}`}
@@ -124,32 +127,34 @@ const DownloadSection = ({ onAchievement }) => {
             </p>
           )}
         </div>
-      </div>
+      </article>
 
-      <div className="space-y-4">
+      <div className="space-y-4" role="tabpanel" id={`panel-${activeTab}`}>
         {currentVersionData.releases.map((item) => (
-          <div 
+          <article 
             key={item.id} 
             className={`p-6 rounded-xl ${
               item.isBeta 
                 ? 'bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800' 
                 : 'bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600'
             } transition-colors`}
+            itemScope 
+            itemType="https://schema.org/SoftwareApplication"
           >
             <div className="flex justify-between items-start mb-3">
               <div>
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
+                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-200" itemProp="name">
                   v{item.version} - Minecraft {activeTab}
-                </h3>
+                </h4>
                 {item.isBeta && (
                   <span className="inline-block ml-2 px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs font-bold rounded">
                     BETA
                   </span>
                 )}
               </div>
-              <span className="text-gray-500 dark:text-gray-400 text-sm">{item.date}</span>
+              <time className="text-gray-500 dark:text-gray-400 text-sm" itemProp="datePublished">{item.date}</time>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">{item.changelog}</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-4" itemProp="description">{item.changelog}</p>
             <a
               href={item.downloadUrl}
               onClick={() => handleDownload(item.version)}
@@ -159,10 +164,11 @@ const DownloadSection = ({ onAchievement }) => {
                   : 'bg-green-600 dark:bg-green-700 hover:bg-green-700 dark:hover:bg-green-800'
               } text-white transition-colors`}
               download
+              itemProp="downloadUrl"
             >
               Descargar v{item.version}
             </a>
-          </div>
+          </article>
         ))}
       </div>
     </section>

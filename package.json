@@ -15,7 +15,8 @@
     "autoprefixer": "^10.4.17",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "next-themes": "^0.2.1"
+    "next-themes": "^0.2.1",
+    "react-helmet-async": "^2.0.4"
   },
   "main": "/index.js",
   "devDependencies": {
