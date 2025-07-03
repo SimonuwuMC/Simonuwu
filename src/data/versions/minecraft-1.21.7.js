@@ -25,7 +25,7 @@ export const minecraft1217 = {
     {
       id: "110gX0Vui",
       version: "beta-0.2-1.0.4",
-      date: "Mar 7, 2025",
+      date: "Jul 7, 2025",
       changelog: "Nueva versión beta 0.2 para Minecraft 1.21.7 con mejoras adicionales y correcciones de errores. Incluye características tanto de A Minecraft Movie como de Chase the Skies",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.7",
       isBeta: true
