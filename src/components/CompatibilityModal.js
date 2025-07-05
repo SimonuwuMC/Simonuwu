@@ -20,7 +20,7 @@ const CompatibilityModal = ({ isOpen, onClose }) => {
         </div>
         <div className="flex-1 p-4">
           <iframe
-            src="https://excel.cloud.microsoft/open/onedrive/?docId=36429BE1B422AEAE%21sfc99b638d8294f01a217d3f24799acc0&driveId=36429BE1B422AEAE&embed=true"
+            src="https://1drv.ms/x/c/36429be1b422aeae/ETi2mfwp2AFPohfT8keZrMABFDnX88lucPgy_nkME0QRPQ"
             className="w-full h-full border-0 rounded"
             title="Tabla de Compatibilidad Excel"
             allowFullScreen
