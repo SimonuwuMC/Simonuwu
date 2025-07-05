@@ -4,6 +4,14 @@ export const minecraft1216 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_ChaseTheSkies_launch_Header_1170x500.jpg',
   releases: [
     {
+      id: "100gV9Rui",
+      version: "beta-0.4-1.0.4",
+      date: "Jul 5, 2025",
+      changelog: "Nueva versión beta 0.4 con mejoras adicionales y nuevas características para Minecraft 1.21.6",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.4-1.0.4-1.21.6",
+      isBeta: true
+    },
+    {
       id: "90fV8Rth",
       version: "beta-0.3-1.0.4",
       date: "Jul 1, 2025",
