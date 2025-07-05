@@ -1,7 +1,7 @@
 export const minecraft1214 = {
   version: '1.21.4',
   title: 'Garden Awakens',
-  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_TheGardenAwakens_DotNet_1280x768.jpg',
+  image: 'https://minecraft.wiki/images/thumb/5/5e/The_Garden_Awakens.png/1200px-The_Garden_Awakens.png',
   releases: [
     {
       id: "70bU5Pqd",

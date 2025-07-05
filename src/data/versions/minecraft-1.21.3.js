@@ -1,7 +1,7 @@
 export const minecraft1213 = {
   version: '1.21.3',
   title: 'Bundles of Bravery',
-  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_falldrop_launch_editorial_1170x500.jpg',
+  image: 'https://minecraft.wiki/images/thumb/a/a7/Bundles_of_Bravery.png/1200px-Bundles_of_Bravery.png',
   releases: [
     {
       id: "1B4DY6fn",

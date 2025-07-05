@@ -1,7 +1,7 @@
 export const minecraft1216 = {
   version: '1.21.6',
   title: 'Chase the Skies',
-  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_ChaseTheSkies_launch_Header_1170x500.jpg',
+  image: 'https://minecraft.wiki/images/thumb/c/c4/Chase_the_Skies.png/1200px-Chase_the_Skies.png',
   releases: [
     {
       id: "100gV9Rui",

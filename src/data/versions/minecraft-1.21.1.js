@@ -1,7 +1,7 @@
 export const minecraft1211 = {
   version: '1.21.1',
   title: 'Tricky Trials',
-  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Vanilla-PMP_Collection-Carousel-0_Tricky-Trials_1280x768.jpg',
+  image: 'https://minecraft.wiki/images/thumb/f/f7/Tricky_Trials.png/1200px-Tricky_Trials.png',
   releases: [
     {
       id: "1B4DY6fn",

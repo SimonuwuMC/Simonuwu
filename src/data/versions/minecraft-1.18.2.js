@@ -1,7 +1,7 @@
 export const minecraft1182 = {
   version: '1.18.2',
   title: 'Caves & Cliffs Part II',
-  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/CC2_KeyArt_1140x565.jpg',
+  image: 'https://minecraft.wiki/images/thumb/f/f3/Caves_%26_Cliffs_Part_II.png/1200px-Caves_%26_Cliffs_Part_II.png',
   releases: [
     {
       id: "1B4DY6fn",

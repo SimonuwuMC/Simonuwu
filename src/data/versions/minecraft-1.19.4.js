@@ -1,7 +1,7 @@
 export const minecraft1194 = {
   version: '1.19.4',
   title: 'The Wild Update',
-  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/1-19-4_1170x500.jpg',
+  image: 'https://minecraft.wiki/images/thumb/8/85/The_Wild_Update.png/1200px-The_Wild_Update.png',
   releases: [
     {
       id: "120hY1Wvj",
