@@ -1,7 +1,7 @@
 export const minecraft1201 = {
   version: '1.20.1',
   title: 'Trails & Tales',
-  image: 'https://minecraft.wiki/images/thumb/9/99/Trails_%26_Tales.png/1200px-Trails_%26_Tales.png',
+  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/1-20-1_1170x500.jpg',
   releases: [
     {
       id: "130iZ2Xwk",

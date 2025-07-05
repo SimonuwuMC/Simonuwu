@@ -2,22 +2,22 @@ export const minecraft1217 = {
   version: '1.21.7',
   title: 'A Minecraft Movie',
   alternativeTitle: 'Chase the Skies',
-  image: 'https://minecraft.wiki/images/thumb/1/1f/A_Minecraft_Movie.png/1200px-A_Minecraft_Movie.png',
-  alternativeImage: 'https://minecraft.wiki/images/thumb/c/c4/Chase_the_Skies.png/1200px-Chase_the_Skies.png',
+  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg',
+  alternativeImage: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_ChaseTheSkies_launch_Header_1170x500.jpg',
   hasImageSelector: true,
   imageOptions: [
     {
       key: 'movie',
       title: 'A Minecraft Movie',
       icon: '🎬',
-      image: 'https://minecraft.wiki/images/thumb/1/1f/A_Minecraft_Movie.png/1200px-A_Minecraft_Movie.png',
+      image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg',
       description: 'Mostrando imagen de A Minecraft Movie'
     },
     {
       key: 'chase',
       title: 'Chase the Skies',
       icon: '🌤️',
-      image: 'https://minecraft.wiki/images/thumb/c/c4/Chase_the_Skies.png/1200px-Chase_the_Skies.png',
+      image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_ChaseTheSkies_launch_Header_1170x500.jpg',
       description: 'Mostrando imagen de Chase the Skies'
     }
   ],

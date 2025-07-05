@@ -1,7 +1,7 @@
 export const minecraft1204 = {
   version: '1.20.4',
   title: 'Bats and Pots',
-  image: 'https://minecraft.wiki/images/thumb/9/99/Trails_%26_Tales.png/1200px-Trails_%26_Tales.png',
+  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/game-updates/Bats-and-Pots_01_Header_1170x500%20.jpg',
   releases: [
     {
       id: "1B4DY6fn",

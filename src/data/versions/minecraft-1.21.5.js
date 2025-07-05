@@ -1,7 +1,7 @@
 export const minecraft1215 = {
   version: '1.21.5',
   title: 'Spring to Life',
-  image: 'https://minecraft.wiki/images/thumb/b/b8/Spring_Drop.png/1200px-Spring_Drop.png',
+  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/game-updates/MCV_SpringDrop_DotNet_Blog_Editorial_1280x720.jpg',
   releases: [
     {
       id: "60aT4Noc",
