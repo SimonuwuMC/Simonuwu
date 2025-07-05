@@ -1,4 +1,4 @@
-export const minecraft121 = {
+export const minecraft1210 = {
   version: '1.21',
   title: 'Tricky Trials',
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Vanilla-PMP_Collection-Carousel-0_Tricky-Trials_1280x768.jpg',

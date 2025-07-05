@@ -4,7 +4,7 @@ import { minecraft1215 } from './minecraft-1.21.5';
 import { minecraft1214 } from './minecraft-1.21.4';
 import { minecraft1213 } from './minecraft-1.21.3';
 import { minecraft1211 } from './minecraft-1.21.1';
-import { minecraft121 } from './minecraft-1.21';
+import { minecraft1210 } from './minecraft-1.21.0';
 import { minecraft1204 } from './minecraft-1.20.4';
 import { minecraft1202 } from './minecraft-1.20.2';
 import { minecraft1201 } from './minecraft-1.20.1';
@@ -19,7 +19,7 @@ export const allVersions = [
   minecraft1214,
   minecraft1213,
   minecraft1211,
-  minecraft121,
+  minecraft1210,
   minecraft1204,
   minecraft1202,
   minecraft1201,
@@ -35,7 +35,7 @@ export {
   minecraft1214,
   minecraft1213,
   minecraft1211,
-  minecraft121,
+  minecraft1210,
   minecraft1204,
   minecraft1202,
   minecraft1201,
