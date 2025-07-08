@@ -4,7 +4,7 @@ const CompatibilityModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const handleOpenExcel = () => {
-    window.open('https://1drv.ms/x/c/a538ec6ec5b15f61/Ec3T0xCrgQFHuBjpKIwelQgBRUOJRSvkzAMeMjPCQMQZvA?e=eWJebq', '_blank');
+    window.open('https://d.kuku.lu/uj2ducbmc', '_blank');
     onClose(); // Close the modal after opening the link
   };
 
