@@ -4,16 +4,16 @@ const CompatibilityModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const handleOpenExcel = () => {
-    window.location.href = 'https://d.kuku.lu/uj2ducbmc';
-    onClose(); // Close the modal after opening the link
+    window.open('https://d.kuku.lu/uj2ducbmc', '_blank');
+    onClose();
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-lg w-full max-w-4xl max-h-[90vh] flex flex-col">
+      <div className="bg-white dark:bg-gray-800 rounded-lg w-full max-w-6xl max-h-[90vh] flex flex-col">
         <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-600">
           <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-            📊 Tabla de Compatibilidad
+            📊 Tabla de Compatibilidad de Mods
           </h2>
           <button
             onClick={onClose}
@@ -25,13 +25,16 @@ const CompatibilityModal = ({ isOpen, onClose }) => {
         </div>
         
         <div className="flex-1 p-6 overflow-hidden">
-          <div className="h-full bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden">
-            <iframe
-              src="https://d.kuku.lu/uj2ducbmc"
-              className="w-full h-full border-0"
-              title="Tabla de Compatibilidad"
-              loading="lazy"
-            />
+          <div className="h-full bg-white rounded-lg overflow-hidden border-2 border-gray-200">
+            {/* Display the table image directly */}
+            <div className="w-full h-full overflow-auto">
+              <img 
+                src="/image copy.png" 
+                alt="Tabla de Compatibilidad de Mods"
+                className="w-full h-auto min-w-[800px] object-contain"
+                style={{ imageRendering: 'crisp-edges' }}
+              />
+            </div>
           </div>
         </div>
         
@@ -42,7 +45,7 @@ const CompatibilityModal = ({ isOpen, onClose }) => {
               className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center"
             >
               <span className="mr-2">🔗</span>
-              Abrir en Página Completa
+              Ver Tabla Completa Online
             </button>
             
             <button
