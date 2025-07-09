@@ -41,14 +41,6 @@ const CompatibilityModal = ({ isOpen, onClose }) => {
         <div className="p-6 border-t border-gray-200 dark:border-gray-600">
           <div className="flex justify-center space-x-3">
             <button
-              onClick={handleOpenExcel}
-              className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center"
-            >
-              <span className="mr-2">🔗</span>
-              Ver Tabla Completa Online
-            </button>
-            
-            <button
               onClick={onClose}
               className="bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500 text-gray-700 dark:text-gray-200 font-medium py-3 px-6 rounded-lg transition-colors"
             >
