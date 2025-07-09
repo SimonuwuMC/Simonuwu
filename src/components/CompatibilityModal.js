@@ -3,11 +3,6 @@ import React from 'react';
 const CompatibilityModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
-  const handleOpenExcel = () => {
-    window.open('https://d.kuku.lu/uj2ducbmc', '_blank');
-    onClose();
-  };
-
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white dark:bg-gray-800 rounded-lg w-full max-w-6xl max-h-[90vh] flex flex-col">
