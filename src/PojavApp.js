@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { HelmetProvider } from 'react-helmet-async';
-import PojavHero from './components/PojavHero';
-import PojavDownloadSection from './components/PojavDownloadSection';
-import PojavFeatureSection from './components/PojavFeatureSection';
-import PojavInstallationGuide from './components/PojavInstallationGuide';
+import Hero from './components/pojav/Hero';
+import DownloadSection from './components/pojav/DownloadSection';
+import FeatureSection from './components/pojav/FeatureSection';
+import InstallationGuide from './components/pojav/InstallationGuide';
 import Achievements from './components/Achievements';
 import ThemeToggle from './components/ThemeToggle';
 import SEOHead from './components/SEOHead';
@@ -28,18 +28,18 @@ const PojavApp = () => {
             keywords="minecraft, modpack, fabric, simonuwu, pojav launcher, mobile, android, mods móviles"
           />
           <ThemeToggle />
-          <PojavHero onAchievement={() => addAchievement({
+          <Hero onAchievement={() => addAchievement({
             id: 'pojav-youtube-fan',
             title: '¡Logro Desbloqueado!',
             description: 'Fan Móvil: Encontraste el canal de YouTube desde la versión Pojav'
           })} />
-          <PojavDownloadSection onAchievement={() => addAchievement({
+          <DownloadSection onAchievement={() => addAchievement({
             id: 'pojav-first-version',
             title: '¡Logro Desbloqueado!',
             description: 'Pionero Móvil: Encontraste la primera versión para Pojav Launcher'
           })} />
-          <PojavFeatureSection />
-          <PojavInstallationGuide onAchievement={() => addAchievement({
+          <FeatureSection />
+          <InstallationGuide onAchievement={() => addAchievement({
             id: 'pojav-tutorial-expert',
             title: '¡Logro Desbloqueado!',
             description: 'Experto en Pojav: Encontraste el tutorial secreto de Pojav Launcher'
