@@ -43,14 +43,24 @@ const InstallationGuide = ({ onAchievement }) => {
         {showTutorial && (
           <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/50 border border-red-600 rounded-lg animate-fade-in">
             <p className="text-red-900 dark:text-red-300 mb-2">¡Has encontrado un tutorial secreto! 🎮</p>
-            <a 
-              href="https://youtu.be/20HXyed0-cE?si=SFsT4QdLGLhh_wme"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-red-600 dark:bg-red-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 dark:hover:bg-red-900 transition-colors"
-            >
-              Ver Tutorial en YouTube
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a 
+                href="https://youtu.be/20HXyed0-cE?si=SFsT4QdLGLhh_wme"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-red-600 dark:bg-red-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 dark:hover:bg-red-900 transition-colors"
+              >
+                Ver Tutorial en YouTube
+              </a>
+              <a 
+                href="/pojav.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-blue-600 dark:bg-blue-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-900 transition-colors"
+              >
+                📱 Versión para Pojav Launcher
+              </a>
+            </div>
           </div>
         )}
       </div>
