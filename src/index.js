@@ -6,8 +6,8 @@ import PojavApp from './PojavApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Check if we're on the pojav.html page
-const isPojavPage = window.location.pathname === '/pojav.html';
+// Check if we're on the pojav.html page - handle both local and deployed paths
+const isPojavPage = window.location.pathname.includes('pojav.html') || window.location.pathname === '/pojav';
 
 root.render(
   <React.StrictMode>

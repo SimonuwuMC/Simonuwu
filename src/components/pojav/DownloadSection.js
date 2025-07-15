@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useKeyboardNavigation } from '../../utils/keyboardNavigation';
 import { getSortedPojavVersions, getPojavVersionStrings, getPojavVersionData } from '../../data/versions/pojav-versions';
 
-const PojavDownloadSection = ({ onAchievement }) => {
+const PojavDownloadSection = ({ onAchievement = () => {} }) => {
   const sortedVersions = getPojavVersionStrings();
   const [activeTab, setActiveTab] = useState(sortedVersions[0]);
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PojavInstallationGuide = ({ onAchievement }) => {
+const PojavInstallationGuide = ({ onAchievement = () => {} }) => {
   const [showTutorial, setShowTutorial] = useState(false);
 
   const handleTutorialClick = () => {

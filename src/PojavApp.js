@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { HelmetProvider } from 'react-helmet-async';
-import Hero from './components/pojav/Hero';
-import DownloadSection from './components/pojav/DownloadSection';
-import FeatureSection from './components/pojav/FeatureSection';
-import InstallationGuide from './components/pojav/InstallationGuide';
+import PojavHero from './components/pojav/Hero';
+import PojavDownloadSection from './components/pojav/DownloadSection';
+import PojavFeatureSection from './components/pojav/FeatureSection';
+import PojavInstallationGuide from './components/pojav/InstallationGuide';
 import Achievements from './components/Achievements';
 import ThemeToggle from './components/ThemeToggle';
 import SEOHead from './components/SEOHead';
@@ -28,18 +28,18 @@ const PojavApp = () => {
             keywords="minecraft, modpack, fabric, simonuwu, pojav launcher, mobile, android, mods móviles"
           />
           <ThemeToggle />
-          <Hero onAchievement={() => addAchievement({
+          <PojavHero onAchievement={() => addAchievement({
             id: 'pojav-youtube-fan',
             title: '¡Logro Desbloqueado!',
             description: 'Fan Móvil: Encontraste el canal de YouTube desde la versión Pojav'
           })} />
-          <DownloadSection onAchievement={() => addAchievement({
+          <PojavDownloadSection onAchievement={() => addAchievement({
             id: 'pojav-first-version',
             title: '¡Logro Desbloqueado!',
             description: 'Pionero Móvil: Encontraste la primera versión para Pojav Launcher'
           })} />
-          <FeatureSection />
-          <InstallationGuide onAchievement={() => addAchievement({
+          <PojavFeatureSection />
+          <PojavInstallationGuide onAchievement={() => addAchievement({
             id: 'pojav-tutorial-expert',
             title: '¡Logro Desbloqueado!',
             description: 'Experto en Pojav: Encontraste el tutorial secreto de Pojav Launcher'

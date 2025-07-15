@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PojavHero = ({ onAchievement }) => {
+const PojavHero = ({ onAchievement = () => {} }) => {
   const [showEasterEgg, setShowEasterEgg] = useState(false);
 
   const handleEasterEgg = () => {
