@@ -6,6 +6,14 @@ export const pojavVersions = [
     image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/game-updates/MCV_SpringDrop_DotNet_Blog_Editorial_1280x720.jpg',
     releases: [
       {
+        id: "pojav-1215-100",
+        version: "1.0.0",
+        date: "Dec 10, 2024",
+        changelog: "Primera versión para Pojav Launcher - Minecraft 1.21.5",
+        downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project-for-pojav/version/1.0.0-1.21.5",
+        isBeta: false
+      },
+      {
         id: "pojav-1215-101",
         version: "1.0.1",
         date: "Dec 15, 2024",
