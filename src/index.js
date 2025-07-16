@@ -4,15 +4,7 @@ import './index.css';
 
 // Import components with error boundaries
 const App = React.lazy(() => import('./App').catch(() => ({ default: () => <div>Error loading main app</div> })));
-}
-)
-)
-)
 const PojavApp = React.lazy(() => import('./PojavApp').catch(() => ({ default: () => <div>Error loading Pojav app</div> })));
-}
-)
-)
-)
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component {
