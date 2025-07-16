@@ -1,13 +1,5 @@
 import React from 'react';
-
-// Safe Helmet import with fallback
-let Helmet;
-try {
-  Helmet = require('react-helmet-async').Helmet;
-} catch (e) {
-  console.warn('react-helmet-async not available, using fallback');
-  Helmet = ({ children }) => null; // No-op component
-}
+import { Helmet } from 'react-helmet-async';
 
 const SEOHead = ({ 
   title = "Simonuwu Fabric Project - Modpack Optimizado para Minecraft",

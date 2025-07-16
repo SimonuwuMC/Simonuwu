@@ -1,21 +1,6 @@
 import React, { useState } from 'react';
-
-// Conditional imports with fallbacks
-let ThemeProvider, HelmetProvider;
-try {
-  ThemeProvider = require('next-themes').ThemeProvider;
-} catch (e) {
-  console.warn('next-themes not available, using fallback');
-  ThemeProvider = ({ children }) => <div>{children}</div>;
-}
-
-try {
-  HelmetProvider = require('react-helmet-async').HelmetProvider;
-} catch (e) {
-  console.warn('react-helmet-async not available, using fallback');
-  HelmetProvider = ({ children }) => <div>{children}</div>;
-}
-
+import { ThemeProvider } from 'next-themes';
+import { HelmetProvider } from 'react-helmet-async';
 import SimonuwuHero from './components/SimonuwuHero';
 import DownloadSection from './components/DownloadSection';
 import FeatureSection from './components/FeatureSection';
@@ -29,7 +14,7 @@ const App = () => {
   const [achievements, setAchievements] = useState([]);
 
   const addAchievement = (achievement) => {
-    if (achievement && !achievements.some(a => a.id === achievement.id)) {
+    if (!achievements.some(a => a.id === achievement.id)) {
       setAchievements([...achievements, achievement]);
     }
   };
