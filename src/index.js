@@ -4,15 +4,6 @@ import './index.css';
 
 // Import components with error boundaries
 const App = React.lazy(() => import('./App').catch(() => ({ default: () => <div>Error loading main app</div> })));
-}
-)
-)
-)
-const PojavApp = React.lazy(() => import('./PojavApp').catch(() => ({ default: () => <div>Error loading Pojav app</div> })));
-}
-)
-)
-)
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -59,24 +50,12 @@ const Loading = () => (
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Simple route detection that works in both dev and production
-const isPojavPage = () => {
-  const path = window.location.pathname;
-  const search = window.location.search;
-  const hash = window.location.hash;
-  
-  return path.includes('pojav') || 
-         search.includes('pojav') || 
-         hash.includes('pojav') ||
-         path === '/pojav.html';
-};
-
 // Render with error boundary and suspense
 root.render(
   <React.StrictMode>
     <ErrorBoundary>
       <React.Suspense fallback={<Loading />}>
-        {isPojavPage() ? <PojavApp /> : <App />}
+        <App />
       </React.Suspense>
     </ErrorBoundary>
   </React.StrictMode>
