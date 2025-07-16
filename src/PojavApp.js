@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
-import { ThemeProvider } from 'next-themes';
-import { HelmetProvider } from 'react-helmet-async';
+
+// Conditional imports with fallbacks
+let ThemeProvider, HelmetProvider;
+try {
+  ThemeProvider = require('next-themes').ThemeProvider;
+} catch (e) {
+  console.warn('next-themes not available, using fallback');
+  ThemeProvider = ({ children }) => <div>{children}</div>;
+}
+
+try {
+  HelmetProvider = require('react-helmet-async').HelmetProvider;
+} catch (e) {
+  console.warn('react-helmet-async not available, using fallback');
+  HelmetProvider = ({ children }) => <div>{children}</div>;
+}
+
 import PojavHero from './components/pojav/Hero';
 import PojavDownloadSection from './components/pojav/DownloadSection';
 import PojavFeatureSection from './components/pojav/FeatureSection';
@@ -13,7 +28,7 @@ const PojavApp = () => {
   const [achievements, setAchievements] = useState([]);
 
   const addAchievement = (achievement) => {
-    if (!achievements.some(a => a.id === achievement.id)) {
+    if (achievement && !achievements.some(a => a.id === achievement.id)) {
       setAchievements([...achievements, achievement]);
     }
   };

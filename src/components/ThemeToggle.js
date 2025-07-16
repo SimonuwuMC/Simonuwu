@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
-import { useTheme } from 'next-themes';
 import CompatibilityModal from './CompatibilityModal';
+
+// Safe theme hook with fallback
+const useTheme = () => {
+  try {
+    const { useTheme: nextThemeHook } = require('next-themes');
+    return nextThemeHook();
+  } catch (e) {
+    console.warn('next-themes not available, using fallback theme');
+    return {
+      theme: 'light',
+      setTheme: () => {}
+    };
+  }
+};
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
