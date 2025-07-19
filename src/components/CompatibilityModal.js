@@ -24,7 +24,7 @@ const CompatibilityModal = ({ isOpen, onClose }) => {
             {/* Display the table image directly */}
             <div className="w-full h-full overflow-auto">
               <img 
-                src="/image copy copy.png" 
+                src="/Captura de pantalla 2025-07-19 123016.png" 
                 alt="Tabla de Compatibilidad de Mods"
                 className="w-full h-auto min-w-[800px] object-contain"
                 style={{ imageRendering: 'crisp-edges' }}
