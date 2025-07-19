@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Tabla de Compatibilidad - Simonuwu</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .upload-area {
+            border: 3px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            border-color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .upload-area.dragover {
+            border-color: #fbbf24;
+            background: rgba(251, 191, 36, 0.2);
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+        
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn-primary {
+            background: #059669;
+            border-color: #059669;
+        }
+        
+        .btn-primary:hover {
+            background: #047857;
+            border-color: #047857;
+        }
+        
+        .preview {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            max-height: 400px;
+            overflow: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+        }
+        
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .status.success {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid #10b981;
+        }
+        
+        .status.error {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid #ef4444;
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #fbbf24;
+        }
+        
+        .instructions ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Subir Tabla de Compatibilidad</h1>
+        
+        <div class="instructions">
+            <h3>📋 Instrucciones:</h3>
+            <ul>
+                <li>Sube un archivo Excel (.xlsx, .xls) con la tabla de compatibilidad de mods</li>
+                <li>El archivo debe tener encabezados en la primera fila</li>
+                <li>Se generará automáticamente el código para actualizar CompatibilityModal.js</li>
+                <li>Copia el código generado y reemplázalo en el archivo del componente</li>
+            </ul>
+        </div>
+        
+        <div class="upload-area" id="uploadArea">
+            <div>
+                <p style="font-size: 3rem; margin: 0;">📁</p>
+                <p style="font-size: 1.2rem; margin: 10px 0;">Arrastra tu archivo Excel aquí</p>
+                <p style="margin: 10px 0;">o</p>
+                <button class="btn" onclick="document.getElementById('fileInput').click()">
+                    Seleccionar Archivo
+                </button>
+            </div>
+        </div>
+        
+        <input type="file" id="fileInput" accept=".xlsx,.xls" />
+        
+        <div id="status"></div>
+        <div id="preview"></div>
+        <div id="generatedCode"></div>
+    </div>
+
+    <script>
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const statusDiv = document.getElementById('status');
+        const previewDiv = document.getElementById('preview');
+        const generatedCodeDiv = document.getElementById('generatedCode');
+        
+        let currentData = null;
+
+        // Drag and drop functionality
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function showStatus(message, type = 'success') {
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        function handleFile(file) {
+            if (!file.name.match(/\.(xlsx|xls)$/)) {
+                showStatus('❌ Por favor selecciona un archivo Excel válido (.xlsx o .xls)', 'error');
+                return;
+            }
+
+            showStatus('📖 Leyendo archivo...', 'success');
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const firstSheetName = workbook.SheetNames[0];
+                    const worksheet = workbook.Sheets[firstSheetName];
+                    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+                    
+                    if (jsonData.length === 0) {
+                        showStatus('❌ El archivo Excel está vacío', 'error');
+                        return;
+                    }
+
+                    currentData = jsonData;
+                    showPreview(jsonData);
+                    generateCode(jsonData);
+                    showStatus('✅ Archivo procesado correctamente', 'success');
+                } catch (error) {
+                    showStatus('❌ Error al procesar el archivo: ' + error.message, 'error');
+                }
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        function showPreview(data) {
+            if (data.length === 0) return;
+
+            let html = '<h3>📋 Vista Previa:</h3><div style="overflow-x: auto;"><table>';
+            
+            // Headers
+            if (data[0]) {
+                html += '<thead><tr>';
+                data[0].forEach(cell => {
+                    html += `<th>${cell || ''}</th>`;
+                });
+                html += '</tr></thead>';
+            }
+            
+            // Data rows (limit to first 10 for preview)
+            html += '<tbody>';
+            const maxRows = Math.min(data.length, 11);
+            for (let i = 1; i < maxRows; i++) {
+                html += '<tr>';
+                if (data[i]) {
+                    const maxCols = Math.max(data[0]?.length || 0, data[i].length);
+                    for (let j = 0; j < maxCols; j++) {
+                        html += `<td>${data[i][j] || ''}</td>`;
+                    }
+                }
+                html += '</tr>';
+            }
+            
+            if (data.length > 11) {
+                html += `<tr><td colspan="${data[0]?.length || 1}" style="text-align: center; font-style: italic;">... y ${data.length - 11} filas más</td></tr>`;
+            }
+            
+            html += '</tbody></table></div>';
+            previewDiv.innerHTML = html;
+        }
+
+        function generateCode(data) {
+            const componentCode = `import React from 'react';
+
+const CompatibilityModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  const compatibilityData = ${JSON.stringify(data, null, 4)};
+
+  const renderTable = () => {
+    if (compatibilityData.length === 0) return null;
+
+    return (
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse border border-gray-300 dark:border-gray-600 text-sm">
+          <thead>
+            <tr className="bg-gray-100 dark:bg-gray-700">
+              {compatibilityData[0].map((header, index) => (
+                <th key={index} className="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left font-semibold text-gray-800 dark:text-gray-200">
+                  {header || ''}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {compatibilityData.slice(1).map((row, rowIndex) => (
+              <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-750'}>
+                {compatibilityData[0].map((_, colIndex) => (
+                  <td key={colIndex} className="border border-gray-300 dark:border-gray-600 px-3 py-2 text-gray-700 dark:text-gray-300">
+                    {row[colIndex] || ''}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg w-full max-w-6xl max-h-[90vh] flex flex-col">
+        <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-600">
+          <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
+            📊 Tabla de Compatibilidad de Mods
+          </h2>
+          <button
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 text-2xl"
+            aria-label="Cerrar"
+          >
+            ×
+          </button>
+        </div>
+        
+        <div className="flex-1 p-6 overflow-auto">
+          <div className="h-full bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+            {renderTable()}
+          </div>
+        </div>
+        
+        <div className="p-6 border-t border-gray-200 dark:border-gray-600">
+          <div className="flex justify-center space-x-3">
+            <button
+              onClick={onClose}
+              className="bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500 text-gray-700 dark:text-gray-200 font-medium py-3 px-6 rounded-lg transition-colors"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CompatibilityModal;`;
+
+            generatedCodeDiv.innerHTML = `
+                <div style="margin-top: 30px;">
+                    <h3>🔧 Código Generado para CompatibilityModal.js:</h3>
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 20px; margin: 15px 0;">
+                        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 10px;">
+                            <span style="font-weight: bold;">📄 Reemplaza todo el contenido de src/components/CompatibilityModal.js con:</span>
+                            <button class="btn btn-primary" onclick="copyToClipboard()">📋 Copiar Código</button>
+                        </div>
+                        <pre id="generatedCodeContent" style="background: rgba(0,0,0,0.5); padding: 15px; border-radius: 4px; overflow-x: auto; white-space: pre-wrap; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.4;">${componentCode.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+                    </div>
+                    <div style="background: rgba(251, 191, 36, 0.2); border: 1px solid #fbbf24; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                        <p style="margin: 0; font-weight: bold;">⚠️ Instrucciones:</p>
+                        <ol style="margin: 10px 0; padding-left: 20px;">
+                            <li>Copia el código generado arriba</li>
+                            <li>Abre el archivo <code>src/components/CompatibilityModal.js</code></li>
+                            <li>Reemplaza todo el contenido con el código copiado</li>
+                            <li>Guarda el archivo</li>
+                            <li>La tabla se actualizará automáticamente en la aplicación</li>
+                        </ol>
+                    </div>
+                </div>
+            `;
+        }
+
+        function copyToClipboard() {
+            const codeContent = document.getElementById('generatedCodeContent').textContent;
+            navigator.clipboard.writeText(codeContent).then(() => {
+                showStatus('✅ Código copiado al portapapeles', 'success');
+            }).catch(() => {
+                showStatus('❌ Error al copiar. Selecciona y copia manualmente.', 'error');
+            });
+        }
+    </script>
+</body>
+</html>
