@@ -5,6 +5,14 @@ export const minecraft1218 = {
   releases: [
     {
       id: "130hY3Xwk",
+      version: "beta-0.2-1.0.4",
+      date: "Jul 24, 2025",
+      changelog: "Segunda versión beta para Minecraft 1.21.8 con la mayoría de mods agregados",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.8",
+      isBeta: true
+    },
+    {
+      id: "130hY3Xwk",
       version: "beta-0.1-1.0.4",
       date: "Jul 8, 2025",
       changelog: "Primera versión beta para Minecraft 1.21.8 con mods básicos optimizados",
