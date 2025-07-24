@@ -23,6 +23,14 @@ export const minecraft1217 = {
   ],
   releases: [
     {
+      id: "60aT4Noc",
+      version: "1.0.4",
+      date: "Jul 24, 2025",
+      changelog: "Versión estable para Minecraft 1.21.7 con todos los mods actualizados",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.7",
+      isBeta: false
+    },
+    {
       id: "140iY4Zwl",
       version: "beta-0.4-1.0.4",
       date: "Jul 8, 2025",
