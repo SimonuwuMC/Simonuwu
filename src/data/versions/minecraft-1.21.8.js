@@ -4,6 +4,14 @@ export const minecraft1218 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg',
   releases: [
     {
+      id: "140hY4Zwl",
+      version: "1.0.4",
+      date: "Jul 24, 2025",
+      changelog: "Versión estable para Minecraft 1.21.8 con todos los mods actualizados y optimizados",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.8",
+      isBeta: false
+    },
+    {
       id: "130hY3Xwk",
       version: "beta-0.2-1.0.4",
       date: "Jul 24, 2025",
