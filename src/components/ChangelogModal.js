@@ -50,8 +50,14 @@ const ChangelogModal = ({ isOpen, onClose }) => {
       date: "9 Jan 2025",
       changes: [
         "🎉 Primera versión estable del modpack",
-        "📦 Colección inicial de mods optimizados",
-        "🌟 Soporte para múltiples versiones de Minecraft",
+        "📦 Mods principales: Sodium, Lithium, Iris Shaders para optimización",
+        "🔧 Mods de utilidad: ModMenu, MiniHUD + MaLiLib, In-Game Account Switcher",
+        "🎨 Mejoras visuales: Continuity, Entity Culling + Entity Model Features",
+        "📹 Grabación: ReplayMod para capturar gameplay",
+        "🔍 Funcionalidad: Zoomify para zoom mejorado",
+        "🌟 APIs esenciales: Fabric API, Fabric Language Kotlin",
+        "🎨 Resource Packs: Fresh Animations, Translations for Sodium",
+        "⚡ Optimizaciones: Sodium Extra, Reese's Sodium Options",
         "⚠️ Versión inicial con algunos errores conocidos"
       ]
     }
