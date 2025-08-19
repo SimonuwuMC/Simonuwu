@@ -68,7 +68,7 @@ const ChangelogModal = ({ isOpen, onClose }) => {
       <div className="bg-white dark:bg-gray-800 rounded-lg w-full max-w-4xl max-h-[90vh] flex flex-col">
         <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-600">
           <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-             Registros de Cambios - Simonuwu Fabric Project
+            📋 Registros de Cambios - Simonuwu Fabric Project
           </h2>
           <button
             onClick={onClose}
