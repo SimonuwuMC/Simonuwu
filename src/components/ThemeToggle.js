@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTheme } from 'next-themes';
 import CompatibilityModal from './CompatibilityModal';
-import ChangelogModal from './ChangelogModal';
+import ChangelogModal from './ChangelogModal.js';
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
