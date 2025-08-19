@@ -49,7 +49,7 @@ const ChangelogModal = ({ isOpen, onClose }) => {
       version: "1.0.0",
       date: "9 Jan 2025",
       changes: [
-        "🎉 Primera versión estable del modpack",
+        "🎉 Primera versión estable del modpack (solo compatible con Minecraft 1.21.4)",
         "📦 Mods principales: Sodium, Lithium, Iris Shaders para optimización",
         "🔧 Mods de utilidad: ModMenu, MiniHUD + MaLiLib, In-Game Account Switcher",
         "🎨 Mejoras visuales: Continuity, Entity Culling + Entity Model Features",
