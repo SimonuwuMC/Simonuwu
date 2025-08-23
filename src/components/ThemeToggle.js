@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTheme } from 'next-themes';
+import UserButton from './UserButton';
 import CompatibilityModal from './CompatibilityModal';
 import ChangelogModal from './ChangelogModal.js';
 
@@ -19,6 +20,7 @@ const ThemeToggle = () => {
   return (
     <>
       <div className="fixed top-4 right-4 flex gap-2">
+        <UserButton />
         <button
           onClick={handleChangelogClick}
           className="p-2 rounded-lg bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 border border-blue-300 dark:border-blue-600 hover:bg-blue-50 dark:hover:bg-gray-600 transition-colors shadow-md"

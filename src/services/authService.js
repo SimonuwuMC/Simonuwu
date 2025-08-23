@@ -81,7 +81,8 @@ class AuthService {
           favoriteVersions: [],
           totalDownloads: 0,
           isPremium: false,
-          lastLogin: new Date()
+          lastLogin: new Date(),
+          githubToken: null // Para futuras integraciones con GitHub API
         });
       } else {
         // Update last login
@@ -91,7 +92,10 @@ class AuthService {
       }
     } catch (error) {
       console.error('Error creating user document:', error);
-      throw error;
+      // En modo demo, no lanzar error
+      if (!error.message.includes('demo')) {
+        throw error;
+      }
     }
   }
 

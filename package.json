@@ -7,8 +7,11 @@
     "dev": "react-scripts start"
   },
   "dependencies": {
+    "@octokit/rest": "^22.0.0",
     "autoprefixer": "^10.4.17",
+    "dompurify": "^3.2.6",
     "firebase": "^12.1.0",
+    "marked": "^16.2.0",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.35",
     "react": "^18.2.0",
