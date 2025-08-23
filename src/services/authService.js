@@ -80,11 +80,18 @@ class AuthService {
           downloads: [],
           favoriteVersions: [],
           totalDownloads: 0,
-          isPremium: false
+          isPremium: false,
+          lastLogin: new Date()
+        });
+      } else {
+        // Update last login
+        await updateDoc(userRef, {
+          lastLogin: new Date()
         });
       }
     } catch (error) {
       console.error('Error creating user document:', error);
+      throw error;
     }
   }
 
