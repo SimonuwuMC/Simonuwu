@@ -5,8 +5,7 @@ import githubService from '../services/githubService';
 import { useAuth } from '../hooks/useAuth';
 
 const CommentsSection = () => {
-  const [openIssues, setOpenIssues] = useState([]);
-  const [closedIssues, setClosedIssues] = useState([]);
+  const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedIssue, setSelectedIssue] = useState(null);
   const [comments, setComments] = useState([]);
@@ -24,12 +23,10 @@ const CommentsSection = () => {
   const loadIssues = async () => {
     setLoading(true);
     try {
-      const open = await githubService.getIssues('open');
-      const closed = await githubService.getIssues('closed');
-      setOpenIssues(open);
-      setClosedIssues(closed);
+      const fetchedIssues = await githubService.getIssues();
+      setIssues(fetchedIssues);
     } catch (error) {
-      console.error('Error al cargar los issues:', error);
+      console.error('Error loading issues:', error);
     }
     setLoading(false);
   };
@@ -39,7 +36,7 @@ const CommentsSection = () => {
       const fetchedComments = await githubService.getIssueComments(issueNumber);
       setComments(fetchedComments);
     } catch (error) {
-      console.error('Error al cargar comentarios:', error);
+      console.error('Error loading comments:', error);
     }
   };
 
@@ -54,15 +51,16 @@ const CommentsSection = () => {
 
     setSubmitting(true);
     try {
-      const githubUrl = `https://github.com/SimonuwuMC/Simonuwu-Fabric-Project/issues/new?title=${encodeURIComponent(newIssueTitle)}&body=${encodeURIComponent(newIssueBody)}`;
+      const githubUrl = `https://github.com/SimonuwuMC/Simonuwu-Fabric-Project/issues/new?title=${encodeURIComponent(newIssueTitle)}&body=${encodeURIComponent(newIssueBody + '\n\n---\nCreado desde: https://simonuwumodpack.netlify.app')}`;
       window.open(githubUrl, '_blank');
 
       setNewIssueTitle('');
       setNewIssueBody('');
       setShowNewIssueForm(false);
+
       setTimeout(loadIssues, 3000);
     } catch (error) {
-      console.error('Error creando el issue:', error);
+      console.error('Error creating issue:', error);
     }
     setSubmitting(false);
   };
@@ -72,13 +70,25 @@ const CommentsSection = () => {
     return DOMPurify.sanitize(html);
   };
 
+  // Filtrar issues abiertos y cerrados
+  const openIssues = issues.filter((issue) => issue.state === 'open');
+  const closedIssues = issues.filter((issue) => issue.state === 'closed');
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center py-12">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600"></div>
+      </div>
+    );
+  }
+
   return (
     <section className="py-12 px-6 max-w-6xl mx-auto">
+      {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-bold text-red-900 dark:text-red-400">
           💬 Comentarios y Sugerencias
         </h2>
-
         {user && (
           <button
             onClick={() => setShowNewIssueForm(!showNewIssueForm)}
@@ -89,118 +99,288 @@ const CommentsSection = () => {
         )}
       </div>
 
-      {showNewIssueForm && (
-        <form
-          onSubmit={handleCreateIssue}
-          className="mb-8 bg-gray-800 p-6 rounded-lg shadow-lg"
-        >
-          <input
-            type="text"
-            placeholder="Título de la sugerencia"
-            value={newIssueTitle}
-            onChange={(e) => setNewIssueTitle(e.target.value)}
-            className="w-full p-3 mb-4 bg-gray-900 rounded-lg text-white"
-          />
-          <textarea
-            placeholder="Describe tu sugerencia..."
-            value={newIssueBody}
-            onChange={(e) => setNewIssueBody(e.target.value)}
-            className="w-full p-3 mb-4 bg-gray-900 rounded-lg text-white"
-            rows="4"
-          />
-          <button
-            type="submit"
-            disabled={submitting}
-            className="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-lg text-white"
-          >
-            {submitting ? 'Enviando...' : 'Enviar Sugerencia'}
-          </button>
-        </form>
-      )}
-
-      {/* Issues abiertos */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-semibold text-green-500 mb-4">
-          📌 Sugerencias Abiertas
-        </h3>
-        {loading ? (
-          <p className="text-gray-400">Cargando sugerencias abiertas...</p>
-        ) : openIssues.length === 0 ? (
-          <p className="text-gray-400">No hay sugerencias abiertas.</p>
-        ) : (
-          <ul className="space-y-4">
-            {openIssues.map((issue) => (
-              <li
-                key={issue.id}
-                onClick={() => handleIssueClick(issue)}
-                className="cursor-pointer p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition"
-              >
-                <h4 className="text-xl font-bold text-white">{issue.title}</h4>
-                <p
-                  className="text-gray-300"
-                  dangerouslySetInnerHTML={{ __html: renderMarkdown(issue.body || '') }}
-                />
-                <span className="text-gray-400 text-sm">
-                  Por: {issue.user.login} • {githubService.formatDate(issue.created_at)}
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      {/* Issues cerrados */}
-      <div>
-        <h3 className="text-2xl font-semibold text-red-400 mb-4">
-          🔒 Sugerencias Cerradas
-        </h3>
-        {loading ? (
-          <p className="text-gray-400">Cargando sugerencias cerradas...</p>
-        ) : closedIssues.length === 0 ? (
-          <p className="text-gray-400">No hay sugerencias cerradas.</p>
-        ) : (
-          <ul className="space-y-4">
-            {closedIssues.map((issue) => (
-              <li
-                key={issue.id}
-                onClick={() => handleIssueClick(issue)}
-                className="cursor-pointer p-4 rounded-lg bg-gray-900 hover:bg-gray-800 transition"
-              >
-                <h4 className="text-xl font-bold text-gray-300">{issue.title}</h4>
-                <p
-                  className="text-gray-400"
-                  dangerouslySetInnerHTML={{ __html: renderMarkdown(issue.body || '') }}
-                />
-                <span className="text-gray-500 text-sm">
-                  Por: {issue.user.login} • {githubService.formatDate(issue.created_at)}
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      {/* Mostrar comentarios cuando seleccionas un issue */}
-      {selectedIssue && (
-        <div className="mt-12 bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h3 className="text-xl font-semibold text-white mb-4">
-            Comentarios de "{selectedIssue.title}"
-          </h3>
-          {comments.length === 0 ? (
-            <p className="text-gray-400">No hay comentarios en esta sugerencia.</p>
-          ) : (
-            <ul className="space-y-4">
-              {comments.map((comment) => (
-                <li
-                  key={comment.id}
-                  className="p-3 rounded-lg bg-gray-700"
-                  dangerouslySetInnerHTML={{ __html: renderMarkdown(comment.body) }}
-                />
-              ))}
-            </ul>
-          )}
+      {!user && (
+        <div className="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-6">
+          <p className="text-yellow-800 dark:text-yellow-200">
+            🔐 Inicia sesión para crear nuevas sugerencias y participar en las discusiones
+          </p>
         </div>
       )}
+
+      {/* Formulario para nueva sugerencia */}
+      {showNewIssueForm && user && (
+        <div className="bg-white dark:bg-gray-700 rounded-lg p-6 mb-6 border border-gray-200 dark:border-gray-600">
+          <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">
+            ✨ Nueva Sugerencia
+          </h3>
+          <form onSubmit={handleCreateIssue}>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Título
+              </label>
+              <input
+                type="text"
+                value={newIssueTitle}
+                onChange={(e) => setNewIssueTitle(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 dark:bg-gray-800 dark:text-gray-200"
+                placeholder="Describe tu sugerencia en pocas palabras..."
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Descripción
+              </label>
+              <textarea
+                value={newIssueBody}
+                onChange={(e) => setNewIssueBody(e.target.value)}
+                rows={4}
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 dark:bg-gray-800 dark:text-gray-200"
+                placeholder="Explica tu sugerencia con más detalle..."
+                required
+              />
+            </div>
+            <div className="flex space-x-3">
+              <button
+                type="submit"
+                disabled={submitting}
+                className="bg-green-600 dark:bg-green-700 text-white px-6 py-2 rounded-lg hover:bg-green-700 dark:hover:bg-green-800 transition-colors disabled:opacity-50"
+              >
+                {submitting ? '📤 Enviando...' : '📤 Enviar Sugerencia'}
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowNewIssueForm(false)}
+                className="bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-200 px-6 py-2 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors"
+              >
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Lista de Issues */}
+        <div className="space-y-6">
+          {/* Issues abiertos */}
+          <div>
+            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3">
+              🟢 Sugerencias Abiertas
+            </h3>
+            {openIssues.length === 0 ? (
+              <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+                No hay sugerencias abiertas
+              </div>
+            ) : (
+              openIssues.map((issue) => (
+                <div
+                  key={issue.id}
+                  onClick={() => handleIssueClick(issue)}
+                  className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                    selectedIssue?.id === issue.id
+                      ? 'bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700'
+                      : 'bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600'
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">
+                        {issue.title}
+                      </h4>
+                      <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                        <span>#{issue.number}</span>
+                        <span>👤 {issue.user.login}</span>
+                        <span>📅 {githubService.formatDate(issue.created_at)}</span>
+                      </div>
+                      <div className="flex items-center space-x-2 mt-2">
+                        <span className="text-sm text-gray-600 dark:text-gray-300">
+                          💬 {issue.comments} comentarios
+                        </span>
+                        {issue.labels.map((label) => (
+                          <span
+                            key={label.id}
+                            className="px-2 py-1 text-xs rounded-full"
+                            style={{
+                              backgroundColor: `#${label.color}20`,
+                              color: `#${label.color}`,
+                            }}
+                          >
+                            {label.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <img
+                      src={issue.user.avatar_url}
+                      alt={issue.user.login}
+                      className="w-10 h-10 rounded-full ml-3"
+                    />
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+
+          {/* Issues cerrados */}
+          <div>
+            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3">
+              🔴 Sugerencias Cerradas
+            </h3>
+            {closedIssues.length === 0 ? (
+              <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+                No hay sugerencias cerradas
+              </div>
+            ) : (
+              closedIssues.map((issue) => (
+                <div
+                  key={issue.id}
+                  onClick={() => handleIssueClick(issue)}
+                  className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                    selectedIssue?.id === issue.id
+                      ? 'bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700'
+                      : 'bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600'
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">
+                        {issue.title}
+                      </h4>
+                      <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                        <span>#{issue.number}</span>
+                        <span>👤 {issue.user.login}</span>
+                        <span>📅 {githubService.formatDate(issue.created_at)}</span>
+                      </div>
+                      <div className="flex items-center space-x-2 mt-2">
+                        <span className="text-sm text-gray-600 dark:text-gray-300">
+                          💬 {issue.comments} comentarios
+                        </span>
+                        {issue.labels.map((label) => (
+                          <span
+                            key={label.id}
+                            className="px-2 py-1 text-xs rounded-full"
+                            style={{
+                              backgroundColor: `#${label.color}20`,
+                              color: `#${label.color}`,
+                            }}
+                          >
+                            {label.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <img
+                      src={issue.user.avatar_url}
+                      alt={issue.user.login}
+                      className="w-10 h-10 rounded-full ml-3"
+                    />
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+
+        {/* Detalles del Issue seleccionado */}
+        <div className="space-y-4">
+          {selectedIssue ? (
+            <>
+              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 border border-gray-200 dark:border-gray-600">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                      {selectedIssue.title}
+                    </h3>
+                    <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                      <span>#{selectedIssue.number}</span>
+                      <span>👤 {selectedIssue.user.login}</span>
+                      <span>📅 {githubService.formatDate(selectedIssue.created_at)}</span>
+                    </div>
+                  </div>
+                  <a
+                    href={selectedIssue.html_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 dark:bg-gray-600 text-white px-3 py-1 rounded text-sm hover:bg-gray-700 dark:hover:bg-gray-500 transition-colors"
+                  >
+                    Ver en GitHub
+                  </a>
+                </div>
+                <div
+                  className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
+                  dangerouslySetInnerHTML={{
+                    __html: renderMarkdown(selectedIssue.body || 'Sin descripción'),
+                  }}
+                />
+              </div>
+
+              {/* Comentarios */}
+              <div className="space-y-4">
+                <h4 className="text-lg font-bold text-gray-800 dark:text-gray-200">
+                  💬 Comentarios ({comments.length})
+                </h4>
+                {comments.map((comment) => (
+                  <div
+                    key={comment.id}
+                    className="bg-white dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600"
+                  >
+                    <div className="flex items-center space-x-3 mb-3">
+                      <img
+                        src={comment.user.avatar_url}
+                        alt={comment.user.login}
+                        className="w-8 h-8 rounded-full"
+                      />
+                      <div>
+                        <span className="font-semibold text-gray-800 dark:text-gray-200">
+                          {comment.user.login}
+                        </span>
+                        <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
+                          {githubService.formatDate(comment.created_at)}
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
+                      dangerouslySetInnerHTML={{
+                        __html: renderMarkdown(comment.body),
+                      }}
+                    />
+                  </div>
+                ))}
+
+                {comments.length === 0 && (
+                  <div className="text-center py-6 text-gray-500 dark:text-gray-400">
+                    No hay comentarios aún
+                  </div>
+                )}
+              </div>
+            </>
+          ) : (
+            <div className="bg-white dark:bg-gray-700 rounded-lg p-8 border border-gray-200 dark:border-gray-600 text-center">
+              <div className="text-4xl mb-4">💬</div>
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                Selecciona una sugerencia
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                Haz clic en cualquier sugerencia de la izquierda para ver los detalles y comentarios
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="mt-8 text-center">
+        <a
+          href="https://github.com/SimonuwuMC/Simonuwu-Fabric-Project/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center space-x-2 bg-gray-800 dark:bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 dark:hover:bg-gray-500 transition-colors"
+        >
+          <span>🐙</span>
+          <span>Ver todas las sugerencias en GitHub</span>
+        </a>
+      </div>
     </section>
   );
 };
