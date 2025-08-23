@@ -1,14 +1,11 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
-// Crear el contexto
 const AuthContext = createContext();
 
-// Proveedor que envolverá tu app
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Simular verificación de sesión
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
@@ -17,28 +14,31 @@ export function AuthProvider({ children }) {
     setLoading(false);
   }, []);
 
-  // Función para iniciar sesión (simulada)
+  // 🔹 Función de login básica
   const login = (username, password) => {
-    // Aquí iría la lógica real de autenticación con tu API
     const fakeUser = { username };
     setUser(fakeUser);
     localStorage.setItem("user", JSON.stringify(fakeUser));
   };
 
-  // Función para cerrar sesión
+  // 🔹 Función de logout
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
   };
 
+  // 🔹 Solución: agregar signIn como alias de login
+  const signIn = (username, password) => {
+    login(username, password);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, signIn, logout }}>
       {children}
     </AuthContext.Provider>
   );
 }
 
-// Hook para consumir el contexto
 export function useAuth() {
   return useContext(AuthContext);
 }
