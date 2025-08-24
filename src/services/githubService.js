@@ -10,12 +10,12 @@ class GitHubService {
     this.repo = 'Simonuwu-Fabric-Project';
   }
 
-  async getIssues(page = 1, per_page = 10) {
+  async getIssues(page = 1, per_page = 10, state = 'all') {
     try {
       const response = await this.octokit.rest.issues.listForRepo({
         owner: this.owner,
         repo: this.repo,
-        state: 'open',
+        state: state, // 'open', 'closed', or 'all'
         sort: 'created',
         direction: 'desc',
         page,
@@ -33,7 +33,9 @@ class GitHubService {
       const response = await this.octokit.rest.issues.listComments({
         owner: this.owner,
         repo: this.repo,
-        issue_number: issueNumber
+        issue_number: issueNumber,
+        sort: 'created',
+        direction: 'asc'
       });
       return response.data;
     } catch (error) {
@@ -90,6 +92,25 @@ class GitHubService {
       hour: '2-digit',
       minute: '2-digit'
     });
+  }
+
+  // Get repository statistics
+  async getRepoStats() {
+    try {
+      const response = await this.octokit.rest.repos.get({
+        owner: this.owner,
+        repo: this.repo
+      });
+      return {
+        stars: response.data.stargazers_count,
+        forks: response.data.forks_count,
+        issues: response.data.open_issues_count,
+        watchers: response.data.watchers_count
+      };
+    } catch (error) {
+      console.error('Error fetching repo stats:', error);
+      return null;
+    }
   }
 }
 

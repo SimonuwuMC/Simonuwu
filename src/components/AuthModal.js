@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 
 const AuthModal = ({ isOpen, onClose }) => {
-  const { signIn } = useAuth();
+  const { signInWithGoogle, signInWithGitHub } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -13,7 +13,11 @@ const AuthModal = ({ isOpen, onClose }) => {
     setError('');
     
     try {
-      await signIn(provider);
+      if (provider === 'google') {
+        await signInWithGoogle();
+      } else if (provider === 'github') {
+        await signInWithGitHub();
+      }
       onClose();
     } catch (error) {
       console.error('Sign in error:', error);

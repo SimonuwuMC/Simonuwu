@@ -9,26 +9,46 @@ const CommentsSection = () => {
   const [loading, setLoading] = useState(true);
   const [selectedIssue, setSelectedIssue] = useState(null);
   const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState('');
   const [newIssueTitle, setNewIssueTitle] = useState('');
   const [newIssueBody, setNewIssueBody] = useState('');
   const [showNewIssueForm, setShowNewIssueForm] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const { user } = useAuth();
 
   useEffect(() => {
     loadIssues();
+    // Auto-refresh every 30 seconds
+    const interval = setInterval(loadIssues, 30000);
+    return () => clearInterval(interval);
   }, []);
 
-  const loadIssues = async () => {
-    setLoading(true);
+  const loadIssues = async (showRefreshIndicator = false) => {
+    if (showRefreshIndicator) {
+      setRefreshing(true);
+    } else {
+      setLoading(true);
+    }
+    
     try {
-      const fetchedIssues = await githubService.getIssues();
-      setIssues(fetchedIssues);
+      // Load both open and closed issues
+      const [openIssues, closedIssues] = await Promise.all([
+        githubService.getIssues(1, 20, 'open'),
+        githubService.getIssues(1, 10, 'closed')
+      ]);
+      
+      // Combine and sort by creation date
+      const allIssues = [...openIssues, ...closedIssues].sort((a, b) => 
+        new Date(b.created_at) - new Date(a.created_at)
+      );
+      
+      setIssues(allIssues);
     } catch (error) {
       console.error('Error loading issues:', error);
     }
+    
     setLoading(false);
+    setRefreshing(false);
   };
 
   const loadComments = async (issueNumber) => {
@@ -37,6 +57,7 @@ const CommentsSection = () => {
       setComments(fetchedComments);
     } catch (error) {
       console.error('Error loading comments:', error);
+      setComments([]);
     }
   };
 
@@ -51,14 +72,15 @@ const CommentsSection = () => {
 
     setSubmitting(true);
     try {
-      const githubUrl = `https://github.com/SimonuwuMC/Simonuwu-Fabric-Project/issues/new?title=${encodeURIComponent(newIssueTitle)}&body=${encodeURIComponent(newIssueBody + '\n\n---\nCreado desde: https://simonuwumodpack.netlify.app')}`;
+      const githubUrl = `https://github.com/SimonuwuMC/Simonuwu-Fabric-Project/issues/new?title=${encodeURIComponent(newIssueTitle)}&body=${encodeURIComponent(newIssueBody + '\n\n---\nCreado desde: https://simonuwumodpack.netlify.app\nUsuario: ' + (user.displayName || user.email))}`;
       window.open(githubUrl, '_blank');
 
       setNewIssueTitle('');
       setNewIssueBody('');
       setShowNewIssueForm(false);
 
-      setTimeout(loadIssues, 3000);
+      // Refresh issues after a short delay
+      setTimeout(() => loadIssues(true), 3000);
     } catch (error) {
       console.error('Error creating issue:', error);
     }
@@ -66,11 +88,16 @@ const CommentsSection = () => {
   };
 
   const renderMarkdown = (text) => {
-    const html = marked(text);
-    return DOMPurify.sanitize(html);
+    try {
+      const html = marked(text || '');
+      return DOMPurify.sanitize(html);
+    } catch (error) {
+      console.error('Error rendering markdown:', error);
+      return text || '';
+    }
   };
 
-  // Filtrar issues abiertos y cerrados
+  // Filter issues by state
   const openIssues = issues.filter((issue) => issue.state === 'open');
   const closedIssues = issues.filter((issue) => issue.state === 'closed');
 
@@ -78,6 +105,7 @@ const CommentsSection = () => {
     return (
       <div className="flex justify-center items-center py-12">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600"></div>
+        <span className="ml-3 text-gray-600 dark:text-gray-400">Cargando sugerencias...</span>
       </div>
     );
   }
@@ -86,9 +114,19 @@ const CommentsSection = () => {
     <section className="py-12 px-6 max-w-6xl mx-auto">
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold text-red-900 dark:text-red-400">
-          💬 Comentarios y Sugerencias
-        </h2>
+        <div className="flex items-center space-x-4">
+          <h2 className="text-3xl font-bold text-red-900 dark:text-red-400">
+            💬 Comentarios y Sugerencias
+          </h2>
+          <button
+            onClick={() => loadIssues(true)}
+            disabled={refreshing}
+            className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors disabled:opacity-50"
+            title="Actualizar sugerencias"
+          >
+            <span className={refreshing ? 'animate-spin' : ''}>🔄</span>
+          </button>
+        </div>
         {user && (
           <button
             onClick={() => setShowNewIssueForm(!showNewIssueForm)}
@@ -165,119 +203,132 @@ const CommentsSection = () => {
         <div className="space-y-6">
           {/* Issues abiertos */}
           <div>
-            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3">
-              🟢 Sugerencias Abiertas
+            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3 flex items-center">
+              🟢 Sugerencias Abiertas 
+              <span className="ml-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-sm">
+                {openIssues.length}
+              </span>
             </h3>
             {openIssues.length === 0 ? (
               <div className="text-center py-8 text-gray-500 dark:text-gray-400">
                 No hay sugerencias abiertas
               </div>
             ) : (
-              openIssues.map((issue) => (
-                <div
-                  key={issue.id}
-                  onClick={() => handleIssueClick(issue)}
-                  className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                    selectedIssue?.id === issue.id
-                      ? 'bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700'
-                      : 'bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600'
-                  }`}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">
-                        {issue.title}
-                      </h4>
-                      <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
-                        <span>#{issue.number}</span>
-                        <span>👤 {issue.user.login}</span>
-                        <span>📅 {githubService.formatDate(issue.created_at)}</span>
-                      </div>
-                      <div className="flex items-center space-x-2 mt-2">
-                        <span className="text-sm text-gray-600 dark:text-gray-300">
-                          💬 {issue.comments} comentarios
-                        </span>
-                        {issue.labels.map((label) => (
-                          <span
-                            key={label.id}
-                            className="px-2 py-1 text-xs rounded-full"
-                            style={{
-                              backgroundColor: `#${label.color}20`,
-                              color: `#${label.color}`,
-                            }}
-                          >
-                            {label.name}
+              <div className="space-y-3">
+                {openIssues.map((issue) => (
+                  <div
+                    key={issue.id}
+                    onClick={() => handleIssueClick(issue)}
+                    className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                      selectedIssue?.id === issue.id
+                        ? 'bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700'
+                        : 'bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">
+                          {issue.title}
+                        </h4>
+                        <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                          <span>#{issue.number}</span>
+                          <span>👤 {issue.user.login}</span>
+                          <span>📅 {githubService.formatDate(issue.created_at)}</span>
+                        </div>
+                        <div className="flex items-center space-x-2 mt-2">
+                          <span className="text-sm text-gray-600 dark:text-gray-300">
+                            💬 {issue.comments} comentarios
                           </span>
-                        ))}
+                          {issue.labels.map((label) => (
+                            <span
+                              key={label.id}
+                              className="px-2 py-1 text-xs rounded-full"
+                              style={{
+                                backgroundColor: `#${label.color}20`,
+                                color: `#${label.color}`,
+                              }}
+                            >
+                              {label.name}
+                            </span>
+                          ))}
+                        </div>
                       </div>
+                      <img
+                        src={issue.user.avatar_url}
+                        alt={issue.user.login}
+                        className="w-10 h-10 rounded-full ml-3"
+                      />
                     </div>
-                    <img
-                      src={issue.user.avatar_url}
-                      alt={issue.user.login}
-                      className="w-10 h-10 rounded-full ml-3"
-                    />
                   </div>
-                </div>
-              ))
+                ))}
+              </div>
             )}
           </div>
 
           {/* Issues cerrados */}
           <div>
-            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3">
+            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3 flex items-center">
               🔴 Sugerencias Cerradas
+              <span className="ml-2 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded-full text-sm">
+                {closedIssues.length}
+              </span>
             </h3>
             {closedIssues.length === 0 ? (
               <div className="text-center py-8 text-gray-500 dark:text-gray-400">
                 No hay sugerencias cerradas
               </div>
             ) : (
-              closedIssues.map((issue) => (
-                <div
-                  key={issue.id}
-                  onClick={() => handleIssueClick(issue)}
-                  className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                    selectedIssue?.id === issue.id
-                      ? 'bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700'
-                      : 'bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600'
-                  }`}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">
-                        {issue.title}
-                      </h4>
-                      <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
-                        <span>#{issue.number}</span>
-                        <span>👤 {issue.user.login}</span>
-                        <span>📅 {githubService.formatDate(issue.created_at)}</span>
-                      </div>
-                      <div className="flex items-center space-x-2 mt-2">
-                        <span className="text-sm text-gray-600 dark:text-gray-300">
-                          💬 {issue.comments} comentarios
-                        </span>
-                        {issue.labels.map((label) => (
-                          <span
-                            key={label.id}
-                            className="px-2 py-1 text-xs rounded-full"
-                            style={{
-                              backgroundColor: `#${label.color}20`,
-                              color: `#${label.color}`,
-                            }}
-                          >
-                            {label.name}
+              <div className="space-y-3">
+                {closedIssues.map((issue) => (
+                  <div
+                    key={issue.id}
+                    onClick={() => handleIssueClick(issue)}
+                    className={`p-4 rounded-lg border cursor-pointer transition-all opacity-75 ${
+                      selectedIssue?.id === issue.id
+                        ? 'bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700'
+                        : 'bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">
+                          {issue.title}
+                        </h4>
+                        <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                          <span>#{issue.number}</span>
+                          <span>👤 {issue.user.login}</span>
+                          <span>📅 {githubService.formatDate(issue.created_at)}</span>
+                          {issue.closed_at && (
+                            <span>🔒 {githubService.formatDate(issue.closed_at)}</span>
+                          )}
+                        </div>
+                        <div className="flex items-center space-x-2 mt-2">
+                          <span className="text-sm text-gray-600 dark:text-gray-300">
+                            💬 {issue.comments} comentarios
                           </span>
-                        ))}
+                          {issue.labels.map((label) => (
+                            <span
+                              key={label.id}
+                              className="px-2 py-1 text-xs rounded-full"
+                              style={{
+                                backgroundColor: `#${label.color}20`,
+                                color: `#${label.color}`,
+                              }}
+                            >
+                              {label.name}
+                            </span>
+                          ))}
+                        </div>
                       </div>
+                      <img
+                        src={issue.user.avatar_url}
+                        alt={issue.user.login}
+                        className="w-10 h-10 rounded-full ml-3"
+                      />
                     </div>
-                    <img
-                      src={issue.user.avatar_url}
-                      alt={issue.user.login}
-                      className="w-10 h-10 rounded-full ml-3"
-                    />
                   </div>
-                </div>
-              ))
+                ))}
+              </div>
             )}
           </div>
         </div>
@@ -289,9 +340,18 @@ const CommentsSection = () => {
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 border border-gray-200 dark:border-gray-600">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
-                      {selectedIssue.title}
-                    </h3>
+                    <div className="flex items-center space-x-2 mb-2">
+                      <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
+                        {selectedIssue.title}
+                      </h3>
+                      <span className={`px-2 py-1 text-xs font-bold rounded-full ${
+                        selectedIssue.state === 'open' 
+                          ? 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+                          : 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+                      }`}>
+                        {selectedIssue.state === 'open' ? '🟢 ABIERTO' : '🔴 CERRADO'}
+                      </span>
+                    </div>
                     <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
                       <span>#{selectedIssue.number}</span>
                       <span>👤 {selectedIssue.user.login}</span>
