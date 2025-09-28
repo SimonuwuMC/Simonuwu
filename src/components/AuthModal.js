@@ -21,7 +21,11 @@ const AuthModal = ({ isOpen, onClose }) => {
       onClose();
     } catch (error) {
       console.error('Sign in error:', error);
-      setError('Error al iniciar sesión. Por favor, intenta de nuevo.');
+      if (error.code === 'auth/popup-blocked') {
+        setError('El navegador bloqueó la ventana emergente. Por favor, permite las ventanas emergentes para este sitio y vuelve a intentarlo.');
+      } else {
+        setError('Error al iniciar sesión. Por favor, intenta de nuevo.');
+      }
     }
     
     setLoading(false);
