@@ -1,6 +1,6 @@
 export const minecraft1218 = {
   version: '1.21.8',
-  title: 'Latest Update',
+  title: 'A Minecraft Movie',
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg',
   releases: [
     {
