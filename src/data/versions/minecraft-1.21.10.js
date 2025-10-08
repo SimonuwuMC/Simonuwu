@@ -1,6 +1,6 @@
 export const minecraft12110 = {
   version: '1.21.10',
-  title: 'The Copper Age con arreglos de bugs',
+  title: 'The Copper Age',
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_Fall_Drop_Campaign_Key_Art_DotNet_Blog_Editorial_1280x768.jpg',
   releases: [
     {
