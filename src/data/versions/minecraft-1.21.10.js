@@ -14,7 +14,7 @@ export const minecraft12110 = {
     {
       id: "170hY7Zwo",
       version: "beta-0.1-1.0.4",
-      date: "Dec 25, 2025",
+      date: "Oct 25, 2025",
       changelog: "Primera versión beta para Minecraft 1.21.10 Copper Age con mods básicos optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.10",
       isBeta: true
