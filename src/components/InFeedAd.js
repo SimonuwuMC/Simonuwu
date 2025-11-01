@@ -11,7 +11,7 @@ const InFeedAd = ({ className = "" }) => {
           </span>
         </div>
         <AdBanner
-          slot="1234567890" // Reemplaza con tu slot ID real
+          slot="8234567890" // Slot para anuncios in-feed
           format="rectangle"
           style={{
             width: '100%',

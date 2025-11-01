@@ -1,7 +1,5 @@
-@@ .. @@
--google.com, pub-5545830368282113, DIRECT, f08c47fec0942fa0
-+google.com, pub-5545830368282113, DIRECT, f08c47fec0942fa0
-+
-+# AdSense verification
-+# Replace with your actual publisher ID and verification details
-+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-5545830368282113, DIRECT, f08c47fec0942fa0
+
+# AdSense verification
+# Simonuwu Fabric Project - Modpack Website
+# Publisher ID verified: pub-5545830368282113

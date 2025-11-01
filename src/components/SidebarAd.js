@@ -10,7 +10,7 @@ const SidebarAd = ({ className = "" }) => {
         </span>
       </div>
       <AdBanner
-        slot="0987654321" // Reemplaza con tu slot ID real
+        slot="9876543210" // Slot para anuncios sidebar
         format="vertical"
         style={{
           width: '300px',
