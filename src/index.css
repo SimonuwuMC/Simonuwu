@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Ad Styles */
+.ad-container {
+  @apply flex justify-center items-center;
+}
+
+.ad-container ins {
+  @apply rounded-lg overflow-hidden;
+}
+
+/* Responsive ad adjustments */
+@media (max-width: 768px) {
+  .ad-container ins {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* Dark mode ad container styling */
+.dark .ad-container {
+  @apply bg-gray-800;
+}

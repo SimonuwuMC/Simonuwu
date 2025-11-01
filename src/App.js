@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from './hooks/useAuth';
+import AdSense from './components/AdSense';
+import InFeedAd from './components/InFeedAd';
 import SimonuwuHero from './components/SimonuwuHero';
 import DownloadSection from './components/DownloadSection';
 import FeatureSection from './components/FeatureSection';
@@ -26,6 +28,7 @@ const App = () => {
       <AuthProvider>
         <ThemeProvider attribute="class">
           <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+            <AdSense />
             <SEOHead />
             <ThemeToggle />
             <SimonuwuHero onAchievement={() => addAchievement({
@@ -39,12 +42,15 @@ const App = () => {
               description: 'Arqueólogo: Encontraste la versión 1.0.0 del modpack'
             })} />
             <FeatureSection />
+            <InFeedAd />
             <ModsList />
+            <InFeedAd />
             <InstallationGuide onAchievement={() => addAchievement({
               id: 'pojav-expert',
               title: '¡Logro Desbloqueado!',
               description: 'Experto en Launchers: Encontraste el tutorial secreto de Pojav Launcher'
             })} />
+            <InFeedAd />
             <CommentsSection />
             <Achievements achievements={achievements} />
           </div>
