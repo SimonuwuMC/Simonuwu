@@ -57,6 +57,39 @@ const DownloadSection = ({ onAchievement }) => {
     <section id="download" className="py-12 px-6 max-w-5xl mx-auto">
       <h2 className="text-3xl font-bold text-center text-red-900 dark:text-red-400 mb-6">Descargar por Versión</h2>
       
+      {/* Información sobre compatibilidad */}
+      <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-6">
+        <h3 className="text-lg font-bold text-blue-800 dark:text-blue-300 mb-3">
+          📋 Información de Compatibilidad
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div>
+            <h4 className="font-semibold text-blue-700 dark:text-blue-400 mb-2">🎮 Requisitos Mínimos</h4>
+            <ul className="space-y-1 text-blue-600 dark:text-blue-300">
+              <li>• Java 17 o superior</li>
+              <li>• 4GB RAM mínimo</li>
+              <li>• Minecraft Java Edition</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-blue-700 dark:text-blue-400 mb-2">⚡ Recomendado</h4>
+            <ul className="space-y-1 text-blue-600 dark:text-blue-300">
+              <li>• 8GB RAM o más</li>
+              <li>• GPU dedicada</li>
+              <li>• SSD para mejor carga</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-blue-700 dark:text-blue-400 mb-2">🔧 Launchers Compatibles</h4>
+            <ul className="space-y-1 text-blue-600 dark:text-blue-300">
+              <li>• Prism Launcher ⭐</li>
+              <li>• MultiMC</li>
+              <li>• SkLauncher</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       {/* Keyboard navigation hint */}
       <div className="text-center mb-4">
         <p className="text-sm text-gray-600 dark:text-gray-400">

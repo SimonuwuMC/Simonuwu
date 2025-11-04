@@ -1,6 +1,9 @@
 import React from 'react';
 
 const ModsList = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+
   const mods = [
     {
       name: "3D Skin Layers",
@@ -207,13 +210,82 @@ const ModsList = () => {
     }
   ];
 
+  const categories = [
+    { id: 'all', name: 'Todos los Mods', icon: '📦' },
+    { id: 'performance', name: 'Rendimiento', icon: '⚡' },
+    { id: 'graphics', name: 'Gráficos', icon: '🎨' },
+    { id: 'utility', name: 'Utilidad', icon: '🔧' },
+    { id: 'required', name: 'APIs Requeridas', icon: '⚙️' }
+  ];
+
+  const filteredMods = mods.filter(mod => {
+    const matchesCategory = selectedCategory === 'all' || mod.category === selectedCategory;
+    const matchesSearch = mod.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                         mod.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
   return (
     <section className="py-12 px-6 bg-white dark:bg-gray-800 transition-colors">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-red-900 dark:text-red-400 mb-12">Mods Instalados</h2>
         
+        {/* Filtros y búsqueda */}
+        <div className="mb-8 space-y-4">
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map(category => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                  selectedCategory === category.id
+                    ? 'bg-red-600 dark:bg-red-800 text-white'
+                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-red-100 dark:hover:bg-red-900'
+                }`}
+              >
+                {category.icon} {category.name}
+              </button>
+            ))}
+          </div>
+          
+          <div className="max-w-md mx-auto">
+            <input
+              type="text"
+              placeholder="Buscar mods..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-gray-200"
+            />
+          </div>
+        </div>
+
+        {/* Estadísticas */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div className="bg-red-50 dark:bg-red-900/30 p-4 rounded-lg text-center">
+            <div className="text-2xl font-bold text-red-600 dark:text-red-400">{mods.length}</div>
+            <div className="text-sm text-red-800 dark:text-red-300">Total de Mods</div>
+          </div>
+          <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg text-center">
+            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+              {mods.filter(m => m.category === 'performance').length}
+            </div>
+            <div className="text-sm text-blue-800 dark:text-blue-300">Rendimiento</div>
+          </div>
+          <div className="bg-green-50 dark:bg-green-900/30 p-4 rounded-lg text-center">
+            <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+              {mods.filter(m => m.category === 'graphics').length}
+            </div>
+            <div className="text-sm text-green-800 dark:text-green-300">Gráficos</div>
+          </div>
+          <div className="bg-purple-50 dark:bg-purple-900/30 p-4 rounded-lg text-center">
+            <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+              {mods.filter(m => m.category === 'utility').length}
+            </div>
+            <div className="text-sm text-purple-800 dark:text-purple-300">Utilidad</div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {mods.map((mod, index) => (
+          {filteredMods.map((mod, index) => (
             <a 
               key={index}
               href={mod.url}
@@ -229,10 +301,27 @@ const ModsList = () => {
               <div className="ml-4 min-w-0">
                 <h4 className="text-lg font-semibold text-red-900 dark:text-red-300 truncate">{mod.name}</h4>
                 <p className="text-gray-700 dark:text-gray-300 text-sm line-clamp-2">{mod.description}</p>
+                <div className="mt-2">
+                  <span className={`px-2 py-1 text-xs rounded-full ${
+                    mod.category === 'performance' ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200' :
+                    mod.category === 'graphics' ? 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200' :
+                    mod.category === 'utility' ? 'bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200' :
+                    'bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200'
+                  }`}>
+                    {categories.find(c => c.id === mod.category)?.name || 'Otro'}
+                  </span>
+                </div>
               </div>
             </a>
           ))}
         </div>
+        
+        {filteredMods.length === 0 && (
+          <div className="text-center py-8">
+            <div className="text-4xl mb-4">🔍</div>
+            <p className="text-gray-600 dark:text-gray-400">No se encontraron mods que coincidan con tu búsqueda</p>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -40,6 +40,26 @@ const SimonuwuHero = ({ onAchievement }) => {
           </div>
         )}
         <p className="text-xl text-red-100 mb-8">El modpack más optimizado para Minecraft Fabric</p>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8 text-left max-w-3xl mx-auto">
+          <h2 className="text-xl font-bold text-white mb-4">🎮 ¿Qué es Simonuwu Fabric Project?</h2>
+          <p className="text-red-100 mb-3">
+            Simonuwu Fabric Project es un modpack cuidadosamente curado para Minecraft que combina los mejores mods de optimización y características kawaii. Diseñado para ofrecer la mejor experiencia de juego posible, desde PCs modestas hasta configuraciones de alta gama.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <div className="text-center">
+              <div className="text-2xl mb-2">⚡</div>
+              <div className="text-sm text-red-200">+200% Rendimiento</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl mb-2">🎨</div>
+              <div className="text-sm text-red-200">30+ Mods Visuales</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl mb-2">🔧</div>
+              <div className="text-sm text-red-200">15+ Versiones</div>
+            </div>
+          </div>
+        </div>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a 
             href="https://modrinth.com/modpack/simonuwu-fabric-project" 
