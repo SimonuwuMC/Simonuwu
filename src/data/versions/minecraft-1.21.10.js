@@ -4,6 +4,14 @@ export const minecraft12110 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_Fall_Drop_Campaign_Key_Art_DotNet_Blog_Editorial_1280x768.jpg',
   releases: [
     {
+      id: "200hY0Zwr",
+      version: "beta-0.4-1.0.4",
+      date: "Jan 10, 2026",
+      changelog: "Cuarta versión beta para Minecraft 1.21.10 Copper Age con optimizaciones finales y correcciones de bugs adicionales",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.4-1.0.4-1.21.10",
+      isBeta: true
+    },
+    {
       id: "190hY9Zwq",
       version: "beta-0.3-1.0.4",
       date: "Jan 2, 2026",
