@@ -12,7 +12,7 @@ const InstallationGuide = ({ onAchievement }) => {
   };
 
   const steps = [
-    <span key="0">
+    <span>
       Descarga e instala Prism Launcher,SkLauncher,{' '}
       <span 
         className="cursor-pointer hover:text-red-600 dark:hover:text-red-400 transition-colors"
