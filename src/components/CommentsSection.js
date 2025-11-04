@@ -115,14 +115,9 @@ const CommentsSection = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <div className="flex items-center space-x-4">
-          <div>
-            <h2 className="text-3xl font-bold text-red-900 dark:text-red-400">
-              💬 Comentarios y Sugerencias
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">
-              Comparte tus ideas, reporta bugs y ayuda a mejorar el modpack
-            </p>
-          </div>
+          <h2 className="text-3xl font-bold text-red-900 dark:text-red-400">
+            💬 Comentarios y Sugerencias
+          </h2>
           <button
             onClick={() => loadIssues(true)}
             disabled={refreshing}
@@ -152,31 +147,10 @@ const CommentsSection = () => {
 
       {/* Formulario para nueva sugerencia */}
       {showNewIssueForm && user && (
-        <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/30 dark:to-blue-900/30 rounded-lg p-6 mb-6 border border-green-200 dark:border-green-800">
+        <div className="bg-white dark:bg-gray-700 rounded-lg p-6 mb-6 border border-gray-200 dark:border-gray-600">
           <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">
             ✨ Nueva Sugerencia
           </h3>
-          <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4 mb-4">
-            <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">💡 Tipos de sugerencias que puedes enviar:</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-              <div>
-                <span className="font-medium text-green-600 dark:text-green-400">✅ Nuevos mods:</span>
-                <span className="text-gray-600 dark:text-gray-400"> Sugiere mods que mejoren la experiencia</span>
-              </div>
-              <div>
-                <span className="font-medium text-blue-600 dark:text-blue-400">🐛 Reportar bugs:</span>
-                <span className="text-gray-600 dark:text-gray-400"> Informa sobre errores o problemas</span>
-              </div>
-              <div>
-                <span className="font-medium text-purple-600 dark:text-purple-400">⚡ Optimizaciones:</span>
-                <span className="text-gray-600 dark:text-gray-400"> Ideas para mejorar el rendimiento</span>
-              </div>
-              <div>
-                <span className="font-medium text-orange-600 dark:text-orange-400">🎨 Mejoras visuales:</span>
-                <span className="text-gray-600 dark:text-gray-400"> Sugerencias de texturas o shaders</span>
-              </div>
-            </div>
-          </div>
           <form onSubmit={handleCreateIssue}>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
