@@ -55,6 +55,14 @@ const SimonuwuHero = ({ onAchievement }) => {
           >
             Descargar
           </a>
+          <a 
+            href="https://modrinth.com/modpack/simonuwu-fabric-project/version/beta-1.0.5" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-yellow-600 dark:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-yellow-700 dark:hover:bg-yellow-800 transition-colors"
+          >
+            🧪 Beta Test 1.0.5
+          </a>
         </div>
       </div>
     </header>
