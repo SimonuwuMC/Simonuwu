@@ -9,7 +9,7 @@ export const minecraft1218 = {
       date: "Jul 24, 2025",
       changelog: "Versión estable para Minecraft 1.21.8 con todos los mods actualizados y optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-1-1.0.5-1.21.8",
-      isBeta: false
+      isBeta: true
     },
     {
       id: "140hY4Zwl",
