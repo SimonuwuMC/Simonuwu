@@ -4,6 +4,14 @@ export const minecraft1218 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg',
   releases: [
     {
+      id: "150hY5Zwl",
+      version: "alpha-BetaTest-1-1.0.5",
+      date: "Nov 16, 2025",
+      changelog: "Versión alpha experimental BetaTest-1 para Minecraft 1.21.8 con nuevas características experimentales",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-1-1.0.5-1.21.8",
+      isBeta: true
+    },
+    {
       id: "140hY4Zwl",
       version: "BetaTest-1-1.0.5",
       date: "Jul 24, 2025",
