@@ -4,7 +4,7 @@ const DonationButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState('');
 
-  const binanceAddress = 'TU_DIRECCION_BINANCE_AQUI';
+  const binanceAddress = '0x29e6e7b3a95aedb8b2308aa8465d7cbb3828c7b3';
   const paypalLink = 'https://paypal.me/desousasimon023';
 
   const handleCopy = (text, type) => {
