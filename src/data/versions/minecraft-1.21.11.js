@@ -1,7 +1,7 @@
 export const minecraft12111 = {
   version: '1.21.11',
-  title: 'The Copper Age',
-  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_Fall_Drop_Campaign_Key_Art_DotNet_Blog_Editorial_1280x768.jpg',
+  title: 'Mounts of Mayhem',
+  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/WGD-25_Video-Banner-A_Trailer_1920x1080.jpg',
   releases: [
     {
       id: "220hY2Zxt",
