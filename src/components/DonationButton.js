@@ -5,7 +5,7 @@ const DonationButton = () => {
   const [copied, setCopied] = useState('');
 
   const binanceAddress = 'TU_DIRECCION_BINANCE_AQUI';
-  const paypalLink = 'https://paypal.me/tuusuario';
+  const paypalLink = 'https://paypal.me/desousasimon023';
 
   const handleCopy = (text, type) => {
     navigator.clipboard.writeText(text).then(() => {
