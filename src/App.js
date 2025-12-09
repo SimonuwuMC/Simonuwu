@@ -13,6 +13,7 @@ import ModsList from './components/ModsList';
 import CommentsSection from './components/CommentsSection';
 import ThemeToggle from './components/ThemeToggle';
 import SEOHead from './components/SEOHead';
+import DonationButton from './components/DonationButton';
 
 const App = () => {
   const [achievements, setAchievements] = useState([]);
@@ -53,6 +54,7 @@ const App = () => {
             <InFeedAd />
             <CommentsSection />
             <Achievements achievements={achievements} />
+            <DonationButton />
           </div>
         </ThemeProvider>
       </AuthProvider>
