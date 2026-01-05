@@ -27,7 +27,7 @@ const App = () => {
   return (
     <HelmetProvider>
       <AuthProvider>
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
             <AdSense />
             <SEOHead />
