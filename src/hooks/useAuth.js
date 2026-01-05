@@ -1,25 +1,18 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { createClient } from '@supabase/supabase-js';
 import authService from '../services/authService';
 
 const AuthContext = createContext();
-
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Listen for authentication state changes
     const initAuth = async () => {
       try {
-        const { data: { user: authUser } } = await supabase.auth.getUser();
-        if (authUser) {
-          setUser(authUser);
-          await authService.createUserDocument(authUser);
-        }
+        const currentUser = await authService.getCurrentUser();
+        setUser(currentUser);
       } catch (error) {
         console.error('Error initializing auth:', error);
       }
@@ -27,21 +20,6 @@ export function AuthProvider({ children }) {
     };
 
     initAuth();
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      (async () => {
-        if (session?.user) {
-          setUser(session.user);
-          await authService.createUserDocument(session.user);
-        } else {
-          setUser(null);
-        }
-      })();
-    });
-
-    return () => {
-      subscription?.unsubscribe();
-    };
   }, []);
 
   // Real sign in with Google

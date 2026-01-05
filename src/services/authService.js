@@ -1,9 +1,6 @@
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+import { auth, db } from '../config/firebase';
+import { doc, setDoc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { GoogleAuthProvider, GithubAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth';
 
 class AuthService {
   constructor() {
@@ -12,15 +9,17 @@ class AuthService {
 
   async signInWithGoogle() {
     try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: window.location.origin,
-        },
-      });
-
-      if (error) throw error;
-      return data;
+      const provider = new GoogleAuthProvider();
+      provider.addScope('email');
+      provider.addScope('profile');
+      
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      
+      await this.createUserDocument(user);
+      this.currentUser = user;
+      
+      return user;
     } catch (error) {
       console.error('Error signing in with Google:', error);
       throw error;
@@ -29,15 +28,16 @@ class AuthService {
 
   async signInWithGitHub() {
     try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'github',
-        options: {
-          redirectTo: window.location.origin,
-        },
-      });
-
-      if (error) throw error;
-      return data;
+      const provider = new GithubAuthProvider();
+      provider.addScope('user:email');
+      
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      
+      await this.createUserDocument(user);
+      this.currentUser = user;
+      
+      return user;
     } catch (error) {
       console.error('Error signing in with GitHub:', error);
       throw error;
@@ -46,8 +46,7 @@ class AuthService {
 
   async signOut() {
     try {
-      const { error } = await supabase.auth.signOut();
-      if (error) throw error;
+      await signOut(auth);
       this.currentUser = null;
     } catch (error) {
       console.error('Error signing out:', error);
@@ -56,118 +55,83 @@ class AuthService {
   }
 
   async getCurrentUser() {
-    try {
-      const { data: { user }, error } = await supabase.auth.getUser();
-      if (error) throw error;
-      this.currentUser = user;
-      return user;
-    } catch (error) {
-      console.error('Error getting current user:', error);
-      return null;
-    }
+    return new Promise((resolve) => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        unsubscribe();
+        this.currentUser = user;
+        resolve(user);
+      });
+    });
   }
 
-  async createUserDocument(user, provider = '') {
+  async createUserDocument(user) {
     try {
-      const { data: existingUser, error: fetchError } = await supabase
-        .from('users')
-        .select('*')
-        .eq('id', user.id)
-        .maybeSingle();
-
-      if (fetchError) throw fetchError;
-
-      if (!existingUser) {
-        const { error: insertError } = await supabase
-          .from('users')
-          .insert([{
-            id: user.id,
-            email: user.email,
-            display_name: user.user_metadata?.name || user.email?.split('@')[0] || '',
-            photo_url: user.user_metadata?.avatar_url || '',
-            provider: provider,
-            created_at: new Date(),
-            last_login: new Date(),
-          }]);
-
-        if (insertError) throw insertError;
+      const userRef = doc(db, 'users', user.uid);
+      const userSnap = await getDoc(userRef);
+      
+      if (!userSnap.exists()) {
+        await setDoc(userRef, {
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName,
+          photoURL: user.photoURL,
+          provider: user.providerData[0]?.providerId,
+          createdAt: new Date(),
+          downloads: [],
+          favoriteVersions: [],
+          totalDownloads: 0,
+          isPremium: false,
+          lastLogin: new Date(),
+          githubToken: null // Para futuras integraciones con GitHub API
+        });
       } else {
-        const { error: updateError } = await supabase
-          .from('users')
-          .update({ last_login: new Date() })
-          .eq('id', user.id);
-
-        if (updateError) throw updateError;
+        // Update last login
+        await updateDoc(userRef, {
+          lastLogin: new Date()
+        });
       }
     } catch (error) {
       console.error('Error creating user document:', error);
+      // En modo demo, no lanzar error
+      if (!error.message.includes('demo')) {
+        throw error;
+      }
     }
   }
 
-  async getUserData(userId) {
+  async getUserData(uid) {
     try {
-      const { data, error } = await supabase
-        .from('users')
-        .select('*')
-        .eq('id', userId)
-        .maybeSingle();
-
-      if (error) throw error;
-      return data;
+      const userRef = doc(db, 'users', uid);
+      const userSnap = await getDoc(userRef);
+      
+      if (userSnap.exists()) {
+        return userSnap.data();
+      }
+      return null;
     } catch (error) {
       console.error('Error getting user data:', error);
       return null;
     }
   }
 
-  async trackDownload(userId, version) {
+  async trackDownload(uid, version) {
     try {
-      const { data: userData, error: fetchError } = await supabase
-        .from('users')
-        .select('downloads')
-        .eq('id', userId)
-        .maybeSingle();
-
-      if (fetchError) throw fetchError;
-
-      const currentDownloads = userData?.downloads || [];
-      const updatedDownloads = [...currentDownloads, version];
-
-      const { error: updateError } = await supabase
-        .from('users')
-        .update({
-          downloads: updatedDownloads,
-          total_downloads: updatedDownloads.length,
-        })
-        .eq('id', userId);
-
-      if (updateError) throw updateError;
+      const userRef = doc(db, 'users', uid);
+      await updateDoc(userRef, {
+        downloads: arrayUnion(version),
+        totalDownloads: arrayUnion(1)
+      });
     } catch (error) {
       console.error('Error tracking download:', error);
     }
   }
 
-  async addFavoriteVersion(userId, version) {
+  async addFavoriteVersion(uid, version) {
     try {
-      const { data: userData, error: fetchError } = await supabase
-        .from('users')
-        .select('favorite_versions')
-        .eq('id', userId)
-        .maybeSingle();
-
-      if (fetchError) throw fetchError;
-
-      const currentFavorites = userData?.favorite_versions || [];
-      if (!currentFavorites.includes(version)) {
-        const updatedFavorites = [...currentFavorites, version];
-
-        const { error: updateError } = await supabase
-          .from('users')
-          .update({ favorite_versions: updatedFavorites })
-          .eq('id', userId);
-
-        if (updateError) throw updateError;
-      }
+      const userRef = doc(db, 'users', uid);
+      await updateDoc(userRef, {
+        favoriteVersions: arrayUnion(version)
+      });
     } catch (error) {
       console.error('Error adding favorite version:', error);
     }
