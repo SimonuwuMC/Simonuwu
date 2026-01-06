@@ -14,7 +14,7 @@ const AnniversaryBanner = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 drop-shadow-lg">
-            ¡1 Año de SimonuwU!
+            ¡1 Año de Simonuwu Fabric Project!
           </h2>
           <p className="text-lg sm:text-xl text-blue-100 drop-shadow-md">
             Gracias por formar parte de esta increíble comunidad durante este primer año
