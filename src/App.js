@@ -14,7 +14,6 @@ import CommentsSection from './components/CommentsSection';
 import ThemeToggle from './components/ThemeToggle';
 import SEOHead from './components/SEOHead';
 import DonationButton from './components/DonationButton';
-import AnniversaryBanner from './components/AnniversaryBanner';
 
 const App = () => {
   const [achievements, setAchievements] = useState([]);
@@ -33,7 +32,6 @@ const App = () => {
             <AdSense />
             <SEOHead />
             <ThemeToggle />
-            <AnniversaryBanner />
             <SimonuwuHero onAchievement={() => addAchievement({
               id: 'youtube-fan',
               title: '¡Logro Desbloqueado!',
