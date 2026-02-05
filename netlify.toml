@@ -1,6 +1,6 @@
 [build]
 command = "npm run build"
-publish = "build"
+publish = ".next"
 
 [[redirects]]
 from = "/*"
@@ -16,3 +16,5 @@ X-XSS-Protection = "1; mode=block"
 X-Content-Type-Options = "nosniff"
 Referrer-Policy = "no-referrer"
 
+[[plugins]]
+package = "@netlify/plugin-nextjs"
