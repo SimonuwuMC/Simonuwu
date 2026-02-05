@@ -4,9 +4,17 @@ export const minecraft12110 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_Fall_Drop_Campaign_Key_Art_DotNet_Blog_Editorial_1280x768.jpg',
   releases: [
     {
+      id: "220hY1Zws",
+      version: "beta-0.6-1.0.4",
+      date: "Jan 11, 2026",
+      changelog: "Penultima versión beta para Minecraft 1.21.10 Copper Age con agregados finales y correcciones de bugs adicionales",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.6-1.0.4-1.21.10",
+      isBeta: true
+    },
+    {
       id: "210hY1Zws",
       version: "beta-0.5-1.0.4",
-      date: "Jan 15, 2026",
+      date: "Dec 7, 2025",
       changelog: "Quinta versión beta para Minecraft 1.21.10 Copper Age con optimizaciones finales y correcciones de bugs adicionales",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.5-1.0.4-1.21.10",
       isBeta: true
@@ -14,7 +22,7 @@ export const minecraft12110 = {
     {
       id: "200hY0Zwr",
       version: "beta-0.4-1.0.4",
-      date: "Jan 10, 2026",
+      date: "Nov 4, 2025",
       changelog: "Cuarta versión beta para Minecraft 1.21.10 Copper Age con optimizaciones finales y correcciones de bugs adicionales",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.4-1.0.4-1.21.10",
       isBeta: true
@@ -22,7 +30,7 @@ export const minecraft12110 = {
     {
       id: "190hY9Zwq",
       version: "beta-0.3-1.0.4",
-      date: "Jan 2, 2026",
+      date: "Oct 24, 2025",
       changelog: "Tercera versión beta para Minecraft 1.21.10 Copper Age con aún más mods agregados y optimizaciones avanzadas",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.3-1.0.4-1.21.10",
       isBeta: true
