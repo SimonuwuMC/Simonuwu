@@ -28,6 +28,7 @@ export const minecraft1217 = {
       date: "Jul 24, 2025",
       changelog: "Versión estable para Minecraft 1.21.7 con todos los mods actualizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.7",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: false
     },
     {
@@ -36,6 +37,7 @@ export const minecraft1217 = {
       date: "Jul 8, 2025",
       changelog: "Nueva versión beta 0.4 para Minecraft 1.21.7 con mejoras adicionales y nuevas características. Incluye características tanto de A Minecraft Movie como de Chase the Skies",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.4-1.0.4-1.21.7",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {
@@ -44,6 +46,7 @@ export const minecraft1217 = {
       date: "Jul 5, 2025",
       changelog: "Nueva versión beta 0.3 para Minecraft 1.21.7 con mejoras adicionales y nuevas características. Incluye características tanto de A Minecraft Movie como de Chase the Skies",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.3-1.0.4-1.21.7",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {
@@ -52,6 +55,7 @@ export const minecraft1217 = {
       date: "Jul 7, 2025",
       changelog: "Nueva versión beta 0.2 para Minecraft 1.21.7 con mejoras adicionales y correcciones de errores. Incluye características tanto de A Minecraft Movie como de Chase the Skies",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.7",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {
@@ -60,6 +64,7 @@ export const minecraft1217 = {
       date: "Jul 1, 2025",
       changelog: "Nueva versión beta 0.1 para Minecraft 1.21.7 con mods básicos optimizados. Incluye características tanto de A Minecraft Movie como de Chase the Skies",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.7",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     }
   ]

@@ -9,6 +9,7 @@ export const minecraft1214 = {
       date: "May 12, 2025",
       changelog: "Última versión estable para Minecraft 1.21.4 con todas las características",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.4",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: false
     },
     {
@@ -17,6 +18,7 @@ export const minecraft1214 = {
       date: "Feb 9, 2025",
       changelog: "Mejoras de rendimiento y corrección de errores",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.3-1.21.4",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: false
     },
     {
@@ -25,6 +27,7 @@ export const minecraft1214 = {
       date: "Jan 9, 2025",
       changelog: "Actualización de mods y optimizaciones",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.2-1.21.4",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: false
     },
     {
@@ -33,6 +36,7 @@ export const minecraft1214 = {
       date: "Jan 9, 2025",
       changelog: "Primera actualización con correcciones importantes",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.1-1.21.4",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: false
     },
     {
@@ -41,6 +45,7 @@ export const minecraft1214 = {
       date: "Jan 9, 2025",
       changelog: "Primera versión estable para Minecraft 1.21.4 y del modpack entero,con errores",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.0-1.21.4",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: false
     }
   ]

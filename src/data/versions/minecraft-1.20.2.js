@@ -9,6 +9,7 @@ export const minecraft1202 = {
       date: "Jul 5, 2025",
       changelog: "Versión estable para Minecraft 1.20.2 con todos los mods optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.20.2",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: false
     }
   ]

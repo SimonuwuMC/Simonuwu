@@ -9,6 +9,7 @@ export const minecraft12111 = {
       date: "Jan 6, 2026",
       changelog: "Segunda versión beta para Minecraft 1.21.11 Mounts of Mayhem con más mods agregados y mejoras de rendimiento",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.11",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {
@@ -17,6 +18,7 @@ export const minecraft12111 = {
       date: "Dec 9, 2025",
       changelog: "Primera versión beta para Minecraft 1.21.11 Mounts of Mayhem",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.11",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     }
   ]

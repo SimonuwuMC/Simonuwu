@@ -9,6 +9,7 @@ export const minecraft1219 = {
       date: "Jan 10, 2026",
       changelog: "Quinta versión beta para Minecraft 1.21.9 Copper Age con optimizaciones finales y preparación para versión estable",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.5-1.0.4-1.21.9",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {

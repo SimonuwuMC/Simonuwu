@@ -150,18 +150,36 @@ const DownloadSection = ({ onAchievement }) => {
               <span className="text-gray-500 dark:text-gray-400 text-sm">{item.date}</span>
             </div>
             <p className="text-gray-600 dark:text-gray-300 mb-4">{item.changelog}</p>
-            <a
-              href={item.downloadUrl}
-              onClick={() => handleDownload(item.version)}
-              className={`px-6 py-2 rounded-lg font-medium ${
-                item.isBeta 
-                  ? 'bg-yellow-500 dark:bg-yellow-700 hover:bg-yellow-600 dark:hover:bg-yellow-800' 
-                  : 'bg-green-600 dark:bg-green-700 hover:bg-green-700 dark:hover:bg-green-800'
-              } text-white transition-colors`}
-              download
-            >
-              Descargar v{item.version}
-            </a>
+            <div className="flex gap-3">
+              <a
+                href={item.downloadUrl}
+                onClick={() => handleDownload(item.version)}
+                className={`px-6 py-2 rounded-lg font-medium ${
+                  item.isBeta
+                    ? 'bg-yellow-500 dark:bg-yellow-700 hover:bg-yellow-600 dark:hover:bg-yellow-800'
+                    : 'bg-green-600 dark:bg-green-700 hover:bg-green-700 dark:hover:bg-green-800'
+                } text-white transition-colors`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Modrinth
+              </a>
+              {item.curseforgeUrl && (
+                <a
+                  href={item.curseforgeUrl}
+                  onClick={() => handleDownload(item.version)}
+                  className={`px-6 py-2 rounded-lg font-medium ${
+                    item.isBeta
+                      ? 'bg-yellow-500 dark:bg-yellow-700 hover:bg-yellow-600 dark:hover:bg-yellow-800'
+                      : 'bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-800'
+                  } text-white transition-colors`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  CurseForge
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>

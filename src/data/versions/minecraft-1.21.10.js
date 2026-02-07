@@ -9,6 +9,7 @@ export const minecraft12110 = {
       date: "Jan 11, 2026",
       changelog: "Penultima versión beta para Minecraft 1.21.10 Copper Age con agregados finales y correcciones de bugs adicionales",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.6-1.0.4-1.21.10",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {
@@ -17,6 +18,7 @@ export const minecraft12110 = {
       date: "Dec 7, 2025",
       changelog: "Quinta versión beta para Minecraft 1.21.10 Copper Age con optimizaciones finales y correcciones de bugs adicionales",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.5-1.0.4-1.21.10",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {
@@ -25,6 +27,7 @@ export const minecraft12110 = {
       date: "Nov 4, 2025",
       changelog: "Cuarta versión beta para Minecraft 1.21.10 Copper Age con optimizaciones finales y correcciones de bugs adicionales",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.4-1.0.4-1.21.10",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {
@@ -33,6 +36,7 @@ export const minecraft12110 = {
       date: "Oct 24, 2025",
       changelog: "Tercera versión beta para Minecraft 1.21.10 Copper Age con aún más mods agregados y optimizaciones avanzadas",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.3-1.0.4-1.21.10",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {
@@ -41,6 +45,7 @@ export const minecraft12110 = {
       date: "Oct 17, 2025",
       changelog: "Segunda versión beta para Minecraft 1.21.10 Copper Age con más mods agregados y correcciones de bugs adicionales",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.10",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     },
     {
@@ -49,6 +54,7 @@ export const minecraft12110 = {
       date: "Oct 11, 2025",
       changelog: "Primera versión beta para Minecraft 1.21.10 Copper Age con mods básicos optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.10",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
       isBeta: true
     }
   ]
