@@ -41,16 +41,24 @@ const SimonuwuHero = ({ onAchievement }) => {
         )}
         <p className="text-xl text-red-100 mb-8">El modpack más optimizado para Minecraft Fabric</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a 
-            href="https://modrinth.com/modpack/simonuwu-fabric-project" 
-            target="_blank" 
+          <a
+            href="https://modrinth.com/modpack/simonuwu-fabric-project"
+            target="_blank"
             rel="noopener noreferrer"
             className="bg-white dark:bg-gray-800 text-red-600 dark:text-red-400 font-bold py-3 px-8 rounded-lg hover:bg-red-50 dark:hover:bg-gray-700 transition-colors"
           >
             Ver en Modrinth
           </a>
-          <a 
-            href="#download" 
+          <a
+            href="https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-orange-600 dark:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-700 dark:hover:bg-orange-800 transition-colors"
+          >
+            Ver en CurseForge
+          </a>
+          <a
+            href="#download"
             className="bg-red-700 dark:bg-red-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-red-800 dark:hover:bg-red-950 transition-colors"
           >
             Descargar
