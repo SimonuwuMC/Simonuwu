@@ -9,7 +9,7 @@ export const minecraft1182 = {
       date: "May 10, 2025",
       changelog: "Versión estable para Minecraft 1.18.2, se modifico un mod por otra alternativa",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.18.2",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project/files/7421218",
       isBeta: false
     },
     {
@@ -18,7 +18,7 @@ export const minecraft1182 = {
       date: "May 23, 2025",
       changelog: "Versión beta para Minecraft 1.18.2",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.18.2",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "",
       isBeta: true
     }
   ]
