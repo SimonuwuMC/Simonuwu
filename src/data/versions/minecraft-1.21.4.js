@@ -9,7 +9,7 @@ export const minecraft1214 = {
       date: "May 12, 2025",
       changelog: "Última versión estable para Minecraft 1.21.4 con todas las características",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.4",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project/files/7417724",
       isBeta: false
     },
     {
@@ -18,7 +18,7 @@ export const minecraft1214 = {
       date: "Feb 9, 2025",
       changelog: "Mejoras de rendimiento y corrección de errores",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.3-1.21.4",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "",
       isBeta: false
     },
     {
