@@ -1,5 +1,5 @@
-"homepage": "https://simonuwumc.github.io/Simonuwu",
 {
+  "homepage": "https://simonuwumc.github.io/Simonuwu",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
