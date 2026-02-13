@@ -4,12 +4,12 @@ export const minecraft12111 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/WGD-25_Video-Banner-A_Trailer_1920x1080.jpg',
   releases: [
     {
-      id: "140hY4Zwl",
+      id: "240hY4Zwl",
       version: "1.0.4",
-      date: "Jul 24, 2025",
+      date: "Feb 13, 2025",
       changelog: "Versión estable para Minecraft 1.21.8 con todos los mods actualizados y optimizados",
-      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.11",
+      curseforgeUrl: "",
       isBeta: false
     },{
       id: "230hY3Zxu",
