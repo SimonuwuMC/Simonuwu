@@ -5,6 +5,15 @@ export const minecraft1219 = {
   releases: [
     {
       id: "190hY9Zwq",
+      version: "1.0.4",
+      date: "Jan 10, 2026",
+      changelog: "## ⚠Warning⚠ The modpack will not include the Continuity mod, as indicated by its developer, nor the In-Game Account Switcher mod, because it was omitted during development. It won't have a stable version yet, but it's functional, so there are no problems.",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.5-1.0.4-1.21.9",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      isBeta: false
+    },
+     {
+      id: "190hY9Zwq",
       version: "beta-0.5-1.0.4",
       date: "Jan 10, 2026",
       changelog: "Quinta versión beta para Minecraft 1.21.9 Copper Age con optimizaciones finales y preparación para versión estable",
