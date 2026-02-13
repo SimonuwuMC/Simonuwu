@@ -6,7 +6,7 @@ export const minecraft12111 = {
     {
       id: "240hY4Zwl",
       version: "1.0.4",
-      date: "Feb 13, 2025",
+      date: "Feb 13, 2026",
       changelog: "Versión estable para Minecraft 1.21.11 con todos los mods actualizados y optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.11",
       curseforgeUrl: "",
