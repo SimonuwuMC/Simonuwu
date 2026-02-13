@@ -4,6 +4,14 @@ export const minecraft12110 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_Fall_Drop_Campaign_Key_Art_DotNet_Blog_Editorial_1280x768.jpg',
   releases: [
     {
+      id: "140hY4Zwl",
+      version: "1.0.4",
+      date: "Feb 13, 2026",
+      changelog: "Versión estable para Minecraft 1.21.10 con todos los mods actualizados y optimizados",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.10",
+      curseforgeUrl: "",
+      isBeta: false
+    },{
       id: "220hY1Zws",
       version: "beta-0.6-1.0.4",
       date: "Jan 11, 2026",
