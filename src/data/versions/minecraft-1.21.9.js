@@ -8,8 +8,8 @@ export const minecraft1219 = {
       version: "1.0.4",
       date: "Jan 10, 2026",
       changelog: "## ⚠Warning⚠ The modpack will not include the Continuity mod, as indicated by its developer, nor the In-Game Account Switcher mod, because it was omitted during development. It won't have a stable version yet, but it's functional, so there are no problems.",
-      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.5-1.0.4-1.21.9",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.9",
+      curseforgeUrl: "",
       isBeta: false
     },
      {
