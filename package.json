@@ -8,7 +8,7 @@
     "dev": "react-scripts start"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "^5.15.7",
+    "@netlify/plugin-nextjs": "^5.15.8",
     "@octokit/rest": "^22.0.0",
     "autoprefixer": "^10.4.17",
     "dompurify": "^3.2.6",
@@ -42,5 +42,3 @@
     ]
   }
 }
-
-
