@@ -17,7 +17,7 @@ export const minecraft12110 = {
       date: "Jan 11, 2026",
       changelog: "Penultima versión beta para Minecraft 1.21.10 Copper Age con agregados finales y correcciones de bugs adicionales",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.6-1.0.4-1.21.10",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project/files/7447254",
       isBeta: true
     },
     {
