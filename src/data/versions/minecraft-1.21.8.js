@@ -4,6 +4,33 @@ export const minecraft1218 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg',
   releases: [
     {
+      id: "180hY8Zwl",
+      version: "alpha-BetaTest-6-1.0.5",
+      date: "Dec 5, 2025",
+      changelog: "Versión alpha experimental BetaTest-6 para Minecraft 1.21.8. Últimas mejoras y optimizaciones del modpack.",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-6-1.0.5-1.21.8",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      isBeta: true
+    },
+    {
+      id: "175hY7Zwl",
+      version: "alpha-BetaTest-5-1.0.5",
+      date: "Dec 3, 2025",
+      changelog: "Versión alpha experimental BetaTest-5 para Minecraft 1.21.8. Correcciones y mejoras de estabilidad.",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-5-1.0.5-1.21.8",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      isBeta: true
+    },
+    {
+      id: "172hY7Zwl",
+      version: "alpha-BetaTest-4-1.0.5",
+      date: "Nov 28, 2025",
+      changelog: "Versión alpha experimental BetaTest-4 para Minecraft 1.21.8. Ajustes de rendimiento y nuevas características.",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-4-1.0.5-1.21.8",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      isBeta: true
+    },
+    {
       id: "170hY7Zwl",
       version: "alpha-BetaTest-3-1.0.5",
       date: "Nov 23, 2025",
