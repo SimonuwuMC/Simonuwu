@@ -1,7 +1,7 @@
 export const minecraft261 = {
   version: '26.1',
   title: 'Tiny Takeover',
-  image: 'https://whatsapp.com/channel/0029VakYS0uKLaHg2yxV2T1p/1053',
+  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Tiny%20Takeover_keyart_1170x500.jpg',
   releases: [
     {
       id: "150jZ5Axm",
