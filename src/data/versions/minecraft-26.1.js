@@ -9,7 +9,7 @@ export const minecraft261 = {
       date: "Mar 27, 2026",
       changelog: "Nueva versión beta 0.2 para Minecraft 26.1 con mejoras para los mods básicos optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-26.1",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project/files/7823213",
+      curseforgeUrl: "",
       isBeta: true
     },
     {
@@ -18,7 +18,7 @@ export const minecraft261 = {
       date: "Mar 25, 2026",
       changelog: "Nueva versión beta 0.1 para Minecraft 26.1 con mods básicos optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-26.1",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project/files/7813463",
+      curseforgeUrl: "",
       isBeta: true
     }
   ]
