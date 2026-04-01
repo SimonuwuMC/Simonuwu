@@ -6,7 +6,6 @@ import AdSense from './components/AdSense';
 import InFeedAd from './components/InFeedAd';
 import SimonuwuHero from './components/SimonuwuHero';
 import DownloadSection from './components/DownloadSection';
-import DownloadSectionVertical from './components/DownloadSectionVertical';
 import FeatureSection from './components/FeatureSection';
 import InstallationGuide from './components/InstallationGuide';
 import Achievements from './components/Achievements';
@@ -43,13 +42,6 @@ const App = () => {
               title: '¡Logro Desbloqueado!',
               description: 'Arqueólogo: Encontraste la versión 1.0.0 del modpack'
             })} />
-            <div className="my-16 border-t-2 border-gray-300 dark:border-gray-700 pt-16">
-              <DownloadSectionVertical onAchievement={() => addAchievement({
-                id: 'original-version',
-                title: '¡Logro Desbloqueado!',
-                description: 'Arqueólogo: Encontraste la versión 1.0.0 del modpack'
-              })} />
-            </div>
             <FeatureSection />
             <InFeedAd />
             <ModsList />
