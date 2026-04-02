@@ -1,6 +1,6 @@
 export const minecraft2611 = {
   version: '26.1.1',
-  title: 'Tiny TakeOver',
-  image: 'URL de Minecraft.net',
+  title: 'Tiny Takeover',
+  image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Tiny%20Takeover_keyart_1170x500.jpg',
   releases: []
 };
