@@ -1,4 +1,3 @@
-// minecraft-26.1.1.js
 export const minecraft2611 = {
   version: '26.1.1',
   title: 'Tiny TakeOver',
