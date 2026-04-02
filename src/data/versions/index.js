@@ -15,7 +15,7 @@ import { minecraft1218 } from './minecraft-1.21.8';
 import { minecraft1219 } from './minecraft-1.21.9';
 import { minecraft12110 } from './minecraft-1.21.10';
 import { minecraft12111 } from './minecraft-1.21.11';
-import { minecraft261 } from './minecraft-26.1.1';
+import { minecraft2611 } from './minecraft-26.1.1';
 
 // Export all versions as an array in correct chronological order
 export const allVersions = [
