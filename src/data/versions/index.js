@@ -16,10 +16,13 @@ import { minecraft1219 } from './minecraft-1.21.9';
 import { minecraft12110 } from './minecraft-1.21.10';
 import { minecraft12111 } from './minecraft-1.21.11';
 import { minecraft2611 } from './minecraft-26.1.1';
+import { minecraft26w14a } from './minecraft-26w14a';
+
 
 // Export all versions as an array in correct chronological order
 export const allVersions = [
   minecraft2611,
+  minecraft26w14a,
   minecraft261,
   minecraft12111,
   minecraft12110,
@@ -42,6 +45,7 @@ export const allVersions = [
 // Export individual versions
 export {
   minecraft2611,
+  minecraft26w14a,
   minecraft261,
   minecraft12111,
   minecraft12110,
