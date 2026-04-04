@@ -9,10 +9,9 @@ const ChangelogModal = ({ isOpen, onClose }) => {
       date: "3 Apr 2026",
       changes: [
         " ## **Changes** "
-"- **Several mods have been updated to their latest available versions at this time**
-- **The fabric loader was updated to version 0.18.1**
-- **Translations for Sodium was removed to avoid copyright issues. However, it can be downloaded using the Resourcify mod or manually from Modrinth or Curseforge.** 
-- **The project logo was added**
+        "- **Several mods have been updated to their latest available versions at this time**"
+        "- **The fabric loader was updated to version 0.18.1**
+        "- **Translations for Sodium was removed to avoid copyright issues. However, it can be downloaded using the Resourcify mod or manually from Modrinth or Curseforge.** 
 
 ## **Changes for the menu.**
 - **A mod was added that allows you to customize Minecraft menus so that the project gets a watermark.** 
