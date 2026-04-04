@@ -9,40 +9,16 @@ const ChangelogModal = ({ isOpen, onClose }) => {
       date: "3 Apr 2026",
       changes: [
         " ## **Changes** ",
-        "- Several mods have been updated to their latest available versions at this time**"
-        "- **The fabric loader was updated to version 0.18.1**
-        "- **Translations for Sodium was removed to avoid copyright issues. However, it can be downloaded using the Resourcify mod or manually from Modrinth or Curseforge.** 
-
-## **Changes for the menu.**
-- **A mod was added that allows you to customize Minecraft menus so that the project gets a watermark.** 
-**The game menu was modified with the ``simonuwu_fabric_project`` layouts, adding a button to view the YouTube channel, the project logo, and its official website.** 
-- **The donation icon in the ``simonuwu_fabric_project`` menu was changed to a button with the $ symbol, and the window name was also changed from Simonuwu Fabric Project BetaTest-6-1.0.4-1.21.8 to Simonuwu Fabric Project 1.0.5-1.21.8** 
-
-
-**Several mods have been added to improve chunk loading and other gameplay improvements, A mod has been added to improve the download of Resource Packs, Data Packs, Worlds, and Shaders.** 
-
-### **Mods Added**
-
-- BadOptimizations
-- Concurrent Chunk Management Engine (C2ME)
-- Fast IP Ping 
-- FerriteCore 
-- ImmediatelyFast 
-- ModernFix 
-- Starlight - ScalableLux 
-- Very Many Players
-- FastChest
-- Resourcify
-- FancyMenu
-- Konkrete
-- Melody
-- Cubes Without Borders mod was recently added to version 7 of 1.0.5
-
-### **Resource Pack Eliminated**
-
-- Translations for Sodium
-
-https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.5-1.21.8"
+        "- Several mods have been updated to their latest available versions at this time**",
+        "- **The fabric loader was updated to version 0.18.1**",
+        "- **Translations for Sodium was removed to avoid copyright issues. However, it can be downloaded using the Resourcify mod or manually from Modrinth or Curseforge.**",
+        " ## **Changes for the menu.**",
+"- **A mod was added that allows you to customize Minecraft menus so that the project gets a watermark.**", 
+"**The game menu was modified with the ``simonuwu_fabric_project`` layouts, adding a button to view the YouTube channel, the project logo, and its official website.** ",
+"- **The donation icon in the ``simonuwu_fabric_project`` menu was changed to a button with the $ symbol, and the window name was also changed from Simonuwu Fabric Project BetaTest-6-1.0.4-1.21.8 to Simonuwu Fabric Project 1.0.5-1.21.8** 
+"**Several mods have been added to improve chunk loading and other gameplay improvements, A mod has been added to improve the download of Resource Packs, Data Packs, Worlds, and Shaders.**",
+"Mods Added: BadOptimizations, Concurrent Chunk Management Engine (C2ME), Fast IP Ping, FerriteCore, ImmediatelyFast, ModernFix, Starlight-ScalableLux, Very Many Players, FastChest, Resourcify, FancyMenu, Konkrete, Melody, Cubes Without Borders",
+"Resource Pack Elimnated Translations for Sodium"
       ]
     },
     {
