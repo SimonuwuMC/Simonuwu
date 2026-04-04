@@ -4,6 +4,15 @@ export const minecraft1218 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg',
   releases: [
     {
+      id: "200hY9Zxm",
+      version: "1.0.5",
+      date: "Apr 4, 2026",
+      changelog: "Simonuwu Fabric Project 1.0.5 - Several mods have been updated to their latest available versions. Fabric loader updated to 0.18.1. Project logo added. Menu customization with simonuwu_fabric_project layouts, YouTube channel button, and official website. Mods Added: BadOptimizations, C2ME, Fast IP Ping, FerriteCore, ImmediatelyFast, ModernFix, Starlight, Very Many Players, FastChest, Resourcify, FancyMenu, Konkrete, Melody, Cubes Without Borders.",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.5-1.21.8",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      isBeta: false
+    },
+    {
       id: "180hY8Zwl",
       version: "alpha-BetaTest-6-1.0.5",
       date: "Dec 5, 2025",
