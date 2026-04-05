@@ -5,11 +5,20 @@ export const minecraft1218 = {
   releases: [
     {
       id: "200hY9Zxm",
-      version: "1.0.5",
+      version: "1.0.5a",
       date: "Apr 4, 2026",
+      changelog: "Hotfix 1.0.5a - Se downgradeo los mods MiniHUD y MaLiLib para la compatibildad con Curseforge",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.5-1.21.8",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project/files/7875906",
+      isBeta: false
+    },
+    {
+      id: "200hY9Zxm",
+      version: "1.0.5",
+      date: "Apr 3, 2026",
       changelog: "Simonuwu Fabric Project 1.0.5 - Several mods have been updated to their latest available versions. Fabric loader updated to 0.18.1. Project logo added. Menu customization with simonuwu_fabric_project layouts, YouTube channel button, and official website. Mods Added: BadOptimizations, C2ME, Fast IP Ping, FerriteCore, ImmediatelyFast, ModernFix, Starlight, Very Many Players, FastChest, Resourcify, FancyMenu, Konkrete, Melody, Cubes Without Borders.",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.5-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "",
       isBeta: false
     },
     {
@@ -18,7 +27,7 @@ export const minecraft1218 = {
       date: "Dec 5, 2025",
       changelog: "Versión alpha experimental BetaTest-6 para Minecraft 1.21.8. Últimas mejoras y optimizaciones del modpack.",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-6-1.0.5-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project/files/7631181",
       isBeta: true
     },
     {
@@ -27,7 +36,7 @@ export const minecraft1218 = {
       date: "Dec 3, 2025",
       changelog: "Versión alpha experimental BetaTest-5 para Minecraft 1.21.8. Correcciones y mejoras de estabilidad.",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-5-1.0.5-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project/files/7595418",
       isBeta: true
     },
     {
@@ -36,7 +45,7 @@ export const minecraft1218 = {
       date: "Nov 28, 2025",
       changelog: "Versión alpha experimental BetaTest-4 para Minecraft 1.21.8. Ajustes de rendimiento y nuevas características.",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-4-1.0.5-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "",
       isBeta: true
     },
     {
@@ -45,7 +54,7 @@ export const minecraft1218 = {
       date: "Nov 23, 2025",
       changelog: "Versión alpha experimental BetaTest-3 para Minecraft 1.21.8. Agregado Resourcify para mejorar la descarga de Resource Packs, Data Packs, Worlds y Shaders. Varios mods actualizados a sus últimas versiones disponibles.",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-3-1.0.5-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "",
       isBeta: true
     },
     {
@@ -54,7 +63,7 @@ export const minecraft1218 = {
       date: "Nov 17, 2025",
       changelog: "Versión alpha experimental BetaTest-2 para Minecraft 1.21.8. Actualizado Fabric Loader a 0.18.1. Agregado FastChest Revived para mejorar la carga de chunks y otras mejoras de gameplay. Varios mods actualizados a sus últimas versiones disponibles.",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-2-1.0.5-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "",
       isBeta: true
     },
     {
@@ -63,7 +72,7 @@ export const minecraft1218 = {
       date: "Nov 16, 2025",
       changelog: "Versión alpha experimental BetaTest-1 para Minecraft 1.21.8 con nuevas características experimentales",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/BetaTest-1-1.0.5-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "",
       isBeta: true
     },
     {
@@ -72,7 +81,7 @@ export const minecraft1218 = {
       date: "Jul 24, 2025",
       changelog: "Versión estable para Minecraft 1.21.8 con todos los mods actualizados y optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project/files/7447287",
       isBeta: false
     },
     {
@@ -81,7 +90,7 @@ export const minecraft1218 = {
       date: "Jul 24, 2025",
       changelog: "Segunda versión beta para Minecraft 1.21.8 con la mayoría de mods agregados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.2-1.0.4-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "",
       isBeta: true
     },
     {
@@ -90,7 +99,7 @@ export const minecraft1218 = {
       date: "Jul 8, 2025",
       changelog: "Primera versión beta para Minecraft 1.21.8 con mods básicos optimizados",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-1.21.8",
-      curseforgeUrl: "https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project",
+      curseforgeUrl: "",
       isBeta: true
     }
   ]
