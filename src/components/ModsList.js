@@ -133,7 +133,7 @@ const ModsList = () => {
       description: "Interfaz para gestionar mods",
       url: "https://modrinth.com/mod/modmenu",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/mOgUt4GM/1bfe2006b38340e9d064700e41adf84a8abb1bd4_96.webp"
+      icon: "https://cdn.modrinth.com/data/mOgUt4GM/5a20ed1450a0e1e79a1fe04e61bb4e5878bf1d20.png"
     },
     {
       name: "Not Enough Animations",
@@ -210,7 +210,7 @@ const ModsList = () => {
       description: "Optimiza el rendimiento general del juego",
       url: "https://modrinth.com/mod/badoptimizations",
       category: "performance",
-      icon: "https://ru-minecraft.ru/mody-minecraft/78383-badoptimizations-mod.html"
+      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk3Sa5iztuWOXQsB_O3-8SjuSDGlF71JIIUsp9-PMBOg&s"
     },
     {
       name: "Concurrent Chunk Management Engine (C2ME)",
