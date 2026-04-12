@@ -7,7 +7,7 @@ export const minecraft2612 = {
     id: "160jZ5Axm",
       version: "beta-0.1-1.0.4",
       date: "Apr 12, 2026",
-      changelog: "",
+      changelog: "Sin lanzar por parte de SimonuwuMCYT",
       downloadUrl: "",
       curseforgeUrl: "",
       isBeta: true  
