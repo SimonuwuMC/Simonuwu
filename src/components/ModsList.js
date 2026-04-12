@@ -84,7 +84,7 @@ const ModsList = () => {
       description: "Pack de recursos con animaciones mejoradas",
       url: "https://modrinth.com/resourcepack/fresh-animations",
       category: "graphics",
-      icon: "https://cdn.modrinth.com/data/50dA9Sha/d5f379581096db483bd2181ab982d9270b17feb7_96.webp"
+      icon: "https://cdn.modrinth.com/data/50dA9Sha/3132c10e9e3c73fde9799720fd3da5561071708c_96.webp"
     },
     {
       name: "Iris Shaders",
@@ -217,28 +217,28 @@ const ModsList = () => {
       description: "Mejora la gestión de chunks y el rendimiento",
       url: "https://modrinth.com/mod/c2me-fabric",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/c2me-fabric/icon.png"
+      icon: "https://cdn.modrinth.com/data/VSNURh3q/3c2ce471054466712a44c8758a03e03bb868f93b_96.webp"
     },
     {
       name: "Fast IP Ping",
       description: "Reduce el tiempo de ping en servidores",
       url: "https://modrinth.com/mod/fast-ip-ping",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/fast-ip-ping/icon.png"
+      icon: "https://cdn.modrinth.com/data/9mtu0sUO/dca186a8a57d45ad06e88de6cfc45d4cc4c6a0ba.png"
     },
     {
       name: "FerriteCore",
       description: "Reduce el uso de memoria",
       url: "https://modrinth.com/mod/ferrite-core",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/ferrite-core/icon.png"
+      icon: "https://cdn.modrinth.com/data/uXXizFIs/222a126f26f8f9ae1eb339f3b767677f18bff31f_96.webp"
     },
     {
       name: "ImmediatelyFast",
       description: "Optimiza el renderizado inmediato",
       url: "https://modrinth.com/mod/immediatelyfast",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/immediatelyfast/icon.png"
+      icon: "https://cdn.modrinth.com/data/5ZwdcRci/e57b6b451425692ac17ad322d5e14bea686a383a_96.webp"
     },
     {
       name: "ModernFix",
@@ -256,7 +256,7 @@ const ModsList = () => {
     },
     {
       name: "ScalableLux",
-      description: "Mejora la iluminación escalable",
+      description: "Alternativa para Starlight en versiones recientes",
       url: "https://modrinth.com/mod/scalablelux",
       category: "performance",
       icon: "https://cdn.modrinth.com/data/scalablelux/icon.png"
