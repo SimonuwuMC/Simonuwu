@@ -210,7 +210,7 @@ const ModsList = () => {
       description: "Optimiza el rendimiento general del juego",
       url: "https://modrinth.com/mod/badoptimizations",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/badoptimizations/icon.png"
+      icon: "https://ru-minecraft.ru/mody-minecraft/78383-badoptimizations-mod.html"
     },
     {
       name: "Concurrent Chunk Management Engine (C2ME)",
