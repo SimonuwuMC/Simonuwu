@@ -10,7 +10,7 @@ const ChangelogModal = ({ isOpen, onClose }) => {
         changes: [
           "🚨 ACTUALIZACIÓN URGENTE",
           "⚠️ Algunos mods fueron degradados de versión y su proveedor cambió de Modrinth a CurseForge (debido al rechazo del archivo por moderadores)",
-          "🪟 Nombre de la ventana actualizado a Simonuwu Fabric Project 1.0.5a-(Nombre de Versión de Minecraft) en el menú simonuwu_fabric_project",
+          "🏷️ Nombre de la ventana actualizado a Simonuwu Fabric Project 1.0.5a-(Nombre de Versión de Minecraft) en el menú simonuwu_fabric_project",
           "⬇️ Mods degradados: MiniHUD (0.36.7 → 0.36.4), MaLiLib (0.25.7 → 0.25.5)"
           "📌 Versiones afectadas: 1.21.8"
       ]
@@ -25,7 +25,7 @@ const ChangelogModal = ({ isOpen, onClose }) => {
         "🎮 Mod agregado para personalizar el menú (incluye marca de agua del proyecto)",
         "🆕 Menú actualizado con el diseño simonuwu_fabric_project (botón de YouTube, logo y sitio web oficial)",
         "💲 Ícono de donación reemplazado por un botón con símbolo $",
-        "🪟 Nombre de la ventana actualizado a Simonuwu Fabric Project 1.0.5-(Nombre de Versión de Minecraft)",
+        "🏷️ Nombre de la ventana actualizado a Simonuwu Fabric Project 1.0.5-(Nombre de Versión de Minecraft)",
         "⚡ Mejoras de rendimiento (mejor carga de chunks y optimización general)",
         "⬇️ Mejora en la descarga de Resource Packs, Data Packs, mundos y shaders",
         "➕ Mods agregados: BadOptimizations, C2ME, Fast IP Ping, FerriteCore, ImmediatelyFast, ModernFix, Starlight, Very Many Players, FastChest, Resourcify, FancyMenu, Konkrete, Melody, Cubes Without Borders",
