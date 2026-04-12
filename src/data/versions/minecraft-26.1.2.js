@@ -7,8 +7,8 @@ export const minecraft2612 = {
     id: "160jZ5Axm",
       version: "beta-0.1-1.0.4",
       date: "Apr 12, 2026",
-      changelog: "Sin lanzar por parte de SimonuwuMCYT",
-      downloadUrl: "",
+      changelog: "Nueva versión beta 0.1 para Minecraft 26.1 con mods básicos optimizados",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/0.1-1.0.4-26.1.2",
       curseforgeUrl: "",
       isBeta: true  
     }
