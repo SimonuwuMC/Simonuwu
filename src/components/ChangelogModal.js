@@ -11,7 +11,7 @@ const ChangelogModal = ({ isOpen, onClose }) => {
           "🚨 ACTUALIZACIÓN URGENTE",
           "⚠️ Algunos mods fueron degradados de versión y su proveedor cambió de Modrinth a CurseForge (debido al rechazo del archivo por moderadores)",
           "🏷️ Nombre de la ventana actualizado a Simonuwu Fabric Project 1.0.5a-(Nombre de Versión de Minecraft) en el menú simonuwu_fabric_project",
-          "⬇️ Mods degradados: MiniHUD (0.36.7 → 0.36.4), MaLiLib (0.25.7 → 0.25.5)"
+          "⬇️ Mods degradados: MiniHUD (0.36.7 → 0.36.4), MaLiLib (0.25.7 → 0.25.5)",
           "📌 Versiones afectadas: 1.21.8"
       ]
     },
