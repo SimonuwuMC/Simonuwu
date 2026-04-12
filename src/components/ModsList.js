@@ -204,6 +204,111 @@ const ModsList = () => {
       url: "https://modrinth.com/mod/zoomify",
       category: "utility",
       icon: "https://cdn.modrinth.com/data/w7ThoJFB/e2de67a0bfb9e8aa2347982ab3ec5463f26cca31_96.webp"
+    },
+    {
+      name: "BadOptimizations",
+      description: "Optimiza el rendimiento general del juego",
+      url: "https://modrinth.com/mod/badoptimizations",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/badoptimizations/icon.png"
+    },
+    {
+      name: "Concurrent Chunk Management Engine (C2ME)",
+      description: "Mejora la gestión de chunks y el rendimiento",
+      url: "https://modrinth.com/mod/c2me-fabric",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/c2me-fabric/icon.png"
+    },
+    {
+      name: "Fast IP Ping",
+      description: "Reduce el tiempo de ping en servidores",
+      url: "https://modrinth.com/mod/fast-ip-ping",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/fast-ip-ping/icon.png"
+    },
+    {
+      name: "FerriteCore",
+      description: "Reduce el uso de memoria",
+      url: "https://modrinth.com/mod/ferrite-core",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/ferrite-core/icon.png"
+    },
+    {
+      name: "ImmediatelyFast",
+      description: "Optimiza el renderizado inmediato",
+      url: "https://modrinth.com/mod/immediatelyfast",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/immediatelyfast/icon.png"
+    },
+    {
+      name: "ModernFix",
+      description: "Soluciona problemas de rendimiento y bugs",
+      url: "https://modrinth.com/mod/modernfix",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/modernfix/icon.png"
+    },
+    {
+      name: "Starlight",
+      description: "Optimiza el sistema de iluminación",
+      url: "https://modrinth.com/mod/starlight",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/starlight/icon.png"
+    },
+    {
+      name: "ScalableLux",
+      description: "Mejora la iluminación escalable",
+      url: "https://modrinth.com/mod/scalablelux",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/scalablelux/icon.png"
+    },
+    {
+      name: "Very Many Players",
+      description: "Optimiza servidores con muchos jugadores",
+      url: "https://modrinth.com/mod/vmp-fabric",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/vmp-fabric/icon.png"
+    },
+    {
+      name: "FastChest",
+      description: "Optimiza la apertura de cofres",
+      url: "https://modrinth.com/mod/fastchest",
+      category: "performance",
+      icon: "https://cdn.modrinth.com/data/fastchest/icon.png"
+    },
+    {
+      name: "Resourcify",
+      description: "Explora y descarga resource packs fácilmente",
+      url: "https://modrinth.com/mod/resourcify",
+      category: "utility",
+      icon: "https://cdn.modrinth.com/data/resourcify/icon.png"
+    },
+    {
+      name: "FancyMenu",
+      description: "Personaliza los menús del juego",
+      url: "https://modrinth.com/mod/fancymenu",
+      category: "utility",
+      icon: "https://cdn.modrinth.com/data/fancymenu/icon.png"
+    },
+    {
+      name: "Konkrete",
+      description: "Librería necesaria para FancyMenu",
+      url: "https://modrinth.com/mod/konkrete",
+      category: "required",
+      icon: "https://cdn.modrinth.com/data/konkrete/icon.png"
+    },
+    {
+      name: "Melody",
+      description: "API necesaria para FancyMenu",
+      url: "https://modrinth.com/mod/melody",
+      category: "required",
+      icon: "https://cdn.modrinth.com/data/melody/icon.png"
+    },
+    {
+      name: "Cubes Without Borders",
+      description: "Agrega el modo de pantalla Ventana sin Bordes (borderless windowed)",
+      url: "https://modrinth.com/mod/cubes-without-borders",
+      category: "graphics",
+      icon: "https://cdn.modrinth.com/data/cubes-without-borders/icon.png"
     }
   ];
 
