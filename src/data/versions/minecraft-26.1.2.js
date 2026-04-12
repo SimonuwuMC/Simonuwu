@@ -11,4 +11,6 @@ export const minecraft2612 = {
       downloadUrl: "",
       curseforgeUrl: "",
       isBeta: true  
-  },
+  }
+      ]
+};
