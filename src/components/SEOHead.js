@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SEOHead = ({ 
   title = "Simonuwu Fabric Project - Modpack Optimizado para Minecraft",
-  description = "Descarga el modpack más optimizado para Minecraft Fabric. Compatible con versiones 1.18.2 a 1.21.7. Incluye Sodium, Lithium, Iris Shaders y más mods kawaii.",
+  description = "Descarga el modpack más optimizado para Minecraft Fabric. Compatible con versiones 1.18.2 a 1.21.11. Incluye Sodium, Lithium, Iris Shaders y más mods kawaii.",
   keywords = "minecraft, modpack, fabric, simonuwu, sodium, lithium, iris, shaders, optimizado, kawaii, mods",
   image = "https://cdn.modrinth.com/data/UqAIdvco/c4ba77ab2ed7f5662a619caed9b47c8391c41658_96.webp",
   url = "https://simonuwumodpack.netlify.app/"
