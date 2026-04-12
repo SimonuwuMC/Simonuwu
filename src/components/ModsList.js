@@ -245,70 +245,70 @@ const ModsList = () => {
       description: "Soluciona problemas de rendimiento y bugs",
       url: "https://modrinth.com/mod/modernfix",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/modernfix/icon.png"
+      icon: "https://cdn.modrinth.com/data/nmDcB62a/2af94de5e08ae54567ee86b968fc7ce076d9fee5_96.webp"
     },
     {
       name: "Starlight",
       description: "Optimiza el sistema de iluminación",
       url: "https://modrinth.com/mod/starlight",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/starlight/icon.png"
+      icon: "https://cdn.modrinth.com/data/H8CaAYZC/aa11bf788b9893370ff1e26af1c275dfd7590c59_96.webp"
     },
     {
       name: "ScalableLux",
       description: "Alternativa para Starlight en versiones recientes",
       url: "https://modrinth.com/mod/scalablelux",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/scalablelux/icon.png"
+      icon: "https://cdn.modrinth.com/data/Ps1zyz6x/27133942a1a58af1bb11b087957ea4cc14414dd3_96.webp"
     },
     {
       name: "Very Many Players",
       description: "Optimiza servidores con muchos jugadores",
       url: "https://modrinth.com/mod/vmp-fabric",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/vmp-fabric/icon.png"
+      icon: "https://cdn.modrinth.com/data/wnEe9KBa/0bb4b66e80c6cca9c37f6f1021a94670d6f820dc_96.webp"
     },
     {
       name: "FastChest",
       description: "Optimiza la apertura de cofres",
       url: "https://modrinth.com/mod/fastchest",
       category: "performance",
-      icon: "https://cdn.modrinth.com/data/fastchest/icon.png"
+      icon: "https://cdn.modrinth.com/data/WNcgffMw/c99a90fe7b39b02f85012650a6bf4bcda6e9010a_96.webp"
     },
     {
       name: "Resourcify",
       description: "Explora y descarga resource packs fácilmente",
       url: "https://modrinth.com/mod/resourcify",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/resourcify/icon.png"
+      icon: "https://cdn.modrinth.com/data/RLzHAoZe/a353989ea9f0f124ebe7cf3e67274c2d72751431_96.webp"
     },
     {
       name: "FancyMenu",
       description: "Personaliza los menús del juego",
       url: "https://modrinth.com/mod/fancymenu",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/fancymenu/icon.png"
+      icon: "https://cdn.modrinth.com/data/Wq5SjeWM/e4e82d028244a1326e6d346bf5b5336140576bb9_96.webp"
     },
     {
       name: "Konkrete",
       description: "Librería necesaria para FancyMenu",
       url: "https://modrinth.com/mod/konkrete",
       category: "required",
-      icon: "https://cdn.modrinth.com/data/konkrete/icon.png"
+      icon: "https://cdn.modrinth.com/data/J81TRJWm/f27c753fd9ec7944b49f4fe2d7cfd32527340183_96.webp"
     },
     {
       name: "Melody",
       description: "API necesaria para FancyMenu",
       url: "https://modrinth.com/mod/melody",
       category: "required",
-      icon: "https://cdn.modrinth.com/data/melody/icon.png"
+      icon: "https://cdn.modrinth.com/data/CVT4pFB2/87ac2562f06b104c827d322b4b937bad8fac5fbc_96.webp"
     },
     {
       name: "Cubes Without Borders",
       description: "Agrega el modo de pantalla Ventana sin Bordes (borderless windowed)",
       url: "https://modrinth.com/mod/cubes-without-borders",
       category: "graphics",
-      icon: "https://cdn.modrinth.com/data/cubes-without-borders/icon.png"
+      icon: "https://cdn.modrinth.com/data/ETlrkaYF/6c1711b4b788b5f25cc1e99ed8805aea94d9e167_96.webp"
     }
   ];
 
