@@ -112,7 +112,7 @@ const ModsList = () => {
       description: "Alternativa para Better thrid person para mejorar la vista en tercera persona",
       url: "https://modrinth.com/mod/leawind-third-person",
       category: "utility",
-      icon: "https://cdn.modrinth.com/data/S3D3QF0M/707a25d3fcf17f6aa7009dd3d3bcb68ed7aa10e1_96.webp"
+      icon: "https://cdn.modrinth.com/data/S3D3QF0M/af0630cc2f7f159cbb3c7f50d029efbb31233e70_96.webp"
     },
     {
       name: "Lithium",
