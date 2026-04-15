@@ -10,7 +10,6 @@ import FeatureSection from './components/FeatureSection';
 import InstallationGuide from './components/InstallationGuide';
 import Achievements from './components/Achievements';
 import ModsList from './components/ModsList';
-import ModsInfo from './components/ModsInfo';
 import CommentsSection from './components/CommentsSection';
 import ThemeToggle from './components/ThemeToggle';
 import SEOHead from './components/SEOHead';
@@ -44,8 +43,6 @@ const App = () => {
               description: 'Arqueólogo: Encontraste la versión 1.0.0 del modpack'
             })} />
             <FeatureSection />
-            <InFeedAd />
-            <ModsInfo />
             <InFeedAd />
             <ModsList />
             <InFeedAd />
