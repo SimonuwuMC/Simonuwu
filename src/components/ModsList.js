@@ -115,6 +115,13 @@ const ModsList = () => {
       icon: "https://cdn.modrinth.com/data/S3D3QF0M/0e9450941b1aa2086eaaec7f34ecb8260f813f88_96.webp"
     },
     {
+      name: "Perspective API",
+      description: "API necesaria para Leawind's Third Person",
+      url: "https://modrinth.com/mod/perspective-api",
+      category: "required",
+      icon: "https://cdn.modrinth.com/data/LIqveQm1/2ff022ae59f4591a7a75ca46f0f150ae8fa6cb94.gif"
+    },
+    {
       name: "Lithium",
       description: "Mejoras en la física y lógica del juego",
       url: "https://modrinth.com/mod/lithium",
