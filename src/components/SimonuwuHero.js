@@ -53,7 +53,7 @@ const SimonuwuHero = ({ onAchievement }) => {
             href="https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-orange-600 dark:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-700 dark:hover:bg-orange-800 transition-colors"
+            className="bg-orange-500 dark:bg-orange-600 text-white font-extrabold uppercase tracking-wide py-3 px-8 rounded-lg hover:bg-orange-600 dark:hover:bg-orange-700 transition-all hover:scale-105 shadow-sm hover:shadow-orange-500/30"
           >
             Ver en CurseForge
           </a>
@@ -69,7 +69,7 @@ const SimonuwuHero = ({ onAchievement }) => {
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-3 px-8 rounded-lg hover:from-violet-700 hover:to-fuchsia-700 transition-all shadow-md hover:shadow-lg"
           >
-             1.0.5a-1.21.8
+             ✨ 1.0.5a-1.21.8
           </a>
         </div>
       </div>
