@@ -59,7 +59,7 @@ const SimonuwuHero = ({ onAchievement }) => {
           </a>
           <a
             href="#download"
-            className="bg-red-700 dark:bg-red-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-red-800 dark:hover:bg-red-950 transition-colors"
+            className="inline-flex items-center gap-2.5 bg-emerald-500 text-white font-extrabold text-lg uppercase tracking-wider py-4 px-10 rounded-xl transition-all duration-150 border-b-[6px] border-emerald-700 hover:bg-emerald-600 active:border-b-0 active:translate-y-1 active:shadow-inner shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-emerald-300 dark:bg-emerald-600 dark:border-emerald-800 dark:hover:bg-emerald-700 dark:focus:ring-emerald-900"
           >
             Descargar
           </a>
