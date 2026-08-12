@@ -45,7 +45,7 @@ const SimonuwuHero = ({ onAchievement }) => {
             href="https://modrinth.com/modpack/simonuwu-fabric-project"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white dark:bg-[#181a1b] text-[#00AF5C] dark:text-[#1BD96A] font-bold py-3 px-8 rounded-lg hover:bg-[#00AF5C]/10 dark:hover:bg-[#222428] transition-colors border border-[#00AF5C]/20 dark:border-transparent"
+            className="bg-[#00AF5C] hover:bg-[#00924d] text-white dark:bg-[#00AF5C] dark:hover:bg-[#1BD96A] dark:text-[#111213] font-bold py-3 px-8 rounded-lg transition-colors"
           >
             Ver en Modrinth
           </a>
