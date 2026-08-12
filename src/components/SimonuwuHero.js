@@ -45,9 +45,9 @@ const SimonuwuHero = ({ onAchievement }) => {
             href="https://modrinth.com/modpack/simonuwu-fabric-project"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#00AF5C] hover:bg-[#00924d] text-white dark:bg-[#00AF5C] dark:hover:bg-[#1BD96A] dark:text-[#111213] font-bold py-3 px-8 rounded-lg transition-colors"
+            className="bg-emerald-500 dark:bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-emerald-600 dark:hover:bg-emerald-700 transition-all hover:scale-105 shadow-sm hover:shadow-emerald-500/30"
           >
-            Ver en Modrinth
+            Modrinth
           </a>
           <a
             href="https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project"
@@ -55,7 +55,7 @@ const SimonuwuHero = ({ onAchievement }) => {
             rel="noopener noreferrer"
             className="bg-orange-500 dark:bg-orange-600 text-white font-extrabold uppercase tracking-wide py-3 px-8 rounded-lg hover:bg-orange-600 dark:hover:bg-orange-700 transition-all hover:scale-105 shadow-sm hover:shadow-orange-500/30"
           >
-            Ver en CurseForge
+            CurseForge
           </a>
           <a
             href="#download"
