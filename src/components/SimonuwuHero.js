@@ -45,7 +45,7 @@ const SimonuwuHero = ({ onAchievement }) => {
             href="https://modrinth.com/modpack/simonuwu-fabric-project"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-emerald-500 dark:bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-emerald-600 dark:hover:bg-emerald-700 transition-all hover:scale-105 shadow-sm hover:shadow-emerald-500/30"
+            className="inline-flex items-center justify-center text-center bg-emerald-500 dark:bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-emerald-600 dark:hover:bg-emerald-700 transition-all hover:scale-105 shadow-sm hover:shadow-emerald-500/30"
           >
             Modrinth
           </a>
@@ -53,13 +53,13 @@ const SimonuwuHero = ({ onAchievement }) => {
             href="https://www.curseforge.com/minecraft/modpacks/simonuwu-fabric-project"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-orange-500 dark:bg-orange-600 text-white font-extrabold uppercase tracking-wide py-3 px-8 rounded-lg hover:bg-orange-600 dark:hover:bg-orange-700 transition-all hover:scale-105 shadow-sm hover:shadow-orange-500/30"
+            className="inline-flex items-center justify-center text-center bg-orange-500 dark:bg-orange-600 text-white font-extrabold uppercase tracking-wide py-3 px-8 rounded-lg hover:bg-orange-600 dark:hover:bg-orange-700 transition-all hover:scale-105 shadow-sm hover:shadow-orange-500/30"
           >
             CurseForge
           </a>
           <a
             href="#download"
-            className="bg-emerald-500 text-white font-extrabold text-lg uppercase tracking-wider py-4 px-10 rounded-xl transition-all duration-150 border-b-[4px] border-emerald-700 hover:bg-emerald-600 active:border-b-0 active:translate-y-1 active:shadow-inner shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-emerald-300 dark:bg-emerald-600 dark:border-emerald-800 dark:hover:bg-emerald-700 dark:focus:ring-emerald-900"
+            className="inline-flex items-center justify-center text-center bg-emerald-500 text-white font-extrabold text-lg uppercase tracking-wider py-4 px-10 rounded-xl transition-all duration-150 border-b-[4px] border-emerald-700 hover:bg-emerald-600 active:border-b-0 active:translate-y-1 active:shadow-inner shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-emerald-300 dark:bg-emerald-600 dark:border-emerald-800 dark:hover:bg-emerald-700 dark:focus:ring-emerald-900"
           >
             Descargar
           </a>
@@ -67,7 +67,7 @@ const SimonuwuHero = ({ onAchievement }) => {
             href="https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.5a-1.21.8" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-3 px-8 rounded-lg hover:from-violet-700 hover:to-fuchsia-700 transition-all shadow-md hover:shadow-lg"
+            className="inline-flex items-center justify-center text-center bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-3 px-8 rounded-lg hover:from-violet-700 hover:to-fuchsia-700 transition-all shadow-md hover:shadow-lg"
           >
              ✨ 1.0.5a-1.21.8
           </a>
