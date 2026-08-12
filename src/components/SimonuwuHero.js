@@ -67,7 +67,7 @@ const SimonuwuHero = ({ onAchievement }) => {
             href="https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.5a-1.21.8" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="className="bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-3 px-8 rounded-lg hover:from-violet-700 hover:to-fuchsia-700 transition-all shadow-md hover:shadow-lg""
+            className="bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-3 px-8 rounded-lg hover:from-violet-700 hover:to-fuchsia-700 transition-all shadow-md hover:shadow-lg"
           >
              1.0.5a-1.21.8
           </a>
