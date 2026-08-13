@@ -7,7 +7,7 @@ export const minecraft261 = {
       id: "190jZ5Axm",
       version: "1.0.4",
       date: "Aug 13, 2026",
-      changelog: "⚠Warning⚠ The modpack will not include the "In-Game Account Switcher" mod, as it was omitted during development. It still counts as a stable version—albeit without the multi-account feature—so there are no issues.",
+      changelog: "⚠Warning⚠ The modpack will not include the In-Game Account Switcher mod, as it was omitted during development. It still counts as a stable version—albeit without the multi-account feature—so there are no issues.",
       downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-26.1",
       curseforgeUrl: "",
       isBeta: false
