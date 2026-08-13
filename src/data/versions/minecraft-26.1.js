@@ -4,6 +4,15 @@ export const minecraft261 = {
   image: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Tiny%20Takeover_keyart_1170x500.jpg',
   releases: [
     {
+      id: "190jZ5Axm",
+      version: "1.0.4",
+      date: "Aug 13, 2026",
+      changelog: "⚠Warning⚠ The modpack will not include the "In-Game Account Switcher" mod, as it was omitted during development. It still counts as a stable version—albeit without the multi-account feature—so there are no issues.",
+      downloadUrl: "https://modrinth.com/modpack/simonuwu-fabric-project/version/1.0.4-26.1",
+      curseforgeUrl: "",
+      isBeta: false
+    },
+    {
       id: "180jZ5Axm",
       version: "beta-0.4-1.0.4",
       date: "Apr 17, 2026",
